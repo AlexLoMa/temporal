@@ -1,3 +1,5 @@
 <resources>
-    <string name="app_name">Login</string>
+    <string name="calendar">Calendar</string>
+    <string name="email">Email</string>
+    <string name="staffing">Staffing</string>
 </resources>
