@@ -1,9 +1,12 @@
-package com.sam.samproject;
+package com.sam.samproject.login;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
-public class LoginActivity extends AppCompatActivity {
+import com.sam.samproject.R;
+import com.sam.samproject.base.BaseActivity;
+
+public class LoginActivity extends BaseActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
