@@ -1,5 +1,16 @@
 <resources>
     <string name="app_name">Login</string>
+    <string name="txt_welcome">Welcome to Mobile \n First Branch</string>
+    <string name="txt_user_name">User Name</string>
+    <string name="txt_user_password">Password</string>
+    <string name="login">Login</string>
+
+    <array name="role">
+        <item name="select">Select your Role</item>
+        <item name="rel_manager">Relationship Manager</item>
+        <item name="personal_adv">Personal Banker + Financial Advisor</item>
+        <item name="branch_manager">Branch Manager</item>
+    </array>
     <string name="calendar">Calendar</string>
     <string name="email">Email</string>
     <string name="staffing">Staffing</string>
