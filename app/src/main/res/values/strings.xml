@@ -1,7 +1,9 @@
 <resources>
     <string name="app_name">Login</string>
     <string name="txt_welcome">Welcome to Mobile \n First Branch</string>
-
+    <string name="txt_user_name">User Name</string>
+    <string name="txt_user_password">Password</string>
+    <string name="login">Login</string>
 
     <array name="role">
         <item name="select">Select your Role</item>
