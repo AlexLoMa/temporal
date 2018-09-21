@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Login</string>
+    <string name="txt_welcome">Welcome to Mobile \n First Branch</string>
+
+
+    <array name="role">
+        <item name="select">Select your Role</item>
+        <item name="rel_manager">Relationship Manager</item>
+        <item name="personal_adv">Personal Banker + Financial Advisor</item>
+        <item name="branch_manager">Branch Manager</item>
+    </array>
 </resources>
