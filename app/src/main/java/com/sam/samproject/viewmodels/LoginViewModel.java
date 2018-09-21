@@ -8,15 +8,27 @@ import android.support.v7.widget.AppCompatSpinner;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Toast;
 
 public class LoginViewModel extends BaseViewModel {
     private String roles[];
     private ObservableField<String> text;
+    private ObservableField<String> strUserName;
+    private ObservableField<String> strUserPassword;
+
     public LoginViewModel() {
         text = new ObservableField<>();
+        strUserName = new ObservableField<>();
+        strUserPassword = new ObservableField<>();
     }
     public ObservableField<String> getText() {
         return text;
+    }
+    public ObservableField<String> getStrUserName() {
+        return strUserName;
+    }
+    public ObservableField<String> getStrUserPassword() {
+        return strUserPassword;
     }
     public String[] getRoles() {
         return roles;
@@ -43,5 +55,25 @@ public class LoginViewModel extends BaseViewModel {
             int pos = ((ArrayAdapter<String>) pAppCompatSpinner.getAdapter()).getPosition(newSelectedValue);
             pAppCompatSpinner.setSelection(pos, true);
         }
+    }
+    public void onLogin(View v){
+        if(strUserName.get()==null || strUserName.get().trim().length()==0){
+            Toast.makeText(v.getContext(),"Please Enter User Name.",Toast.LENGTH_LONG).show();
+            return;
+        }
+        if(strUserPassword.get()==null || strUserPassword.get().trim().length()==0){
+            Toast.makeText(v.getContext(),"Please Enter User Password.",Toast.LENGTH_LONG).show();
+            return;
+        }
+        if(text.equals("Relationship Manager")){
+
+        }else if(text.equals("Personal Banker + Financial Advisor")){
+
+        }else if(text.equals("Branch Manager")){
+
+        }
+//        else{
+//            Toast.makeText(v.getContext(),"Please select role",Toast.LENGTH_LONG).show();
+//        }
     }
 }
