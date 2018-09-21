@@ -17,7 +17,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".base.BaseActivity" />
-        <activity android:name=".BranchManager.BranchManagerActivity"/>
+        <activity android:name=".branchManager.BranchManagerActivity"/>
     </application>
 
 </manifest>

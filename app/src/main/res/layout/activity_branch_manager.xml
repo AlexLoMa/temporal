@@ -1,87 +1,99 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/activity_root"
     android:background="@color/colorPrimary">
 
     <TextView
-        android:id="@+id/bnch_name"
-        android:layout_width="500dp"
-        android:layout_height="50dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="40dp"
-        android:background="@android:color/white"
-        android:gravity="center"
-        android:text="Branch Manager Name"
-        android:textColor="@android:color/black"
-        android:textSize="18sp" />
-
-    <TextView
-        android:id="@+id/bnch_staffing"
-        android:layout_width="200dp"
-        android:layout_height="260dp"
-        android:layout_alignParentRight="true"
-        android:layout_marginBottom="20dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_marginTop="40dp"
-        android:layout_toRightOf="@+id/bnch_calendar"
-        android:background="@android:color/white"
-        android:gravity="center"
-        android:text="Staffing"
-        android:textColor="@android:color/black"
-        android:textSize="41sp" />
-
-    <TextView
-        android:id="@+id/bnch_performance"
-        android:layout_width="200dp"
-        android:layout_height="260dp"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/bnch_staffing"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_toRightOf="@+id/bnch_calendar"
-        android:background="@android:color/white"
-        android:gravity="center"
-        android:text="Performance"
-        android:textColor="@android:color/black"
-        android:textSize="41sp" />
+        android:id="@+id/bnch_managerid"
+        style="@style/dashboard_tile_style"
+        android:layout_width="0dp"
+        android:layout_height="60dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:text="@string/branchmanager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/bnch_calendar"
+        app:layout_constraintEnd_toStartOf="@id/guideline2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/bnch_calendar"
-        android:layout_width="500dp"
-        android:layout_height="250dp"
-        android:layout_below="@+id/bnch_name"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"
-        android:background="@android:color/white"
-        android:gravity="center"
+        style="@style/dashboard_tile_style"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="20dp"
         android:text="@string/calendar"
-        android:textColor="@android:color/black"
-        android:textSize="41sp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/bnch_email"
+        app:layout_constraintEnd_toStartOf="@id/guideline2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bnch_managerid" />
 
     <TextView
         android:id="@+id/bnch_email"
-        android:layout_width="500dp"
-        android:layout_height="200dp"
-        android:layout_below="@+id/bnch_calendar"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"
-        android:background="@android:color/white"
+        style="@style/dashboard_tile_style"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="20dp"
         android:gravity="center"
         android:text="@string/email"
-        android:textColor="@android:color/black"
-        android:textSize="41sp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/bnch_stocks"
+        app:layout_constraintEnd_toStartOf="@id/guideline2"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bnch_calendar" />
 
     <TextView
         android:id="@+id/bnch_stocks"
+        style="@style/dashboard_tile_style"
         android:layout_width="match_parent"
         android:layout_height="80dp"
-        android:layout_alignParentBottom="true"
         android:layout_margin="20dp"
-        android:background="@android:color/white"
-        android:gravity="center"
-        android:text="Company, Stocks, or News"
-        android:textColor="@android:color/black"
-        android:textSize="30sp" />
-</RelativeLayout>
+        android:layout_marginTop="16dp"
+        android:text="@string/companystocks"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bnch_email" />
+
+    <TextView
+        android:id="@+id/bnch_staffing"
+        style="@style/dashboard_tile_style"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        android:text="@string/staffing"
+        app:layout_constraintBottom_toTopOf="@+id/bnch_performance"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/guideline2"
+        app:layout_constraintTop_toTopOf="@+id/bnch_managerid" />
+
+    <TextView
+        android:id="@+id/bnch_performance"
+        style="@style/dashboard_tile_style"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_margin="20dp"
+        android:text="@string/performance"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/bnch_stocks"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/guideline2"
+        app:layout_constraintTop_toBottomOf="@+id/bnch_staffing" />
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.50"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</android.support.constraint.ConstraintLayout>

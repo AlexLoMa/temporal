@@ -1,6 +1,10 @@
-package com.sam.samproject.BranchManager;
+package com.sam.samproject.branchManager;
 
-import com.sam.samproject.BranchManager.BranchManagerFragment.StocksFragment;
+import com.sam.samproject.branchManager.fragment.CalendarFragment;
+import com.sam.samproject.branchManager.fragment.EmailFragment;
+import com.sam.samproject.branchManager.fragment.PerformanceFragment;
+import com.sam.samproject.branchManager.fragment.StaffingFragment;
+import com.sam.samproject.branchManager.fragment.StocksFragment;
 import com.sam.samproject.R;
 import com.sam.samproject.base.BaseActivity;
 
@@ -24,19 +28,19 @@ public class BranchManagerActivity extends BaseActivity implements View.OnClickL
     }
 
     @Override
-    public void onClick(View view) {
-        switch (view.getId()) {
+    public void onClick(View v) {
+        switch (v.getId()) {
             case R.id.bnch_calendar:
-                //TO-DO
+                showFragment(new CalendarFragment(), true);
                 break;
             case R.id.bnch_email:
-                //TO-DO
+                showFragment(new EmailFragment(), true);
                 break;
             case R.id.bnch_performance:
-                //TO-DO
+                showFragment(new PerformanceFragment(), true);
                 break;
             case R.id.bnch_staffing:
-                //TO-DO
+                showFragment(new StaffingFragment(), true);
                 break;
             case R.id.bnch_stocks:
                 showFragment(new StocksFragment(), true);
@@ -44,7 +48,6 @@ public class BranchManagerActivity extends BaseActivity implements View.OnClickL
 
         }
     }
-
     private void showFragment(Fragment fragment, boolean addToBackStack) {
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
