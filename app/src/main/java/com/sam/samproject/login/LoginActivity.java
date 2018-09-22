@@ -2,7 +2,6 @@ package com.sam.samproject.login;
 
 import android.arch.lifecycle.ViewModelProviders;
 import android.databinding.DataBindingUtil;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.sam.samproject.R;
