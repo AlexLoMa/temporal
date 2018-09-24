@@ -11,4 +11,10 @@
         <item name="personal_adv">Personal Banker + Financial Advisor</item>
         <item name="branch_manager">Branch Manager</item>
     </array>
+    <string name="calendar">Calendar</string>
+    <string name="email">Email</string>
+    <string name="staffing">Staffing</string>
+    <string name="performance">Performance</string>
+    <string name="companystocks">Company,Stocks or News</string>
+    <string name="branchmanager">Logged in as BM</string>
 </resources>
