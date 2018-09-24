@@ -17,7 +17,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".login.RelationshipManagerActivity"></activity>
+        <activity android:name=".relationmanager.RelationshipManagerActivity"></activity>
     </application>
 
 </manifest>

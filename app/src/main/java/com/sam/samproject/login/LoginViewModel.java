@@ -1,4 +1,4 @@
-package com.sam.samproject.viewmodels;
+package com.sam.samproject.login;
 
 import android.content.Intent;
 import android.databinding.BindingAdapter;
@@ -11,8 +11,8 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
-import com.sam.samproject.login.LoginActivity;
-import com.sam.samproject.login.RelationshipManagerActivity;
+import com.sam.samproject.base.BaseViewModel;
+import com.sam.samproject.relationmanager.RelationshipManagerActivity;
 
 public class LoginViewModel extends BaseViewModel {
     private String roles[];
@@ -71,7 +71,6 @@ public class LoginViewModel extends BaseViewModel {
         }
         if(text.get().toString().contains("Relationship Manager")){
             (v.getContext()).startActivity(new Intent(v.getContext(),RelationshipManagerActivity.class));
-            ((LoginActivity)v.getContext()).finish();
         }else if(text.get().toString().contains("Personal Banker + Financial Advisor")){
             Toast.makeText(v.getContext(),"Personal Banker + Financial Advisor Under development",Toast.LENGTH_LONG).show();
         }else if(text.get().toString().contains("Branch Manager")){

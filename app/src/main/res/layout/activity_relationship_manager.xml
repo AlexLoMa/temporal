@@ -7,7 +7,7 @@
     <data>
         <variable
             name="viewmodel"
-            type="com.sam.samproject.viewmodels.RelationshipManagerViewModel"/>
+            type="com.sam.samproject.relationmanager.RelationshipManagerViewModel"/>
     </data>
     <android.support.constraint.ConstraintLayout
         android:padding="@dimen/margin_8dp"

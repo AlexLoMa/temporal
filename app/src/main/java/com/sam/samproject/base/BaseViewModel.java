@@ -1,4 +1,4 @@
-package com.sam.samproject.viewmodels;
+package com.sam.samproject.base;
 
 import android.arch.lifecycle.ViewModel;
 

@@ -1,14 +1,12 @@
-package com.sam.samproject.login;
+package com.sam.samproject.relationmanager;
 
 import android.arch.lifecycle.ViewModelProviders;
 import android.databinding.DataBindingUtil;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
 import com.sam.samproject.R;
 import com.sam.samproject.base.BaseActivity;
 import com.sam.samproject.databinding.ActivityRelationshipManagerBinding;
-import com.sam.samproject.viewmodels.RelationshipManagerViewModel;
 
 public class RelationshipManagerActivity extends BaseActivity {
 
