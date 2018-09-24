@@ -74,12 +74,12 @@ public class LoginViewModel extends BaseViewModel {
 
         }else if(text.get().equals("Personal Banker + Financial Advisor")){
             Intent intent = new Intent(v.getContext(), PersonalBankerActivity.class);
-            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
             v.getContext().startActivity(intent);
 
         }else if(text.get().equals("Branch Manager")){
             Intent intent = new Intent(v.getContext(), BranchManagerActivity.class);
-            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
             v.getContext().startActivity(intent);
         }
     }
