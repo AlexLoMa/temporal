@@ -1,5 +1,6 @@
 package com.sam.samproject.viewmodels;
 
+import android.content.Intent;
 import android.databinding.BindingAdapter;
 import android.databinding.InverseBindingAdapter;
 import android.databinding.InverseBindingListener;
@@ -9,6 +10,9 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Toast;
+
+import com.sam.samproject.login.LoginActivity;
+import com.sam.samproject.login.RelationshipManagerActivity;
 
 public class LoginViewModel extends BaseViewModel {
     private String roles[];
@@ -65,15 +69,15 @@ public class LoginViewModel extends BaseViewModel {
             Toast.makeText(v.getContext(),"Please Enter User Password.",Toast.LENGTH_LONG).show();
             return;
         }
-        if(text.equals("Relationship Manager")){
-
-        }else if(text.equals("Personal Banker + Financial Advisor")){
-
-        }else if(text.equals("Branch Manager")){
-
+        if(text.get().toString().contains("Relationship Manager")){
+            (v.getContext()).startActivity(new Intent(v.getContext(),RelationshipManagerActivity.class));
+            ((LoginActivity)v.getContext()).finish();
+        }else if(text.get().toString().contains("Personal Banker + Financial Advisor")){
+            Toast.makeText(v.getContext(),"Personal Banker + Financial Advisor Under development",Toast.LENGTH_LONG).show();
+        }else if(text.get().toString().contains("Branch Manager")){
+            Toast.makeText(v.getContext(),"Branch Manager is Under development",Toast.LENGTH_LONG).show();
+        }else{
+            Toast.makeText(v.getContext(),"Please select role",Toast.LENGTH_LONG).show();
         }
-//        else{
-//            Toast.makeText(v.getContext(),"Please select role",Toast.LENGTH_LONG).show();
-//        }
     }
 }
