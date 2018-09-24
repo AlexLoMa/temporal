@@ -13,6 +13,8 @@ import android.widget.Toast;
 
 import com.sam.samproject.branchManager.BranchManagerActivity;
 
+import com.sam.samproject.personalBanker.PersonalBankerActivity;
+
 public class LoginViewModel extends BaseViewModel {
     private String roles[];
     private ObservableField<String> text;
@@ -71,14 +73,14 @@ public class LoginViewModel extends BaseViewModel {
         if(text.get().equals("Relationship Manager")){
 
         }else if(text.get().equals("Personal Banker + Financial Advisor")){
+            Intent intent = new Intent(v.getContext(), PersonalBankerActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            v.getContext().startActivity(intent);
 
         }else if(text.get().equals("Branch Manager")){
             Intent intent = new Intent(v.getContext(), BranchManagerActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
             v.getContext().startActivity(intent);
         }
-//        else{
-//            Toast.makeText(v.getContext(),"Please select role",Toast.LENGTH_LONG).show();
-//        }
     }
 }
