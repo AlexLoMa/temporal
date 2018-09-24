@@ -1,4 +1,4 @@
-package com.sam.samproject.personalBanker;
+package com.sam.samproject.personalbanker;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -8,11 +8,11 @@ import android.view.View;
 
 import com.sam.samproject.R;
 import com.sam.samproject.base.BaseActivity;
-import com.sam.samproject.personalBanker.fragments.AccountOpenFragment;
-import com.sam.samproject.personalBanker.fragments.CalendarFragment;
-import com.sam.samproject.personalBanker.fragments.CrmFragment;
-import com.sam.samproject.personalBanker.fragments.EmailFragment;
-import com.sam.samproject.personalBanker.fragments.StocksFragment;
+import com.sam.samproject.personalbanker.fragments.AccountOpenFragment;
+import com.sam.samproject.personalbanker.fragments.CalendarFragment;
+import com.sam.samproject.personalbanker.fragments.CrmFragment;
+import com.sam.samproject.personalbanker.fragments.EmailFragment;
+import com.sam.samproject.personalbanker.fragments.StocksFragment;
 
 public class PersonalBankerActivity extends BaseActivity  implements View.OnClickListener{
     @Override

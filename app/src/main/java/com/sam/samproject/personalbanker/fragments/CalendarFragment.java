@@ -1,4 +1,4 @@
-package com.sam.samproject.branchManager.fragment;
+package com.sam.samproject.personalbanker.fragments;
 
 import com.sam.samproject.R;
 import com.sam.samproject.base.BaseFragment;
