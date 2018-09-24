@@ -6,6 +6,6 @@ import com.sam.samproject.base.BaseFragment;
 public class StaffingFragment extends BaseFragment {
     @Override
     protected int layoutResource() {
-        return R.layout.fragment_calendar;
+        return R.layout.fragment_staffing;
     }
 }

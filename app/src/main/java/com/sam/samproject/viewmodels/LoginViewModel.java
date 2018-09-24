@@ -1,5 +1,6 @@
 package com.sam.samproject.viewmodels;
 
+import android.content.Intent;
 import android.databinding.BindingAdapter;
 import android.databinding.InverseBindingAdapter;
 import android.databinding.InverseBindingListener;
@@ -9,6 +10,8 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Toast;
+
+import com.sam.samproject.branchManager.BranchManagerActivity;
 
 public class LoginViewModel extends BaseViewModel {
     private String roles[];
@@ -65,12 +68,13 @@ public class LoginViewModel extends BaseViewModel {
             Toast.makeText(v.getContext(),"Please Enter User Password.",Toast.LENGTH_LONG).show();
             return;
         }
-        if(text.equals("Relationship Manager")){
+        if(text.get().equals("Relationship Manager")){
 
-        }else if(text.equals("Personal Banker + Financial Advisor")){
+        }else if(text.get().equals("Personal Banker + Financial Advisor")){
 
-        }else if(text.equals("Branch Manager")){
-
+        }else if(text.get().equals("Branch Manager")){
+            Intent intent = new Intent(v.getContext(), BranchManagerActivity.class);
+            v.getContext().startActivity(intent);
         }
 //        else{
 //            Toast.makeText(v.getContext(),"Please select role",Toast.LENGTH_LONG).show();
