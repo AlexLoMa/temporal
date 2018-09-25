@@ -12,6 +12,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
 import com.sam.samproject.base.BaseViewModel;
+import com.sam.samproject.branchManager.BranchManagerActivity;
 import com.sam.samproject.relationmanager.RelationshipManagerActivity;
 
 public class LoginViewModel extends BaseViewModel {
@@ -74,7 +75,7 @@ public class LoginViewModel extends BaseViewModel {
         }else if(text.get().toString().contains("Personal Banker + Financial Advisor")){
             Toast.makeText(v.getContext(),"Personal Banker + Financial Advisor Under development",Toast.LENGTH_LONG).show();
         }else if(text.get().toString().contains("Branch Manager")){
-            Toast.makeText(v.getContext(),"Branch Manager is Under development",Toast.LENGTH_LONG).show();
+            (v.getContext()).startActivity(new Intent(v.getContext(),BranchManagerActivity.class));
         }else{
             Toast.makeText(v.getContext(),"Please select role",Toast.LENGTH_LONG).show();
         }

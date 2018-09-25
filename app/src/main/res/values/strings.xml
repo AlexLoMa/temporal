@@ -17,4 +17,8 @@
     <string name="performance">Performance</string>
     <string name="companystocks">Company,Stocks or News</string>
     <string name="branchmanager">Logged in as BM</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
+
