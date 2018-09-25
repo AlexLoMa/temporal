@@ -12,7 +12,6 @@ import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
 import com.sam.samproject.branchmanager.BranchManagerActivity;
-
 import com.sam.samproject.personalbanker.PersonalBankerActivity;
 
 public class LoginViewModel extends BaseViewModel {
