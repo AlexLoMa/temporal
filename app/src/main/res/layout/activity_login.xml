@@ -9,7 +9,7 @@
     <data>
         <variable
             name="viewmodel"
-            type="com.sam.samproject.viewmodels.LoginViewModel"/>
+            type="com.sam.samproject.login.LoginViewModel"/>
     </data>
 
     <android.support.constraint.ConstraintLayout

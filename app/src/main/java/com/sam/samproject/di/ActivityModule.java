@@ -11,6 +11,8 @@ import com.sam.samproject.login.LoginActivity;
 import com.sam.samproject.login.LoginActivityModule;
 import com.sam.samproject.personalbanker.PersonalBankerActivity;
 import com.sam.samproject.personalbanker.PersonalBankerActivityModule;
+import com.sam.samproject.relationmanager.RelationshipManagerActivity;
+import com.sam.samproject.relationmanager.RelationshipManagerModule;
 
 import dagger.Module;
 import dagger.android.ContributesAndroidInjector;
@@ -26,4 +28,7 @@ public abstract class ActivityModule {
 
     @ContributesAndroidInjector(modules = PersonalBankerActivityModule.class)
     abstract PersonalBankerActivity bindPersonalBankerActivity();
+
+    @ContributesAndroidInjector(modules = RelationshipManagerModule.class)
+    abstract RelationshipManagerActivity bindRelationshipManagerActivity();
 }
