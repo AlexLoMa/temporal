@@ -11,6 +11,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
+import com.sam.samproject.R;
 import com.sam.samproject.branchmanager.BranchManagerActivity;
 
 import com.sam.samproject.personalbanker.PersonalBankerActivity;
@@ -70,14 +71,14 @@ public class LoginViewModel extends BaseViewModel {
             Toast.makeText(v.getContext(),"Please Enter User Password.",Toast.LENGTH_LONG).show();
             return;
         }
-        if(text.get().equals("Relationship Manager")){
+        if(text.get().equals(v.getContext().getString(R.string.rel_manager))){
 
-        }else if(text.get().equals("Personal Banker + Financial Advisor")){
+        }else if(text.get().equals(v.getContext().getString(R.string.personal_adv))){
             Intent intent = new Intent(v.getContext(), PersonalBankerActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
             v.getContext().startActivity(intent);
 
-        }else if(text.get().equals("Branch Manager")){
+        }else if(text.get().equals(v.getContext().getString(R.string.branch_manager))){
             Intent intent = new Intent(v.getContext(), BranchManagerActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
             v.getContext().startActivity(intent);

@@ -4,12 +4,14 @@
     <string name="txt_user_name">User Name</string>
     <string name="txt_user_password">Password</string>
     <string name="login">Login</string>
-
+    <string name="rel_manager">Relationship Manager</string>
+    <string name="personal_adv">Personal Banker + Financial Advisor</string>
+    <string name="branch_manager">Branch Manager</string>
     <array name="role">
         <item name="select">Select your Role</item>
-        <item name="rel_manager">Relationship Manager</item>
-        <item name="personal_adv">Personal Banker + Financial Advisor</item>
-        <item name="branch_manager">Branch Manager</item>
+        <item name="rel_manager">@string/rel_manager</item>
+        <item name="personal_adv">@string/personal_adv</item>
+        <item name="branch_manager">@string/branch_manager</item>
     </array>
     <string name="calendar">Calendar</string>
     <string name="email">Email</string>

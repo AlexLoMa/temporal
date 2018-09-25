@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    tools:showIn="@layout/fragment_customer_form">
+
+    <TextView
+        android:id="@+id/application_form_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="3dp"
+        android:text="Mortgage Application"
+        android:textAllCaps="true"
+        android:textColor="#000"
+        android:textSize="25sp" />
+
+    <TextView
+        android:id="@+id/bank_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="2dp"
+        android:text="JP MORGAN CHASE MORTGAGE DEPARTMENT"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/bank_address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="2dp"
+        android:text="304 west street,Polaris,Columbus,OH - 64043"
+        android:textAllCaps="true"
+        android:textSize="18sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="2dp"
+        android:text="Telephone:7784567893 | Fax:2345345903"
+        android:textSize="18sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="3dp"
+        android:background="@android:color/darker_gray" />
+
+
+</merge>
