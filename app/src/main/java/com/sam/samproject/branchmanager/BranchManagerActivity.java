@@ -1,10 +1,10 @@
-package com.sam.samproject.branchManager;
+package com.sam.samproject.branchmanager;
 
-import com.sam.samproject.branchManager.fragment.CalendarFragment;
-import com.sam.samproject.branchManager.fragment.EmailFragment;
-import com.sam.samproject.branchManager.fragment.PerformanceFragment;
-import com.sam.samproject.branchManager.fragment.StaffingFragment;
-import com.sam.samproject.branchManager.fragment.StocksFragment;
+import com.sam.samproject.branchmanager.fragment.CalendarFragment;
+import com.sam.samproject.branchmanager.fragment.EmailFragment;
+import com.sam.samproject.branchmanager.fragment.PerformanceFragment;
+import com.sam.samproject.branchmanager.fragment.StaffingFragment;
+import com.sam.samproject.branchmanager.fragment.StocksFragment;
 import com.sam.samproject.R;
 import com.sam.samproject.base.BaseActivity;
 

@@ -11,7 +11,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
-import com.sam.samproject.branchManager.BranchManagerActivity;
+import com.sam.samproject.branchmanager.BranchManagerActivity;
 
 public class LoginViewModel extends BaseViewModel {
     private String roles[];

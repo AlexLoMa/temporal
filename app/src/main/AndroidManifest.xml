@@ -3,6 +3,7 @@
     package="com.sam.samproject">
 
     <application
+        android:name=".SamApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -18,7 +19,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".branchManager.BranchManagerActivity" />
+        <activity android:name=".branchmanager.BranchManagerActivity" />
     </application>
 
 </manifest>
