@@ -17,4 +17,9 @@
     <string name="performance">Performance</string>
     <string name="companystocks">Company,Stocks or News</string>
     <string name="branchmanager">Logged in as BM</string>
+    <string name="personalBanker">Logged in as PB</string>
+    <string name="accountopening">Mortgage Application</string>
+    <string name="crm">CRM</string>
 </resources>
+
+

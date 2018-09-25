@@ -18,8 +18,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".branchmanager.BranchManagerActivity" />
+        <activity android:name=".branchmanager.BranchManagerActivity"/>
+        <activity android:name=".personalbanker.PersonalBankerActivity"/>
     </application>
 
 </manifest>
