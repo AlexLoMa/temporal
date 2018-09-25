@@ -12,7 +12,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
 import com.sam.samproject.base.BaseViewModel;
-import com.sam.samproject.branchManager.BranchManagerActivity;
+import com.sam.samproject.branchmanager.BranchManagerActivity;
 import com.sam.samproject.relationmanager.RelationshipManagerActivity;
 
 public class LoginViewModel extends BaseViewModel {
