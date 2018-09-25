@@ -5,7 +5,6 @@ package com.sam.samproject.branchmanager;
  */
 
 import dagger.Module;
-import dagger.Provides;
 
 @Module
 public class BranchManagerActivityModule {
