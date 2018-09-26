@@ -1,4 +1,4 @@
-package com.sam.samproject.viewmodels;
+package com.sam.samproject.login;
 
 import android.content.Intent;
 import android.databinding.BindingAdapter;
@@ -12,9 +12,10 @@ import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
 import com.sam.samproject.R;
+import com.sam.samproject.base.BaseViewModel;
 import com.sam.samproject.branchmanager.BranchManagerActivity;
-
 import com.sam.samproject.personalbanker.PersonalBankerActivity;
+import com.sam.samproject.relationmanager.RelationshipManagerActivity;
 
 public class LoginViewModel extends BaseViewModel {
     private String roles[];
@@ -63,25 +64,35 @@ public class LoginViewModel extends BaseViewModel {
         }
     }
     public void onLogin(View v){
-        if(strUserName.get()==null || strUserName.get().trim().length()==0){
+
+        if(strUserName.get()==null || strUserName.get().trim().length()==0) {
             Toast.makeText(v.getContext(),"Please Enter User Name.",Toast.LENGTH_LONG).show();
             return;
         }
-        if(strUserPassword.get()==null || strUserPassword.get().trim().length()==0){
+
+        if(strUserPassword.get()==null || strUserPassword.get().trim().length()==0) {
             Toast.makeText(v.getContext(),"Please Enter User Password.",Toast.LENGTH_LONG).show();
             return;
         }
+
         if(text.get().equals(v.getContext().getString(R.string.rel_manager))){
 
-        }else if(text.get().equals(v.getContext().getString(R.string.personal_adv))){
+            (v.getContext()).startActivity(new Intent(v.getContext(),RelationshipManagerActivity.class));
+
+        } else if (text.get().equals(v.getContext().getString(R.string.personal_adv))) {
+
             Intent intent = new Intent(v.getContext(), PersonalBankerActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
             v.getContext().startActivity(intent);
 
-        }else if(text.get().equals(v.getContext().getString(R.string.branch_manager))){
+        } else if (text.get().equals(v.getContext().getString(R.string.branch_manager))) {
+
             Intent intent = new Intent(v.getContext(), BranchManagerActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
             v.getContext().startActivity(intent);
+
+        } else {
+            Toast.makeText(v.getContext(),"Please select role",Toast.LENGTH_LONG).show();
         }
     }
 }
