@@ -7,7 +7,6 @@ import android.os.Bundle;
 import com.sam.samproject.R;
 import com.sam.samproject.base.BaseActivity;
 import com.sam.samproject.databinding.ActivityLoginBinding;
-import com.sam.samproject.viewmodels.LoginViewModel;
 
 public class LoginActivity extends BaseActivity {
 

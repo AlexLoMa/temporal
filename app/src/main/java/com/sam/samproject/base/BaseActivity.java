@@ -1,10 +1,10 @@
 package com.sam.samproject.base;
 
 /**
- * Created by alexlm on 9/20/18.
+ * Created by Alejandro Lopez on 20/09/2018.
  */
 
-import android.support.v7.app.AppCompatActivity;
+import dagger.android.support.DaggerAppCompatActivity;
 
-public class BaseActivity extends AppCompatActivity {
+public class BaseActivity extends DaggerAppCompatActivity {
 }
