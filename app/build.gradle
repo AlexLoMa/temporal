@@ -1,11 +1,11 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 26
+    compileSdkVersion 27
     defaultConfig {
         applicationId "com.sam.samproject"
-        minSdkVersion 24
-        targetSdkVersion 26
+        minSdkVersion 27
+        targetSdkVersion 2
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
@@ -23,17 +23,50 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation 'com.android.support:appcompat-v7:27.1.1'
     implementation 'com.android.support.constraint:constraint-layout:1.1.3'
-    implementation 'com.android.support:support-v4:26.1.0'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'com.android.support.test:runner:1.0.2'
-    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
-    implementation "android.arch.lifecycle:extensions:$lifecycle_version"
-    implementation 'com.android.support:design:26.1.0'
+    implementation 'com.android.support:support-v4:27.1.1'
 
-    compile 'com.google.dagger:dagger:2.13'
+    // testCompile for local tests only
+    // testCompile 'junit:junit:4.12'
+
+    testImplementation 'junit:junit:4.12'
+
+    // Android testing support library
+    // androidTestCompile for Android (instrumented) tests only
+    // androidTestCompile 'com.android.support.test:runner:0.5'
+
+    //For rules
+    androidTestImplementation 'com.android.support.test:rules:1.0.2'
+
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+
+    // Espresso Core
+    // androidTestCompile 'com.android.support.test.espresso:espresso-core:2.2.2'
+
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+
+    // If want to use RecyclerView actions, drawer actions, or accessibility checks,
+    // you should include espresso-contrib
+
+    // androidTestCompile 'com.android.support.test.espresso:espresso-contrib:2.2.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-contrib:3.0.2'
+
+    // Include espresso-web if you need WebView support in your tests
+    // androidTestCompile 'com.android.support.test.espresso:espresso-web:2.2.2'
+
+    // Include espresso-idling-resources for synchronizing background tasks.
+    // androidTestCompile 'com.android.support.test.espresso:espresso-idling-resources:2.2.2'
+
+    // Include espresso-idling-resources if you'll be validating or stubbing [troquelear] intents.
+    // androidTestCompile 'com.android.support.test.espresso:espresso-intents:2.2.2'
+
+
+    implementation "android.arch.lifecycle:extensions:$lifecycle_version"
+    implementation 'com.android.support:design:27.1.1'
+
+    implementation 'com.google.dagger:dagger:2.13'
     annotationProcessor 'com.google.dagger:dagger-compiler:2.13'
     annotationProcessor 'com.google.dagger:dagger-android-processor:2.13'
-    compile 'com.google.dagger:dagger-android-support:2.13'
+    implementation 'com.google.dagger:dagger-android-support:2.13'
 }
