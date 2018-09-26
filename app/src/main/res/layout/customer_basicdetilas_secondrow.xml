@@ -17,6 +17,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:hint="WorkNumber"
+            android:background="@drawable/border"
             android:inputType="text"
             android:maxLines="1"
             android:textColor="@android:color/black" />
@@ -35,6 +36,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:hint="CellNumber"
+            android:background="@drawable/border"
             android:inputType="text"
             android:maxLines="1"
             android:textColor="@android:color/black" />
@@ -54,6 +56,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:hint="HomeNumber"
+            android:background="@drawable/border"
             android:inputType="text"
             android:maxLines="1"
             android:textColor="@android:color/black" />
@@ -72,6 +75,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:hint="EmailAddress"
+            android:background="@drawable/border"
             android:inputType="text"
             android:maxLines="1"
             android:textColor="@android:color/black" />
@@ -90,6 +94,7 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             android:hint="ContactMethod"
+            android:background="@drawable/border"
             android:inputType="text"
             android:maxLines="1"
             android:textColor="@android:color/black" />
@@ -101,13 +106,14 @@
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/zipcode">
+        app:layout_constraintStart_toEndOf="@+id/contact_method">
 
         <android.support.design.widget.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
             android:hint="Dependents"
+            android:background="@drawable/border"
             android:inputType="text"
             android:maxLines="1"
             android:textColor="@android:color/black" />
