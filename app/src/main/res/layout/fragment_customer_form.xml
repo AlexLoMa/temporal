@@ -49,7 +49,32 @@
 
     <include layout="@layout/customer_previousaddress_detials" />
 
-    <include layout="@layout/customer_insurance_detials" />
+    <include
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/customer_insurance_detials" />
+
+    <RelativeLayout
+        android:id="@+id/relSign"
+        android:layout_marginTop="@dimen/margin_16dp"
+        android:layout_width="match_parent"
+        android:layout_height="60dp">
+        <TextView
+            android:id="@+id/txtSign"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/margin_16dp"
+            android:text="Signature"
+            android:padding="@dimen/margin_8dp"
+            android:layout_alignParentLeft="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        <ImageView
+            android:scaleType="centerInside"
+            android:id="@+id/imgSign"
+            android:layout_toRightOf="@+id/txtSign"
+            android:layout_width="140dp"
+            android:layout_height="match_parent" />
+    </RelativeLayout>
 
 </LinearLayout>
 

@@ -1,5 +1,6 @@
 package com.sam.samproject.personalbanker;
 
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -14,7 +15,10 @@ import com.sam.samproject.personalbanker.fragments.CrmFragment;
 import com.sam.samproject.personalbanker.fragments.EmailFragment;
 import com.sam.samproject.personalbanker.fragments.StocksFragment;
 
-public class PersonalBankerActivity extends BaseActivity  implements View.OnClickListener{
+import java.io.ByteArrayOutputStream;
+
+public class PersonalBankerActivity extends BaseActivity implements View.OnClickListener, SignCompleteListener {
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,30 +34,46 @@ public class PersonalBankerActivity extends BaseActivity  implements View.OnClic
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.pb_calendar:
-                showFragment(new CalendarFragment(), true);
+                showFragment(new CalendarFragment(), true, null);
                 break;
             case R.id.pb_email:
-                showFragment(new EmailFragment(), true);
+                showFragment(new EmailFragment(), true, null);
                 break;
             case R.id.crm:
-                showFragment(new CrmFragment(), true);
+                showFragment(new CrmFragment(), true, null);
                 break;
             case R.id.account_open:
-                showFragment(new AccountOpenFragment(), true);
+                showFragment(new AccountOpenFragment(), true, null);
                 break;
             case R.id.pb_stocks:
-                showFragment(new StocksFragment(), true);
+                showFragment(new StocksFragment(), true, null);
                 break;
 
         }
     }
-    private void showFragment(Fragment fragment, boolean addToBackStack) {
+
+    private void showFragment(Fragment fragment, boolean addToBackStack, Bundle bundle
+    ) {
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.activity_root, fragment);
         if (addToBackStack) {
             fragmentTransaction.addToBackStack(fragment.getClass().getSimpleName());
         }
+        if (bundle != null) {
+            fragment.setArguments(bundle);
+        }
         fragmentTransaction.commit();
+    }
+
+    @Override
+    public void onSignomplete(Bitmap bitmap) {
+        ByteArrayOutputStream stream = new ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
+        byte[] byteArray = stream.toByteArray();
+
+        Bundle bundle = new Bundle();
+        bundle.putSerializable("sign", byteArray);
+        showFragment(new AccountOpenFragment(), true, bundle);
     }
 }
