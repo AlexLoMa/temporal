@@ -13,9 +13,24 @@
         android:layout_height="wrap_content"
         android:text="Applicant Details"
         android:textAllCaps="true"
-        android:textSize="15sp"
-        android:fontFamily="italic"
+        android:textSize="20sp"
+        android:textStyle="bold"
         android:layout_marginLeft="15dp"/>
     <include layout="@layout/customer_basicdetials" />
+
+    <include layout="@layout/customer_basicdetilas_secondrow" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Current Address"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:layout_marginLeft="15dp" />
+
+    <include layout="@layout/customer_currentaddress_details" />
+    <include layout="@layout/customer_previousaddress_detials" />
+    <include layout="@layout/customer_insurance_detials" />
+
 </LinearLayout>
 

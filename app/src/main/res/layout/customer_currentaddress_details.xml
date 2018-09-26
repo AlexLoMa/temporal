@@ -5,38 +5,36 @@
     android:layout_height="wrap_content">
 
     <android.support.design.widget.TextInputLayout
-        android:id="@+id/salutation"
+        android:id="@+id/apt_no"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        app:layout_constraintEnd_toStartOf="@id/firstname"
+        app:layout_constraintEnd_toStartOf="@id/street_name"
         app:layout_constraintStart_toStartOf="parent">
 
         <android.support.design.widget.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:hint="Salutation"
-            android:imeOptions="actionNext"
+            android:hint="Apt #"
             android:inputType="text"
             android:maxLines="1"
             android:textColor="@android:color/black" />
     </android.support.design.widget.TextInputLayout>
 
     <android.support.design.widget.TextInputLayout
-        android:id="@+id/firstname"
+        android:id="@+id/street_name"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        app:layout_constraintEnd_toStartOf="@id/initial"
-        app:layout_constraintStart_toEndOf="@+id/salutation">
+        app:layout_constraintEnd_toStartOf="@id/city"
+        app:layout_constraintStart_toEndOf="@+id/apt_no">
 
         <android.support.design.widget.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:hint="FirstName"
-            android:imeOptions="actionNext"
+            android:hint="Street # and StreetName"
             android:inputType="text"
             android:maxLines="1"
             android:textColor="@android:color/black" />
@@ -44,97 +42,141 @@
 
 
     <android.support.design.widget.TextInputLayout
-        android:id="@+id/initial"
+        android:id="@+id/city"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        app:layout_constraintEnd_toStartOf="@id/lastname"
-        app:layout_constraintStart_toEndOf="@id/firstname">
+        app:layout_constraintEnd_toStartOf="@id/state"
+        app:layout_constraintStart_toEndOf="@id/street_name">
 
         <android.support.design.widget.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:hint="Initial"
-            android:imeOptions="actionNext"
+            android:hint="City"
             android:inputType="text"
             android:maxLines="1"
             android:textColor="@android:color/black" />
     </android.support.design.widget.TextInputLayout>
 
     <android.support.design.widget.TextInputLayout
-        android:id="@+id/lastname"
+        android:id="@+id/state"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        app:layout_constraintEnd_toStartOf="@id/birthdate"
-        app:layout_constraintStart_toEndOf="@+id/initial">
+        app:layout_constraintEnd_toStartOf="@id/zipcode"
+        app:layout_constraintStart_toEndOf="@+id/city">
 
         <android.support.design.widget.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:hint="LastName"
-            android:imeOptions="actionNext"
+            android:hint="State"
             android:inputType="text"
             android:maxLines="1"
             android:textColor="@android:color/black" />
     </android.support.design.widget.TextInputLayout>
 
     <android.support.design.widget.TextInputLayout
-        android:id="@+id/birthdate"
+        android:id="@+id/zipcode"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        app:layout_constraintEnd_toStartOf="@id/ssn"
-        app:layout_constraintStart_toEndOf="@+id/lastname">
+        app:layout_constraintEnd_toStartOf="@id/status"
+        app:layout_constraintStart_toEndOf="@+id/state">
 
         <android.support.design.widget.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:hint="Birthdate"
-            android:imeOptions="actionNext"
+            android:hint="Zipcode"
             android:inputType="text"
             android:maxLines="1"
             android:textColor="@android:color/black" />
     </android.support.design.widget.TextInputLayout>
 
     <android.support.design.widget.TextInputLayout
-        android:id="@+id/ssn"
+        android:id="@+id/status"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
-        app:layout_constraintEnd_toStartOf="@id/martialstatus"
-        app:layout_constraintStart_toEndOf="@+id/birthdate">
+        app:layout_constraintEnd_toStartOf="@id/rentpay"
+        app:layout_constraintStart_toEndOf="@+id/zipcode">
 
         <android.support.design.widget.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:hint="SSN(Optional)"
-            android:imeOptions="actionNext"
+            android:hint="Status"
             android:inputType="text"
             android:maxLines="1"
             android:textColor="@android:color/black" />
     </android.support.design.widget.TextInputLayout>
 
     <android.support.design.widget.TextInputLayout
-        android:id="@+id/martialstatus"
+        android:id="@+id/rentpay"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="10dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/ssn">
+        app:layout_constraintStart_toEndOf="@+id/status">
 
         <android.support.design.widget.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:hint="MartialStatus"
-            android:imeOptions="actionNext"
+            android:hint="Rent Payment"
             android:inputType="text"
             android:maxLines="1"
             android:textColor="@android:color/black" />
     </android.support.design.widget.TextInputLayout>
+
+    <TextView
+        android:id="@+id/time_at_residence"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Time at Residence:"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/apt_no"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="45dp" />
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/years"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        app:layout_constraintEnd_toStartOf="@id/months"
+        app:layout_constraintStart_toEndOf="@+id/time_at_residence"
+        app:layout_constraintTop_toBottomOf="@+id/street_name">
+
+        <android.support.design.widget.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:hint="Years"
+            android:inputType="text"
+            android:maxLines="1"
+            android:textColor="@android:color/black" />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/months"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/years"
+        app:layout_constraintTop_toBottomOf="@+id/city">
+
+        <android.support.design.widget.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:hint="Months"
+            android:inputType="text"
+            android:maxLines="1"
+            android:textColor="@android:color/black" />
+    </android.support.design.widget.TextInputLayout>
+
 </android.support.constraint.ConstraintLayout>
