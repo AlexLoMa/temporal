@@ -19,7 +19,7 @@
         </activity>
         <activity android:name=".branchmanager.BranchManagerActivity"/>
         <activity android:name=".personalbanker.PersonalBankerActivity"/>
-        <activity android:name=".relationmanager.RelationshipManagerActivity"></activity>
+        <activity android:name=".relationmanager.RelationshipManagerActivity"/>
     </application>
 
 </manifest>
