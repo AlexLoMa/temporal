@@ -10,7 +10,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".login.LoginActivity">
+
+        <!-- android:configChanges="orientation|screenSize|smallestScreenSize|density|screenLayout" -->
+
+        <activity
+            android:name=".login.LoginActivity"
+
+            android:configChanges="orientation|screenSize|smallestScreenSize|density|screenLayout|uiMode|keyboard|keyboardHidden|navigation"
+            android:resizeableActivity="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -20,6 +27,10 @@
         <activity android:name=".branchmanager.BranchManagerActivity"/>
         <activity android:name=".personalbanker.PersonalBankerActivity"/>
         <activity android:name=".relationmanager.RelationshipManagerActivity"></activity>
+
+
+        <!-- META DATA -->
+        <meta-data android:name="com.samsung.android.keepalive.density" android:value="true"/>
     </application>
 
 </manifest>
