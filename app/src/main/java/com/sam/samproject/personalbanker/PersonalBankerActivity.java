@@ -19,6 +19,8 @@ import java.io.ByteArrayOutputStream;
 
 public class PersonalBankerActivity extends BaseActivity implements View.OnClickListener, SignCompleteListener {
 
+    private AccountOpenFragment accountOpenFragment = new AccountOpenFragment();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,7 +45,9 @@ public class PersonalBankerActivity extends BaseActivity implements View.OnClick
                 showFragment(new CrmFragment(), true, null);
                 break;
             case R.id.account_open:
-                showFragment(new AccountOpenFragment(), true, null);
+                if(!accountOpenFragment.isVisible()){
+                showFragment(accountOpenFragment, true, null);
+                }
                 break;
             case R.id.pb_stocks:
                 showFragment(new StocksFragment(), true, null);
@@ -74,6 +78,6 @@ public class PersonalBankerActivity extends BaseActivity implements View.OnClick
 
         Bundle bundle = new Bundle();
         bundle.putSerializable("sign", byteArray);
-        showFragment(new AccountOpenFragment(), true, bundle);
+        showFragment(accountOpenFragment, true, bundle);
     }
 }
