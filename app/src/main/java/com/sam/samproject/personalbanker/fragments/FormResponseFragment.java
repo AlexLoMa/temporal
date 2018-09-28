@@ -1,13 +1,14 @@
-package com.sam.samproject.branchmanager.fragment;
+package com.sam.samproject.personalbanker.fragments;
 
 import android.view.View;
 
 import com.sam.samproject.R;
 import com.sam.samproject.base.BaseFragment;
 
-public class PerformanceFragment extends BaseFragment {
+public class FormResponseFragment extends BaseFragment {
     @Override
     protected int layoutResource() {
-        return R.layout.fragment_performance;
+        return R.layout.fragment_formsubmitted;
     }
+
 }
