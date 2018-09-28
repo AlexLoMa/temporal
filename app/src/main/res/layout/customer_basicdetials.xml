@@ -5,28 +5,55 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <android.support.v7.widget.AppCompatSpinner
+    <RelativeLayout
         android:id="@+id/salutation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_margin="@dimen/common_margin"
-        android:elevation="5dp"
-        android:entries="@array/salutation"
-        android:minHeight="@dimen/spinner_height"
-        app:layout_constraintEnd_toStartOf="@id/firstname"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/border"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/firstname"
         app:layout_constraintStart_toStartOf="parent"
-        tools:listitem="@layout/spinner_item_view" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <android.support.v7.widget.AppCompatSpinner
+            android:id="@+id/spin_salution"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:background="@android:color/transparent"
+            android:elevation="5dp"
+            android:entries="@array/salutation"
+            android:textAlignment="gravity"
+            tools:listitem="@layout/spinner_item_view" />
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@+id/spin_salution"
+            android:elevation="10dp"
+            android:src="@drawable/ic_dropdown_arrow" />
+    </RelativeLayout>
 
     <android.support.design.widget.TextInputLayout
         android:id="@+id/firstname"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="2.5dp"
         app:layout_constraintEnd_toStartOf="@id/initial"
-        app:layout_constraintStart_toEndOf="@+id/salutation">
+        app:layout_constraintStart_toEndOf="@+id/salutation"
+        app:layout_constraintTop_toTopOf="parent">
 
         <android.support.design.widget.TextInputEditText
+            android:id="@+id/et_firstname"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/border"
@@ -35,6 +62,7 @@
             android:imeOptions="actionNext"
             android:inputType="text"
             android:maxLines="1"
+            android:padding="2dp"
             android:textColor="@android:color/black" />
     </android.support.design.widget.TextInputLayout>
 
@@ -43,9 +71,12 @@
         android:id="@+id/initial"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="2.5dp"
         app:layout_constraintEnd_toStartOf="@id/lastname"
-        app:layout_constraintStart_toEndOf="@id/firstname">
+        app:layout_constraintStart_toEndOf="@id/firstname"
+        app:layout_constraintTop_toTopOf="parent">
 
         <android.support.design.widget.TextInputEditText
             android:layout_width="match_parent"
@@ -56,6 +87,7 @@
             android:imeOptions="actionNext"
             android:inputType="text"
             android:maxLines="1"
+            android:padding="2dp"
             android:textColor="@android:color/black" />
     </android.support.design.widget.TextInputLayout>
 
@@ -63,9 +95,12 @@
         android:id="@+id/lastname"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="2.5dp"
         app:layout_constraintEnd_toStartOf="@id/birthdate"
-        app:layout_constraintStart_toEndOf="@+id/initial">
+        app:layout_constraintStart_toEndOf="@+id/initial"
+        app:layout_constraintTop_toTopOf="parent">
 
         <android.support.design.widget.TextInputEditText
             android:layout_width="match_parent"
@@ -76,36 +111,34 @@
             android:imeOptions="actionNext"
             android:inputType="text"
             android:maxLines="1"
+            android:padding="2dp"
             android:textColor="@android:color/black" />
     </android.support.design.widget.TextInputLayout>
 
-    <android.support.design.widget.TextInputLayout
+    <TextView
         android:id="@+id/birthdate"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="13dp"
+        android:background="@drawable/border"
+        android:gravity="center"
+        android:padding="5dp"
+        android:text="BirthDate"
         app:layout_constraintEnd_toStartOf="@id/ssn"
-        app:layout_constraintStart_toEndOf="@+id/lastname">
-
-        <android.support.design.widget.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/border"
-            android:gravity="center"
-            android:hint="Birthdate"
-            android:imeOptions="actionNext"
-            android:inputType="text"
-            android:maxLines="1"
-            android:textColor="@android:color/black" />
-    </android.support.design.widget.TextInputLayout>
+        app:layout_constraintStart_toEndOf="@+id/lastname"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <android.support.design.widget.TextInputLayout
         android:id="@+id/ssn"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="2.5dp"
         app:layout_constraintEnd_toStartOf="@id/martialstatus"
-        app:layout_constraintStart_toEndOf="@+id/birthdate">
+        app:layout_constraintStart_toEndOf="@+id/birthdate"
+        app:layout_constraintTop_toTopOf="parent">
 
         <android.support.design.widget.TextInputEditText
             android:layout_width="match_parent"
@@ -116,26 +149,44 @@
             android:imeOptions="actionNext"
             android:inputType="text"
             android:maxLines="1"
+            android:padding="2dp"
             android:textColor="@android:color/black" />
     </android.support.design.widget.TextInputLayout>
 
-    <android.support.design.widget.TextInputLayout
+
+    <RelativeLayout
         android:id="@+id/martialstatus"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/border"
+        android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/ssn">
+        app:layout_constraintStart_toEndOf="@+id/ssn"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <android.support.design.widget.TextInputEditText
-            android:layout_width="match_parent"
+        <android.support.v7.widget.AppCompatSpinner
+            android:id="@+id/spin_martialstatus"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/border"
-            android:gravity="center"
-            android:hint="MartialStatus"
-            android:imeOptions="actionNext"
-            android:inputType="text"
-            android:maxLines="1"
-            android:textColor="@android:color/black" />
-    </android.support.design.widget.TextInputLayout>
+            android:layout_centerHorizontal="true"
+            android:background="@android:color/transparent"
+            android:elevation="5dp"
+            android:entries="@array/martialStatus"
+            android:textAlignment="gravity"
+            tools:listitem="@layout/spinner_item_view" />
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_toRightOf="@+id/spin_martialstatus"
+            android:elevation="10dp"
+            android:src="@drawable/ic_dropdown_arrow" />
+    </RelativeLayout>
 </android.support.constraint.ConstraintLayout>

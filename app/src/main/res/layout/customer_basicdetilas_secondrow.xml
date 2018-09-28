@@ -13,13 +13,16 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <android.support.design.widget.TextInputEditText
+            android:id="@+id/work_phone_number"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/border"
             android:gravity="center"
             android:hint="WorkNumber"
-            android:background="@drawable/border"
-            android:inputType="text"
+            android:imeOptions="actionNext"
+            android:inputType="phone"
             android:maxLines="1"
+
             android:textColor="@android:color/black" />
     </android.support.design.widget.TextInputLayout>
 
@@ -32,12 +35,14 @@
         app:layout_constraintStart_toEndOf="@+id/work_num">
 
         <android.support.design.widget.TextInputEditText
+            android:id="@+id/personal_number"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/border"
             android:gravity="center"
             android:hint="CellNumber"
-            android:background="@drawable/border"
-            android:inputType="text"
+            android:imeOptions="actionNext"
+            android:inputType="phone"
             android:maxLines="1"
             android:textColor="@android:color/black" />
     </android.support.design.widget.TextInputLayout>
@@ -52,12 +57,14 @@
         app:layout_constraintStart_toEndOf="@id/cell_num">
 
         <android.support.design.widget.TextInputEditText
+            android:id="@+id/landline_number"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/border"
             android:gravity="center"
             android:hint="HomeNumber"
-            android:background="@drawable/border"
-            android:inputType="text"
+            android:imeOptions="actionNext"
+            android:inputType="phone"
             android:maxLines="1"
             android:textColor="@android:color/black" />
     </android.support.design.widget.TextInputLayout>
@@ -71,12 +78,14 @@
         app:layout_constraintStart_toEndOf="@+id/home_num">
 
         <android.support.design.widget.TextInputEditText
+            android:id="@+id/personal_email_address"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/border"
             android:gravity="center"
             android:hint="EmailAddress"
-            android:background="@drawable/border"
-            android:inputType="text"
+            android:imeOptions="actionNext"
+            android:inputType="textEmailAddress"
             android:maxLines="1"
             android:textColor="@android:color/black" />
     </android.support.design.widget.TextInputLayout>
@@ -92,9 +101,10 @@
         <android.support.design.widget.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/border"
             android:gravity="center"
             android:hint="ContactMethod"
-            android:background="@drawable/border"
+            android:imeOptions="actionNext"
             android:inputType="text"
             android:maxLines="1"
             android:textColor="@android:color/black" />
@@ -109,12 +119,14 @@
         app:layout_constraintStart_toEndOf="@+id/contact_method">
 
         <android.support.design.widget.TextInputEditText
+            android:id="@+id/number_of_dependents"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/border"
             android:gravity="center"
             android:hint="Dependents"
-            android:background="@drawable/border"
-            android:inputType="text"
+            android:imeOptions="actionNext"
+            android:inputType="number"
             android:maxLines="1"
             android:textColor="@android:color/black" />
     </android.support.design.widget.TextInputLayout>

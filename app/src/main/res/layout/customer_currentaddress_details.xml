@@ -90,6 +90,7 @@
         app:layout_constraintStart_toEndOf="@+id/state">
 
         <android.support.design.widget.TextInputEditText
+            android:id="@+id/us_zipcode"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"

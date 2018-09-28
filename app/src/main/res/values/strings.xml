@@ -29,4 +29,18 @@
         <item name="mr">Mr</item>
         <item name="ms">Ms</item>
     </array>
+    <array name="martialStatus">
+        <item name="select">Select MartialStatus</item>
+        <item name="single">Single</item>
+        <item name="married">Married</item>
+    </array>
+
+    <array name="states">
+        <item name="select">Select State</item>
+        <item name="albama">Alabama</item>
+        <item name="alaska">Alasaka</item>
+        <item name="nebraska">Nebraska</item>
+    </array>
+
+
 </resources>
