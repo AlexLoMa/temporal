@@ -17,7 +17,7 @@ import com.sam.samproject.personalbanker.fragments.StocksFragment;
 
 import java.io.ByteArrayOutputStream;
 
-public class PersonalBankerActivity extends BaseActivity implements View.OnClickListener, SignCompleteListener {
+public class PersonalBankerActivity extends BaseActivity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,14 +66,6 @@ public class PersonalBankerActivity extends BaseActivity implements View.OnClick
         fragmentTransaction.commit();
     }
 
-    @Override
-    public void onSignomplete(Bitmap bitmap) {
-        ByteArrayOutputStream stream = new ByteArrayOutputStream();
-        bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
-        byte[] byteArray = stream.toByteArray();
 
-        Bundle bundle = new Bundle();
-        bundle.putSerializable("sign", byteArray);
-        showFragment(new AccountOpenFragment(), true, bundle);
-    }
+
 }

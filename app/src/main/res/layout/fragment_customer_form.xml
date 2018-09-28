@@ -55,11 +55,13 @@
         layout="@layout/customer_insurance_detials" />
 
     <RelativeLayout
+        android:layout_marginLeft="@dimen/margin_8dp"
         android:id="@+id/relSign"
         android:layout_marginTop="@dimen/margin_16dp"
         android:layout_width="match_parent"
         android:layout_height="60dp">
         <TextView
+            android:background="#b2beb5"
             android:id="@+id/txtSign"
             android:textColor="@android:color/black"
             android:textSize="@dimen/margin_16dp"

@@ -1,92 +1,110 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_root"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/activity_root"
     android:background="@android:color/holo_blue_dark">
 
+
     <TextView
-        app:layout_constraintBottom_toTopOf="@+id/rlshUsingMobileApp"
-        app:layout_constraintStart_toStartOf="@+id/rlshUsingMobileApp"
-        app:layout_constraintEnd_toEndOf="@+id/rlshUsingMobileApp"
-        android:id="@+id/login_as"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginBottom="@dimen/margin_16dp"
+        android:id="@+id/rlshElectronicQueue"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginLeft="@dimen/margin_16dp"
+        android:layout_marginRight="@dimen/margin_16dp"
+        android:background="@android:color/white"
+        android:gravity="center"
+        android:text="Electronic \n Queue"
         android:textColor="@android:color/black"
-        android:textSize="@dimen/text_size_medium"
+        android:textSize="@dimen/text_size_large"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/guideline1"
+        app:layout_constraintTop_toTopOf="@+id/login_as" />
+
+
+    <TextView
+        app:layout_constraintVertical_chainStyle="packed"
+        android:id="@+id/login_as"
+        android:layout_width="0dp"
+        android:layout_marginLeft="@dimen/margin_16dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/margin_16dp"
+        android:background="@android:color/white"
+        android:gravity="center"
         android:padding="@dimen/margin_8dp"
         android:text="Login as RM"
-        android:background="@android:color/white"
-        android:layout_marginTop="@dimen/margin_16dp"
-        android:gravity="center"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/text_size_medium"
+        app:layout_constraintEnd_toEndOf="@+id/guideline1"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_width="0dp"
-        android:layout_height="@dimen/spinner_height" />
-
+        app:layout_constraintBottom_toTopOf="@+id/rlshUsingMobileApp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        app:layout_constraintBottom_toTopOf="@+id/rlshCRMSummary"
+        android:gravity="center"
         android:id="@+id/rlshUsingMobileApp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginLeft="@dimen/margin_16dp"
+        android:layout_marginTop="@dimen/margin_16dp"
+        android:background="@android:color/white"
         android:padding="@dimen/margin_8dp"
         android:text="Using the \n Mobile app"
         android:textColor="@android:color/black"
         android:textSize="@dimen/text_size_large"
-        android:layout_marginLeft="@dimen/margin_16dp"
+        app:layout_constraintEnd_toEndOf="@id/guideline1"
+        app:layout_constraintBottom_toTopOf="@+id/rlshCRMSummary"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="@dimen/margin_16dp"
-        android:background="@android:color/white"
-        app:layout_constraintTop_toBottomOf="@+id/login_as"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-
+        app:layout_constraintTop_toBottomOf="@+id/login_as" />
 
     <TextView
+        android:gravity="center"
         android:id="@+id/rlshCRMSummary"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginLeft="@dimen/margin_16dp"
+        android:layout_marginTop="@dimen/margin_16dp"
+        android:background="@android:color/white"
         android:padding="@dimen/margin_8dp"
         android:text="CRM \n Summary"
         android:textColor="@android:color/black"
         android:textSize="@dimen/text_size_large"
-        android:layout_marginLeft="@dimen/margin_16dp"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="@dimen/margin_16dp"
-        android:background="@android:color/white"
-        app:layout_constraintTop_toBottomOf="@+id/rlshUsingMobileApp"
-        android:layout_width="0dp"
-        app:layout_constraintEnd_toEndOf="@id/rlshUsingMobileApp"
         app:layout_constraintBottom_toTopOf="@+id/rlshFastCheckDepo"
-        android:layout_height="wrap_content" />
-
+        app:layout_constraintEnd_toEndOf="@id/guideline1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rlshUsingMobileApp" />
 
     <TextView
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:gravity="center"
+        android:layout_marginBottom="@dimen/margin_16dp"
         android:id="@+id/rlshFastCheckDepo"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginLeft="@dimen/margin_16dp"
+        android:layout_marginTop="@dimen/margin_16dp"
+        android:background="@android:color/white"
         android:padding="@dimen/margin_8dp"
         android:text="Fast Check \n Deposit"
         android:textColor="@android:color/black"
         android:textSize="@dimen/text_size_large"
-        android:layout_marginLeft="@dimen/margin_16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginTop="@dimen/margin_16dp"
-        android:background="@android:color/white"
+        app:layout_constraintEnd_toEndOf="@id/guideline1"
         app:layout_constraintTop_toBottomOf="@+id/rlshCRMSummary"
-        android:layout_width="0dp"
-        app:layout_constraintEnd_toEndOf="@id/rlshUsingMobileApp"
-        android:layout_height="wrap_content" />
+         />
 
-    <TextView
-        android:id="@+id/rlshElectronicQueue"
-        android:textSize="@dimen/text_size_large"
-        android:text="Electronic \n Queue"
-        android:gravity="center"
-        android:textColor="@android:color/black"
-        android:background="@android:color/white"
-        android:layout_marginRight="@dimen/margin_8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toBottomOf="@+id/rlshFastCheckDepo"
-        android:layout_marginLeft="@dimen/margin_16dp"
-        app:layout_constraintTop_toTopOf="@+id/login_as"
-        app:layout_constraintStart_toEndOf="@+id/login_as"
-        android:layout_width="0dp"
-        android:layout_height="0dp" />
+    <android.support.constraint.Guideline
+        android:id="@+id/guideline1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.50"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

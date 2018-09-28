@@ -1,10 +1,13 @@
 package com.sam.samproject.personalbanker.fragments;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,29 +15,28 @@ import android.view.ViewGroup;
 
 import com.github.gcacace.signaturepad.views.SignaturePad;
 import com.sam.samproject.R;
-import com.sam.samproject.personalbanker.SignCompleteListener;
+import com.sam.samproject.base.BaseFragment;
 
-public class SignatureFragment extends Fragment implements SignaturePad.OnSignedListener, View.OnClickListener {
+import java.io.ByteArrayOutputStream;
+
+public class SignatureFragment extends BaseFragment implements SignaturePad.OnSignedListener, View.OnClickListener {
     Bitmap bitmap = null;
-    private SignCompleteListener signCompleteListener;
     private SignaturePad mSignaturePad;
 
     @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        this.signCompleteListener = (SignCompleteListener) context;
+    protected int layoutResource() {
+        return R.layout.fragement_signature;
     }
 
-    @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View v = inflater.inflate(R.layout.fragement_signature, container, false);
+    protected void initViews(View v) {
+        super.initViews(v);
         mSignaturePad = v.findViewById(R.id.signature_pad);
         v.findViewById(R.id.clear).setOnClickListener(this);
         v.findViewById(R.id.done).setOnClickListener(this);
         mSignaturePad.setOnSignedListener(this);
-        return v;
     }
+
 
     @Override
     public void onStartSigning() {
@@ -60,7 +62,12 @@ public class SignatureFragment extends Fragment implements SignaturePad.OnSigned
             case R.id.done:
                 bitmap = mSignaturePad.getTransparentSignatureBitmap(true);
                 if (bitmap != null) {
-                    signCompleteListener.onSignomplete(bitmap);
+                    ByteArrayOutputStream stream = new ByteArrayOutputStream();
+                    bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
+                    byte[] byteArray = stream.toByteArray();
+                    getTargetFragment().onActivityResult(getTargetRequestCode(), Activity.RESULT_OK, new Intent().putExtra("sign", byteArray));
+                    getActivity().getSupportFragmentManager().popBackStack(SignatureFragment.class.getSimpleName(), FragmentManager.POP_BACK_STACK_INCLUSIVE);
+                    getActivity().getSupportFragmentManager().beginTransaction().commit();
                 }
                 break;
         }

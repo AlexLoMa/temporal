@@ -1,5 +1,6 @@
 package com.sam.samproject.personalbanker.fragments;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
@@ -11,34 +12,47 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.sam.samproject.R;
+import com.sam.samproject.base.BaseFragment;
 import com.sam.samproject.personalbanker.PersonalBankerActivity;
 
-public class AccountOpenFragment extends Fragment {
+public class AccountOpenFragment extends BaseFragment {
     private Bitmap bitmap;
+    private ImageView imageView;
+
 
     @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null && getArguments().containsKey("sign")) {
-            byte[] byteArray = getArguments().getByteArray("sign");
-            bitmap = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
-        }
+    protected int layoutResource() {
+        return R.layout.fragment_customer_form;
     }
 
-    @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_customer_form, container, false);
-        if (bitmap != null)
-            ((ImageView) view.findViewById(R.id.imgSign)).setImageBitmap(bitmap);
+    protected void initViews(View view) {
+        super.initViews(view);
+        imageView = view.findViewById(R.id.imgSign);
 
+        if (bitmap != null)
+            imageView.setImageBitmap(bitmap);
         view.findViewById(R.id.relSign).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ((PersonalBankerActivity) getActivity()).getSupportFragmentManager().beginTransaction().replace(R.id.activity_root, new SignatureFragment()).commit();
+                SignatureFragment signatureFragment = new SignatureFragment();
+                signatureFragment.setTargetFragment(AccountOpenFragment.this, 202);
+                ((PersonalBankerActivity) getActivity()).getSupportFragmentManager().beginTransaction()
+                        .addToBackStack(SignatureFragment.class.getSimpleName())
+                        .replace(R.id.activity_root, signatureFragment).commit();
             }
         });
-        return view;
     }
 
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (resultCode == getActivity().RESULT_OK && requestCode == 202) {
+            byte[] byteArray = data.getExtras().getByteArray("sign");
+            bitmap = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
+            if (bitmap != null)
+                imageView.setImageBitmap(bitmap);
+        }
+    }
 }
