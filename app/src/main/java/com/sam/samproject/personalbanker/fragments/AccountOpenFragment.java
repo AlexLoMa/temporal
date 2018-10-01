@@ -16,7 +16,7 @@ import com.sam.samproject.R;
 import com.sam.samproject.base.BaseFragment;
 import com.sam.samproject.personalbanker.PersonalBankerActivity;
 
-public class AccountOpenFragment extends BaseFragment {
+public class AccountOpenFragment extends BaseFragment implements View.OnClickListener {
     private Bitmap bitmap;
     private ImageView imageView;
 
@@ -33,6 +33,7 @@ public class AccountOpenFragment extends BaseFragment {
 
         if (bitmap != null)
             imageView.setImageBitmap(bitmap);
+
         view.findViewById(R.id.txtSign).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -41,6 +42,8 @@ public class AccountOpenFragment extends BaseFragment {
                 signatureFragment.show(getFragmentManager(), "");
             }
         });
+
+        view.findViewById(R.id.submit).setOnClickListener(this);
     }
 
     void setBimap(Bitmap bimap) {
@@ -48,6 +51,18 @@ public class AccountOpenFragment extends BaseFragment {
         if (bitmap != null)
             imageView.setImageBitmap(bitmap);
 
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.submit:
+                FormResponseFragment formResponseFragment = new FormResponseFragment();
+                ((PersonalBankerActivity) getActivity()).getSupportFragmentManager().beginTransaction()
+                        .addToBackStack(FormResponseFragment.class.getSimpleName())
+                        .replace(R.id.activity_root,formResponseFragment).commit();
+                break;
+        }
     }
 
 }
