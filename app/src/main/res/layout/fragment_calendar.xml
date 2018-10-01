@@ -5,10 +5,11 @@
     android:background="@android:color/holo_blue_dark"
     android:orientation="vertical">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:text="I am in Calendar Page"
-        android:textSize="40sp" />
+    <CalendarView
+        android:id="@+id/pb_calendar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:dateTextAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+
+        />
 </RelativeLayout>

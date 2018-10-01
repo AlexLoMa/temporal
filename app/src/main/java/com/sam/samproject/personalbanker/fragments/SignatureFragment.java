@@ -1,13 +1,9 @@
 package com.sam.samproject.personalbanker.fragments;
 
-import android.app.Activity;
-import android.content.Context;
-import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
+import android.support.v4.app.DialogFragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,28 +11,26 @@ import android.view.ViewGroup;
 
 import com.github.gcacace.signaturepad.views.SignaturePad;
 import com.sam.samproject.R;
-import com.sam.samproject.base.BaseFragment;
 
-import java.io.ByteArrayOutputStream;
-
-public class SignatureFragment extends BaseFragment implements SignaturePad.OnSignedListener, View.OnClickListener {
+public class SignatureFragment extends DialogFragment implements SignaturePad.OnSignedListener, View.OnClickListener {
     Bitmap bitmap = null;
+    AccountOpenFragment accountOpenFragment;
     private SignaturePad mSignaturePad;
 
-    @Override
-    protected int layoutResource() {
-        return R.layout.fragement_signature;
+    public void setAccountFragment(AccountOpenFragment accountOpenFragment) {
+        this.accountOpenFragment = accountOpenFragment;
     }
 
+    @Nullable
     @Override
-    protected void initViews(View v) {
-        super.initViews(v);
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View v = inflater.inflate(R.layout.fragement_signature, container, false);
         mSignaturePad = v.findViewById(R.id.signature_pad);
         v.findViewById(R.id.clear).setOnClickListener(this);
         v.findViewById(R.id.done).setOnClickListener(this);
         mSignaturePad.setOnSignedListener(this);
+        return v;
     }
-
 
     @Override
     public void onStartSigning() {
@@ -61,13 +55,10 @@ public class SignatureFragment extends BaseFragment implements SignaturePad.OnSi
                 break;
             case R.id.done:
                 bitmap = mSignaturePad.getTransparentSignatureBitmap(true);
+
                 if (bitmap != null) {
-                    ByteArrayOutputStream stream = new ByteArrayOutputStream();
-                    bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
-                    byte[] byteArray = stream.toByteArray();
-                    getTargetFragment().onActivityResult(getTargetRequestCode(), Activity.RESULT_OK, new Intent().putExtra("sign", byteArray));
-                    getActivity().getSupportFragmentManager().popBackStack(SignatureFragment.class.getSimpleName(), FragmentManager.POP_BACK_STACK_INCLUSIVE);
-                    getActivity().getSupportFragmentManager().beginTransaction().commit();
+                    accountOpenFragment.setBimap(bitmap);
+                    dismiss();
                 }
                 break;
         }

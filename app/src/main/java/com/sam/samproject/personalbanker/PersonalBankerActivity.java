@@ -6,7 +6,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.view.View;
-import android.widget.Button;
+import android.widget.CalendarView;
 
 import com.sam.samproject.R;
 import com.sam.samproject.base.BaseActivity;
@@ -14,13 +14,12 @@ import com.sam.samproject.personalbanker.fragments.AccountOpenFragment;
 import com.sam.samproject.personalbanker.fragments.CalendarFragment;
 import com.sam.samproject.personalbanker.fragments.CrmFragment;
 import com.sam.samproject.personalbanker.fragments.EmailFragment;
-import com.sam.samproject.personalbanker.fragments.FormResponseFragment;
 import com.sam.samproject.personalbanker.fragments.StocksFragment;
 
 import java.io.ByteArrayOutputStream;
 
 public class PersonalBankerActivity extends BaseActivity implements View.OnClickListener {
-    Button button;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,8 +34,8 @@ public class PersonalBankerActivity extends BaseActivity implements View.OnClick
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.pb_calendar:
-                showFragment(new CalendarFragment(), true, null);
+            case R.id.
+                    pb_calendar: showFragment(new CalendarFragment(), true, null);
                 break;
             case R.id.pb_email:
                 showFragment(new EmailFragment(), true, null);
