@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.view.View;
+import android.widget.CalendarView;
 
 import com.sam.samproject.R;
 import com.sam.samproject.base.BaseActivity;
@@ -33,8 +34,8 @@ public class PersonalBankerActivity extends BaseActivity implements View.OnClick
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.pb_calendar:
-                showFragment(new CalendarFragment(), true, null);
+            case R.id.
+                    pb_calendar: showFragment(new CalendarFragment(), true, null);
                 break;
             case R.id.pb_email:
                 showFragment(new EmailFragment(), true, null);
