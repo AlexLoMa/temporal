@@ -5,6 +5,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.DialogFragment;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -35,24 +36,18 @@ public class AccountOpenFragment extends BaseFragment {
         view.findViewById(R.id.relSign).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                SignatureFragment signatureFragment = new SignatureFragment();
-                signatureFragment.setTargetFragment(AccountOpenFragment.this, 202);
-                ((PersonalBankerActivity) getActivity()).getSupportFragmentManager().beginTransaction()
-                        .addToBackStack(SignatureFragment.class.getSimpleName())
-                        .replace(R.id.activity_root, signatureFragment).commit();
+                DialogFragment signatureFragment = new SignatureFragment();
+                ((SignatureFragment) signatureFragment).setAccountFragment(AccountOpenFragment.this);
+                signatureFragment.show(getFragmentManager(), "");
             }
         });
     }
 
+    void setBimap(Bitmap bimap) {
+        bitmap = bimap;
+        if (bitmap != null)
+            imageView.setImageBitmap(bitmap);
 
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (resultCode == getActivity().RESULT_OK && requestCode == 202) {
-            byte[] byteArray = data.getExtras().getByteArray("sign");
-            bitmap = BitmapFactory.decodeByteArray(byteArray, 0, byteArray.length);
-            if (bitmap != null)
-                imageView.setImageBitmap(bitmap);
-        }
     }
+
 }
