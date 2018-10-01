@@ -33,7 +33,7 @@ public class AccountOpenFragment extends BaseFragment {
 
         if (bitmap != null)
             imageView.setImageBitmap(bitmap);
-        view.findViewById(R.id.relSign).setOnClickListener(new View.OnClickListener() {
+        view.findViewById(R.id.txtSign).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 DialogFragment signatureFragment = new SignatureFragment();

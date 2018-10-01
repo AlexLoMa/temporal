@@ -60,7 +60,7 @@
         android:layout_marginTop="@dimen/margin_16dp"
         android:layout_width="match_parent"
         android:layout_height="60dp">
-        <TextView
+        <Button
             android:background="#b2beb5"
             android:id="@+id/txtSign"
             android:textColor="@android:color/black"
@@ -76,7 +76,28 @@
             android:layout_toRightOf="@+id/txtSign"
             android:layout_width="140dp"
             android:layout_height="match_parent" />
+
+        <Button
+            android:id="@+id/submit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/black"
+            android:text="Submit"
+            android:background="#b2beb5"
+            android:textSize="16sp"
+            android:padding="8dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp" />
     </RelativeLayout>
+
+ <!--   <Button
+        android:id="@+id/submit_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#b2beb5"
+        android:text="Submit"
+        android:textSize="10sp"
+        android:layout_marginLeft="10dp"/> -->
 
 </LinearLayout>
 

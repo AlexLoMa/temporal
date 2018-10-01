@@ -12,7 +12,6 @@ import com.sam.samproject.base.BaseFragment;
 
 public class ElectronicQueueFragment extends BaseFragment {
 
-
     @Override
     protected int layoutResource() {
         return R.layout.fragment_electronic_queue;

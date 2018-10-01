@@ -12,7 +12,6 @@ import com.sam.samproject.base.BaseFragment;
 
 public class FastCheckDepositeFragment extends BaseFragment {
 
-
     @Override
     protected int layoutResource() {
         return R.layout.fragment_fast_check_deposite;
