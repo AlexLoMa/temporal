@@ -31,6 +31,7 @@ public class AccountOpenFragment extends BaseFragment implements View.OnClickLis
         mSignaturePad = view.findViewById(R.id.signature_pad);
 
         view.findViewById(R.id.submit).setOnClickListener(this);
+        view.findViewById(R.id.clear).setOnClickListener(this);
     }
 
     @Override
@@ -43,6 +44,9 @@ public class AccountOpenFragment extends BaseFragment implements View.OnClickLis
                 ((PersonalBankerActivity) getActivity()).getSupportFragmentManager().beginTransaction()
                         .addToBackStack(FormResponseFragment.class.getSimpleName())
                         .replace(R.id.activity_root,formResponseFragment).commit();
+                break;
+            case R.id.clear:
+                mSignaturePad.clear();
                 break;
         }
     }
