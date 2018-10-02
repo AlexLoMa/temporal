@@ -89,16 +89,13 @@
             android:layout_alignParentRight="true"
             android:layout_marginRight="10dp" />
     </RelativeLayout>
-
- <!--   <Button
-        android:id="@+id/submit_button"
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="#b2beb5"
-        android:text="Submit"
-        android:textSize="10sp"
-        android:layout_marginLeft="10dp"/> -->
-
+        android:text="* --> Mandatory Fields are required"
+        android:textSize="15sp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="5dp"/>
 </LinearLayout>
 
 </ScrollView>
