@@ -12,14 +12,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
+import com.github.gcacace.signaturepad.views.SignaturePad;
 import com.sam.samproject.R;
 import com.sam.samproject.base.BaseFragment;
 import com.sam.samproject.personalbanker.PersonalBankerActivity;
 
 public class AccountOpenFragment extends BaseFragment implements View.OnClickListener {
-    private Bitmap bitmap;
-    private ImageView imageView;
-
+    private SignaturePad mSignaturePad;
 
     @Override
     protected int layoutResource() {
@@ -29,34 +28,17 @@ public class AccountOpenFragment extends BaseFragment implements View.OnClickLis
     @Override
     protected void initViews(View view) {
         super.initViews(view);
-        imageView = view.findViewById(R.id.imgSign);
-
-        if (bitmap != null)
-            imageView.setImageBitmap(bitmap);
-
-        view.findViewById(R.id.txtSign).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                DialogFragment signatureFragment = new SignatureFragment();
-                ((SignatureFragment) signatureFragment).setAccountFragment(AccountOpenFragment.this);
-                signatureFragment.show(getFragmentManager(), "");
-            }
-        });
+        mSignaturePad = view.findViewById(R.id.signature_pad);
 
         view.findViewById(R.id.submit).setOnClickListener(this);
-    }
-
-    void setBimap(Bitmap bimap) {
-        bitmap = bimap;
-        if (bitmap != null)
-            imageView.setImageBitmap(bitmap);
-
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.submit:
+                Bitmap bitmap = mSignaturePad.getTransparentSignatureBitmap(true);
+
                 FormResponseFragment formResponseFragment = new FormResponseFragment();
                 ((PersonalBankerActivity) getActivity()).getSupportFragmentManager().beginTransaction()
                         .addToBackStack(FormResponseFragment.class.getSimpleName())
