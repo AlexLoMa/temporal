@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.sam.samproject.login.LoginActivity"
+    >
+    <data>
+        <variable
+            name="viewmodel"
+            type="com.sam.samproject.login.LoginViewModel"/>
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/mobile_banking_landscape">
+
+
+        <LinearLayout
+            android:id="@+id/vertical_line"
+            android:layout_width="15dp"
+            android:layout_height="275dp"
+            android:background="@drawable/login_blue_line"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="70dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/txtInstruct"
+            />
+
+        <TextView
+            android:id="@+id/txtInstruct"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:fontFamily="roboto-medium"
+            android:text="@string/txt_welcome"
+            android:textColor="@color/peacock_blue"
+            android:textSize="@dimen/text_size_xlarge"
+            android:textStyle="bold"
+            app:layout_constraintLeft_toRightOf="@id/vertical_line"
+            app:layout_constraintTop_toTopOf="@id/spContainer" />
+
+        <RelativeLayout
+            android:id="@+id/spContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="204dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/white_round_rect_shape"
+            android:elevation="5dp"
+            android:gravity="center"
+            app:layout_constraintBottom_toTopOf="@+id/usr_psw_panel"
+            app:layout_constraintLeft_toRightOf="@id/txtInstruct">
+
+            <android.support.v7.widget.AppCompatSpinner
+                android:id="@+id/spRole"
+                selectedValue="@={viewmodel.text}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginLeft="@dimen/usr_psw_padding"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="@dimen/usr_psw_padding"
+                android:layout_marginBottom="10dp"
+                android:entries="@{viewmodel.roles}"
+                android:minWidth="400dp"
+                android:minHeight="@dimen/spinner_height"
+                tools:listitem="@layout/spinner_item_view" />
+
+            <!--ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="5dp"
+                android:layout_toRightOf="@+id/spRole"
+                android:src="@drawable/ic_dropdown_arrow" / -->
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/usr_psw_panel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="196dp"
+            android:background="@drawable/white_round_rect_shape"
+            android:elevation="5dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="@dimen/usr_psw_padding"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.774"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent">
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/inputUserName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/usr_psw_padding"
+                android:minWidth="400dp">
+
+                <android.support.design.widget.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/txt_user_name"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:text="@={viewmodel.strUserName}"
+                    android:textColor="@color/slate" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/inputPassword"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/usr_psw_padding"
+                android:minWidth="400dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/inputUserName">
+
+                <android.support.design.widget.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/txt_user_password"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:text="@={viewmodel.strUserPassword}"
+                    android:textColor="@color/slate" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/btnSubmit"
+                android:layout_width="wrap_content"
+                android:layout_height="60dp"
+                android:background="@drawable/blue_round_rect_shape"
+                android:minWidth="400dp"
+                android:onClick="@{viewmodel::onLogin}"
+                android:text="@string/login"
+                android:textColor="@android:color/white"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/inputPassword" />
+
+        </LinearLayout>
+
+    </android.support.constraint.ConstraintLayout>
+</layout>
