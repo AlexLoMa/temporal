@@ -97,43 +97,43 @@ public class AccountOpenFragment extends BaseFragment implements View.OnClickLis
         boolean validationSuccess = true;
         if (firstName.getText().toString().isEmpty()) {
             textFirstNameInputLayout = rootView.findViewById(R.id.firstname);
-            textFirstNameInputLayout.setError("FirstName is Required");
+            textFirstNameInputLayout.setError("Required");
             firstName.setOnFocusChangeListener(this);
             validationSuccess = false;
         }
         if (lastName.getText().toString().isEmpty()) {
             textLastNameInputLayout = rootView.findViewById(R.id.lastname);
-            textLastNameInputLayout.setError("LastName is Required");
+            textLastNameInputLayout.setError("Required");
             lastName.setOnFocusChangeListener(this);
             validationSuccess = false;
         }
         if (dob.getText().toString().isEmpty()) {
             textDoBInputLayout = rootView.findViewById(R.id.birthdate);
-            textDoBInputLayout.setError("Date Of Birth is Required");
+            textDoBInputLayout.setError("Required");
             dob.setOnFocusChangeListener(this);
             validationSuccess = false;
         }
         if (cellNum.getText().toString().isEmpty()) {
             textCellNumberInputLayout = rootView.findViewById(R.id.cell_num);
-            textCellNumberInputLayout.setError("CellNumber is Required");
+            textCellNumberInputLayout.setError("Required");
             cellNum.setOnFocusChangeListener(this);
             validationSuccess = false;
         }
         if (emailAdd.getText().toString().isEmpty()) {
             textEmailInputLayout = rootView.findViewById(R.id.email_address);
-            textEmailInputLayout.setError("EmailAddress is Required");
+            textEmailInputLayout.setError("Required");
             emailAdd.setOnFocusChangeListener(this);
             validationSuccess = false;
         }
         if (zipCode.getText().toString().isEmpty()) {
             textZipcodeInputLayout = rootView.findViewById(R.id.zipcode);
-            textZipcodeInputLayout.setError("ZipCode is Required");
+            textZipcodeInputLayout.setError("Required");
             zipCode.setOnFocusChangeListener(this);
             validationSuccess = false;
         }
         if (lifeInsurance.getText().toString().isEmpty()) {
             textInsuranceInputLayout = rootView.findViewById(R.id.lifeinsurance);
-            textInsuranceInputLayout.setError("Insurance Number is Required");
+            textInsuranceInputLayout.setError("Required");
             lifeInsurance.setOnFocusChangeListener(this);
             validationSuccess = false;
         }
