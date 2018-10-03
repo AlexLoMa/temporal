@@ -16,6 +16,7 @@ import com.sam.samproject.base.BaseViewModel;
 import com.sam.samproject.branchmanager.BranchManagerActivity;
 import com.sam.samproject.personalbanker.PersonalBankerActivity;
 import com.sam.samproject.relationmanager.RelationshipManagerActivity;
+import com.sam.samproject.utils.Utils;
 
 public class LoginViewModel extends BaseViewModel {
     private String roles[];
@@ -74,7 +75,7 @@ public class LoginViewModel extends BaseViewModel {
             Toast.makeText(v.getContext(),"Please Enter User Password.",Toast.LENGTH_LONG).show();
             return;
         }
-
+        Utils.setUserName(strUserName.get());
         if(text.get().equals(v.getContext().getString(R.string.rel_manager))){
 
             (v.getContext()).startActivity(new Intent(v.getContext(),RelationshipManagerActivity.class));

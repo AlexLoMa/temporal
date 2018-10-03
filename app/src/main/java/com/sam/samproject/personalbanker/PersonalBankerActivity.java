@@ -15,6 +15,7 @@ import com.sam.samproject.personalbanker.fragments.CalendarFragment;
 import com.sam.samproject.personalbanker.fragments.CrmFragment;
 import com.sam.samproject.personalbanker.fragments.EmailFragment;
 import com.sam.samproject.personalbanker.fragments.StocksFragment;
+import com.sam.samproject.utils.Utils;
 
 import java.io.ByteArrayOutputStream;
 
@@ -23,6 +24,7 @@ public class PersonalBankerActivity extends BaseActivity implements View.OnClick
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTitle(Utils.getUserName() +" " + getString(R.string.dashboard));
         setContentView(R.layout.activity_personal_banker);
         findViewById(R.id.pb_calendar).setOnClickListener(this);
         findViewById(R.id.pb_email).setOnClickListener(this);

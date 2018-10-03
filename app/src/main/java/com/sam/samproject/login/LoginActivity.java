@@ -3,6 +3,7 @@ package com.sam.samproject.login;
 import android.arch.lifecycle.ViewModelProviders;
 import android.databinding.DataBindingUtil;
 import android.os.Bundle;
+import android.view.Window;
 
 import com.sam.samproject.R;
 import com.sam.samproject.base.BaseActivity;
@@ -15,6 +16,8 @@ public class LoginActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        getWindow().requestFeature(Window.FEATURE_ACTION_BAR);
+        getSupportActionBar().hide();
         binding = DataBindingUtil.setContentView(this,R.layout.activity_login);
         viewModel = ViewModelProviders.of(this).get(LoginViewModel.class);
         binding.setViewmodel(viewModel);
