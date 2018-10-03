@@ -5,7 +5,15 @@
     android:background="@android:color/holo_blue_dark"
     android:orientation="vertical">
 
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_alignParentLeft="true"
+        android:id="@+id/rlMeeting"
+        android:layout_width="122dp"
+        android:layout_height="wrap_content"/>
+
     <CalendarView
+        android:layout_toRightOf="@+id/rlMeeting"
         android:id="@+id/pb_calendar"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

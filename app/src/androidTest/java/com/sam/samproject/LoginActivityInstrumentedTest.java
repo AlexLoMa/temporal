@@ -28,6 +28,7 @@ public class LoginActivityInstrumentedTest {
     @Rule
     public ActivityTestRule<LoginActivity> mActivityRule = new ActivityTestRule<>(LoginActivity.class);
 
+    /*
     @Test
     public void itrateSpinnerItems() {
         String[] myArray = mActivityRule.getActivity().getResources().getStringArray(R.array.role);
@@ -55,6 +56,7 @@ public class LoginActivityInstrumentedTest {
             Espresso.pressBack();
         }
     }
+    */
 
     @Test
     public void RelationshipManagerTest () {
@@ -76,7 +78,10 @@ public class LoginActivityInstrumentedTest {
             onView(allOf(isDescendantOfA(withId(R.id.inputPassword)), isAssignableFrom(EditText.class)))
                     .perform(clearText(), typeText("Password" + ' ' + 1));
 
-            // Find the Submit button and click on it.
+            Espresso.closeSoftKeyboard();
+
+
+        // Find the Submit button and click on it.
             onView(withId(R.id.btnSubmit)).perform(click());
             Espresso.pressBack();
 
@@ -102,6 +107,8 @@ public class LoginActivityInstrumentedTest {
         onView(allOf(isDescendantOfA(withId(R.id.inputPassword)), isAssignableFrom(EditText.class)))
                 .perform(clearText(), typeText("Password" + ' ' + 2));
 
+        Espresso.closeSoftKeyboard();
+
         // Find the Submit button and click on it.
         onView(withId(R.id.btnSubmit)).perform(click());
         Espresso.pressBack();
@@ -126,6 +133,8 @@ public class LoginActivityInstrumentedTest {
         // enter password
         onView(allOf(isDescendantOfA(withId(R.id.inputPassword)), isAssignableFrom(EditText.class)))
                 .perform(clearText(), typeText("Password" + ' ' + 3));
+
+        Espresso.closeSoftKeyboard();
 
         // Find the Submit button and click on it.
          onView(withId(R.id.btnSubmit)).perform(click());
