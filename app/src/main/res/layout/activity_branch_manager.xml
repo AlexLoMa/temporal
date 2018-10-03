@@ -7,6 +7,7 @@
     android:background="@android:color/holo_blue_dark">
 
     <TextView
+        android:visibility="gone"
         android:id="@+id/bnch_managerid"
         style="@style/dashboard_tile_style"
         android:layout_width="0dp"
@@ -20,7 +21,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
+    <ImageView
+        android:src="@drawable/ic_calendar"
         android:id="@+id/bnch_calendar"
         style="@style/dashboard_tile_style"
         android:layout_width="0dp"
@@ -33,7 +35,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bnch_managerid" />
 
-    <TextView
+    <ImageView
+        android:src="@drawable/ic_email"
         android:id="@+id/bnch_email"
         style="@style/dashboard_tile_style"
         android:layout_width="0dp"
@@ -62,7 +65,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bnch_email" />
 
-    <TextView
+    <ImageView
+        android:src="@drawable/ic_staffing"
         android:id="@+id/bnch_staffing"
         style="@style/dashboard_tile_style"
         android:layout_width="0dp"
@@ -75,7 +79,8 @@
         app:layout_constraintStart_toStartOf="@id/guideline2"
         app:layout_constraintTop_toTopOf="@+id/bnch_managerid" />
 
-    <TextView
+    <ImageView
+        android:src="@drawable/ic_performance"
         android:id="@+id/bnch_performance"
         style="@style/dashboard_tile_style"
         android:layout_width="0dp"

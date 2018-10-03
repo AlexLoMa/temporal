@@ -7,6 +7,7 @@
     android:background="@android:color/holo_blue_dark">
 
     <TextView
+        android:visibility="gone"
         android:id="@+id/personal_banker_id"
         style="@style/dashboard_tile_style"
         android:layout_width="0dp"
@@ -20,7 +21,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
+    <ImageView
+        android:src="@drawable/ic_mortgage"
         android:id="@+id/account_open"
         style="@style/dashboard_tile_style"
         android:layout_width="0dp"
@@ -33,7 +35,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/personal_banker_id" />
 
-    <TextView
+    <ImageView
+        android:src="@drawable/ic_analysis_crm"
         android:id="@+id/crm"
         style="@style/dashboard_tile_style"
         android:layout_width="0dp"
@@ -63,7 +66,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/pb_email" />
 
-    <TextView
+    <ImageView
+        android:src="@drawable/ic_calendar"
         android:id="@+id/pb_calendar"
         style="@style/dashboard_tile_style"
         android:layout_width="0dp"
@@ -76,7 +80,8 @@
         app:layout_constraintStart_toStartOf="@id/guideline1"
         app:layout_constraintTop_toTopOf="@+id/personal_banker_id" />
 
-    <TextView
+    <ImageView
+        android:src="@drawable/ic_email"
         android:id="@+id/pb_email"
         style="@style/dashboard_tile_style"
         android:layout_width="0dp"
