@@ -1,5 +1,6 @@
 package com.sam.samproject;
 
+import android.content.pm.ActivityInfo;
 import android.support.test.espresso.Espresso;
 import android.support.test.rule.ActivityTestRule;
 import android.support.test.runner.AndroidJUnit4;
@@ -33,24 +34,19 @@ public class LoginActivityInstrumentedTest {
     public void itrateSpinnerItems() {
         String[] myArray = mActivityRule.getActivity().getResources().getStringArray(R.array.role);
         int size = myArray.length;
-
         for (int i = 1; i < size; i++) {
             // find the spinner and click on it.
             onView(withId(R.id.spRole)).perform(click());
-
             //Find Spinner Item and click on it.
             onData(is(myArray[i])).perform(click());
-
             // enter Username
             //onView(withId(R.id.inputUserName)).perform(click()).perform(typeText("a"));
             // the above command to typeText was not working due to TextInputLayout, so need to write as below.
             onView(allOf(isDescendantOfA(withId(R.id.inputUserName)), isAssignableFrom(EditText.class)))
                     .perform(clearText(), typeText("UserName" + ' ' + i));
-
             // enter password
             onView(allOf(isDescendantOfA(withId(R.id.inputPassword)), isAssignableFrom(EditText.class)))
                     .perform(clearText(), typeText("Password" + ' ' + i));
-
             // Find the Submit button and click on it.
             onView(withId(R.id.btnSubmit)).perform(click());
             Espresso.pressBack();
@@ -60,86 +56,145 @@ public class LoginActivityInstrumentedTest {
 
     @Test
     public void RelationshipManagerTest () {
-        String[] myArray = mActivityRule.getActivity().getResources().getStringArray(R.array.role);
 
+        String[] myArray = mActivityRule.getActivity().getResources().getStringArray(R.array.role);
         // find the spinner and click on it.
         onView(withId(R.id.spRole)).perform(click());
-
         //Find Spinner Item and click on it.
         onData(is(myArray[1])).perform(click());
-
         // enter Username
         //onView(withId(R.id.inputUserName)).perform(click()).perform(typeText("a"));
         // the above command to typeText was not working due to TextInputLayout, so need to write as below.
         onView(allOf(isDescendantOfA(withId(R.id.inputUserName)), isAssignableFrom(EditText.class)))
                 .perform(clearText(), typeText("UserName" + ' ' + 1));
-
-            // enter password
-            onView(allOf(isDescendantOfA(withId(R.id.inputPassword)), isAssignableFrom(EditText.class)))
-                    .perform(clearText(), typeText("Password" + ' ' + 1));
-
-            Espresso.closeSoftKeyboard();
-
-
-        // Find the Submit button and click on it.
-            onView(withId(R.id.btnSubmit)).perform(click());
-            Espresso.pressBack();
-
-    }
-
-       @Test
-       public void PersonalBankerTest () {
-        String[] myArray = mActivityRule.getActivity().getResources().getStringArray(R.array.role);
-
-        // find the spinner and click on it.
-        onView(withId(R.id.spRole)).perform(click());
-
-        //Find Spinner Item and click on it.
-        onData(is(myArray[2])).perform(click());
-
-        // enter Username
-        //onView(withId(R.id.inputUserName)).perform(click()).perform(typeText("a"));
-        // the above command to typeText was not working due to TextInputLayout, so need to write as below.
-        onView(allOf(isDescendantOfA(withId(R.id.inputUserName)), isAssignableFrom(EditText.class)))
-                .perform(clearText(), typeText("UserName" + ' ' + 2));
-
         // enter password
         onView(allOf(isDescendantOfA(withId(R.id.inputPassword)), isAssignableFrom(EditText.class)))
-                .perform(clearText(), typeText("Password" + ' ' + 2));
-
+                .perform(clearText(), typeText("Password" + ' ' + 1));
         Espresso.closeSoftKeyboard();
 
         // Find the Submit button and click on it.
         onView(withId(R.id.btnSubmit)).perform(click());
         Espresso.pressBack();
-
     }
-       @Test
-       public void BranchManagerTest () {
-        String[] myArray = mActivityRule.getActivity().getResources().getStringArray(R.array.role);
 
+     @Test
+     public void PersonalBankerTest () {
+
+        String[] myArray = mActivityRule.getActivity().getResources().getStringArray(R.array.role);
         // find the spinner and click on it.
         onView(withId(R.id.spRole)).perform(click());
+        //Find Spinner Item and click on it.
+        onData(is(myArray[2])).perform(click());
+        // enter Username
+        //onView(withId(R.id.inputUserName)).perform(click()).perform(typeText("a"));
+        // the above command to typeText was not working due to TextInputLayout, so need to write as below.
+        onView(allOf(isDescendantOfA(withId(R.id.inputUserName)), isAssignableFrom(EditText.class)))
+                .perform(clearText(), typeText("UserName" + ' ' + 2));
+        // enter password
+        onView(allOf(isDescendantOfA(withId(R.id.inputPassword)), isAssignableFrom(EditText.class)))
+                .perform(clearText(), typeText("Password" + ' ' + 2));
 
+        Espresso.closeSoftKeyboard();
+        // Find the Submit button and click on it.
+        onView(withId(R.id.btnSubmit)).perform(click());
+        Espresso.pressBack();
+    }
+
+    @Test
+    public void BranchManagerTest () {
+
+        String[] myArray = mActivityRule.getActivity().getResources().getStringArray(R.array.role);
+        // find the spinner and click on it.
+        onView(withId(R.id.spRole)).perform(click());
         //Find Spinner Item and click on it.
         onData(is(myArray[3])).perform(click());
-
         // enter Username
         //onView(withId(R.id.inputUserName)).perform(click()).perform(typeText("a"));
         // the above command to typeText was not working due to TextInputLayout, so need to write as below.
         onView(allOf(isDescendantOfA(withId(R.id.inputUserName)), isAssignableFrom(EditText.class)))
                 .perform(clearText(), typeText("UserName" + ' ' + 3));
-
         // enter password
         onView(allOf(isDescendantOfA(withId(R.id.inputPassword)), isAssignableFrom(EditText.class)))
                 .perform(clearText(), typeText("Password" + ' ' + 3));
-
         Espresso.closeSoftKeyboard();
-
         // Find the Submit button and click on it.
          onView(withId(R.id.btnSubmit)).perform(click());
          Espresso.pressBack();
+    }
 
-         }
+    @Test
+    public void RelationshipManagerLandscapeTest () {
+        mActivityRule.getActivity().setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+        //mActivityRule.getActivity().setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LOCKED);
+        String[] myArray = mActivityRule.getActivity().getResources().getStringArray(R.array.role);
+        // find the spinner and click on it.
+        onView(withId(R.id.spRole)).perform(click());
+        //Find Spinner Item and click on it.
+        onData(is(myArray[1])).perform(click());
+        // enter Username
+        //onView(withId(R.id.inputUserName)).perform(click()).perform(typeText("a"));
+        // the above command to typeText was not working due to TextInputLayout, so need to write as below.
+        onView(allOf(isDescendantOfA(withId(R.id.inputUserName)), isAssignableFrom(EditText.class)))
+                .perform(clearText(), typeText("UserName" + ' ' + 1));
+        Espresso.closeSoftKeyboard();
+        // enter password
+        onView(allOf(isDescendantOfA(withId(R.id.inputPassword)), isAssignableFrom(EditText.class)))
+                .perform(clearText(), typeText("Password" + ' ' + 1));
+        Espresso.closeSoftKeyboard();
+        // Find the Submit button and click on it.
+        onView(withId(R.id.btnSubmit)).perform(click());
+        mActivityRule.getActivity().setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        Espresso.pressBack();
+    }
 
-       }
+    @Test
+    public void PersonalBankerLandscapeTest () {
+        mActivityRule.getActivity().setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+        //mActivityRule.getActivity().setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LOCKED);
+        String[] myArray = mActivityRule.getActivity().getResources().getStringArray(R.array.role);
+        // find the spinner and click on it.
+        onView(withId(R.id.spRole)).perform(click());
+        //Find Spinner Item and click on it.
+        onData(is(myArray[2])).perform(click());
+        // enter Username
+        //onView(withId(R.id.inputUserName)).perform(click()).perform(typeText("a"));
+        // the above command to typeText was not working due to TextInputLayout, so need to write as below.
+        onView(allOf(isDescendantOfA(withId(R.id.inputUserName)), isAssignableFrom(EditText.class)))
+                .perform(clearText(), typeText("UserName" + ' ' + 2));
+        Espresso.closeSoftKeyboard();
+        // enter password
+        onView(allOf(isDescendantOfA(withId(R.id.inputPassword)), isAssignableFrom(EditText.class)))
+                .perform(clearText(), typeText("Password" + ' ' + 2));
+        Espresso.closeSoftKeyboard();
+        // Find the Submit button and click on it.
+        onView(withId(R.id.btnSubmit)).perform(click());
+        mActivityRule.getActivity().setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        Espresso.pressBack();
+    }
+
+    @Test
+    public void BranchManagerLandscapeTest () {
+        mActivityRule.getActivity().setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
+        //mActivityRule.getActivity().setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LOCKED);
+        String[] myArray = mActivityRule.getActivity().getResources().getStringArray(R.array.role);
+        // find the spinner and click on it.
+        onView(withId(R.id.spRole)).perform(click());
+        //Find Spinner Item and click on it.
+        onData(is(myArray[3])).perform(click());
+        // enter Username
+        //onView(withId(R.id.inputUserName)).perform(click()).perform(typeText("a"));
+        // the above command to typeText was not working due to TextInputLayout, so need to write as below.
+        onView(allOf(isDescendantOfA(withId(R.id.inputUserName)), isAssignableFrom(EditText.class)))
+                .perform(clearText(), typeText("UserName" + ' ' + 3));
+        Espresso.closeSoftKeyboard();
+        // enter password
+        onView(allOf(isDescendantOfA(withId(R.id.inputPassword)), isAssignableFrom(EditText.class)))
+                .perform(clearText(), typeText("Password" + ' ' + 3));
+        Espresso.closeSoftKeyboard();
+        // Find the Submit button and click on it.
+        onView(withId(R.id.btnSubmit)).perform(click());
+        mActivityRule.getActivity().setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        Espresso.pressBack();
+    }
+
+}
