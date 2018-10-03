@@ -1,21 +1,18 @@
 package com.sam.samproject.personalbanker.fragments;
 
-import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.TextInputLayout;
-import android.support.v4.app.DialogFragment;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.ImageView;
 
+import com.github.gcacace.signaturepad.views.SignaturePad;
 import com.sam.samproject.R;
 import com.sam.samproject.base.BaseFragment;
 import com.sam.samproject.personalbanker.PersonalBankerActivity;
 
 public class AccountOpenFragment extends BaseFragment implements View.OnClickListener, View.OnFocusChangeListener {
-    private Bitmap bitmap;
-    private ImageView imageView;
+    private SignaturePad mSignaturePad;
     private EditText firstName;
     private EditText lastName;
     private EditText dob;
@@ -40,7 +37,6 @@ public class AccountOpenFragment extends BaseFragment implements View.OnClickLis
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        imageView = view.findViewById(R.id.imgSign);
         firstName = view.findViewById(R.id.first_name);
         lastName = view.findViewById(R.id.last_name);
         dob = view.findViewById(R.id.birth_date);
@@ -48,17 +44,6 @@ public class AccountOpenFragment extends BaseFragment implements View.OnClickLis
         emailAdd = view.findViewById(R.id.emailadd);
         zipCode = view.findViewById(R.id.zip_code);
         lifeInsurance = view.findViewById(R.id.life_insurance);
-        if (bitmap != null)
-            imageView.setImageBitmap(bitmap);
-
-        view.findViewById(R.id.txtSign).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                DialogFragment signatureFragment = new SignatureFragment();
-                ((SignatureFragment) signatureFragment).setAccountFragment(AccountOpenFragment.this);
-                signatureFragment.show(getFragmentManager(), "");
-            }
-        });
 
         firstName.setOnClickListener(this);
         lastName.setOnClickListener(this);
@@ -70,17 +55,21 @@ public class AccountOpenFragment extends BaseFragment implements View.OnClickLis
         rootView = view;
     }
 
-    void setBitmap(Bitmap bitmap) {
-        this.bitmap = bitmap;
-        if (this.bitmap != null)
-            imageView.setImageBitmap(this.bitmap);
+    protected void initViews(View view) {
+        super.initViews(view);
+        mSignaturePad = view.findViewById(R.id.signature_pad);
 
+        view.findViewById(R.id.submit).setOnClickListener(this);
+        view.findViewById(R.id.clear).setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.submit:
+
+                //Bitmap bitmap = mSignaturePad.getTransparentSignatureBitmap(true);
+
                 rootView.findViewById(R.id.submit).setFocusable(true);
                 rootView.findViewById(R.id.submit).requestFocus();
                 if (validationSuccess()) {
@@ -90,6 +79,10 @@ public class AccountOpenFragment extends BaseFragment implements View.OnClickLis
                             .replace(R.id.activity_root, formResponseFragment).commit();
                     break;
                 }
+
+            case R.id.clear:
+                mSignaturePad.clear();
+                break;
         }
     }
 
@@ -169,4 +162,5 @@ public class AccountOpenFragment extends BaseFragment implements View.OnClickLis
         }
 
     }
+
 }

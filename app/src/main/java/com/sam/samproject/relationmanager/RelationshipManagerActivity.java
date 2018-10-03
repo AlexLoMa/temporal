@@ -12,12 +12,14 @@ import com.sam.samproject.relationmanager.fragment.CRMSummaryFragment;
 import com.sam.samproject.relationmanager.fragment.ElectronicQueueFragment;
 import com.sam.samproject.relationmanager.fragment.FastCheckDepositeFragment;
 import com.sam.samproject.relationmanager.fragment.UsingTheMobileAppFragment;
+import com.sam.samproject.utils.Utils;
 
 public class RelationshipManagerActivity extends BaseActivity implements View.OnClickListener{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTitle(Utils.getUserName() +" " + getString(R.string.dashboard));
         setContentView(R.layout.activity_relationship_manager);
         findViewById(R.id.rlshUsingMobileApp).setOnClickListener(this);
         findViewById(R.id.rlshElectronicQueue).setOnClickListener(this);

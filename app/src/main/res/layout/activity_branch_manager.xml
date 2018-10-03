@@ -7,31 +7,19 @@
     android:background="@android:color/holo_blue_dark">
 
     <TextView
-        android:id="@+id/bnch_managerid"
-        style="@style/dashboard_tile_style"
-        android:layout_width="0dp"
-        android:layout_height="60dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginStart="20dp"
-        android:text="@string/branchmanager"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/bnch_calendar"
-        app:layout_constraintEnd_toStartOf="@id/guideline2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
         android:id="@+id/bnch_calendar"
         style="@style/dashboard_tile_style"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_margin="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="10dp"
         android:text="@string/calendar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/bnch_email"
         app:layout_constraintEnd_toStartOf="@id/guideline2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bnch_managerid" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/bnch_email"
@@ -39,7 +27,8 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="20dp"
         android:gravity="center"
         android:text="@string/email"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -68,19 +57,23 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginEnd="20dp"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
         android:text="@string/staffing"
         app:layout_constraintBottom_toTopOf="@+id/bnch_performance"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@id/guideline2"
-        app:layout_constraintTop_toTopOf="@+id/bnch_managerid" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/bnch_performance"
         style="@style/dashboard_tile_style"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_margin="20dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
         android:text="@string/performance"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/bnch_stocks"

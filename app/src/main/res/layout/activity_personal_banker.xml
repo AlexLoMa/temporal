@@ -7,40 +7,29 @@
     android:background="@android:color/holo_blue_dark">
 
     <TextView
-        android:id="@+id/personal_banker_id"
-        style="@style/dashboard_tile_style"
-        android:layout_width="0dp"
-        android:layout_height="60dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginStart="20dp"
-        android:text="@string/personalBanker"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/account_open"
-        app:layout_constraintEnd_toStartOf="@id/guideline1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
         android:id="@+id/account_open"
         style="@style/dashboard_tile_style"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_margin="20dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="20dp"
         android:text="@string/accountopening"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/crm"
         app:layout_constraintEnd_toStartOf="@id/guideline1"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/personal_banker_id" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/crm"
         style="@style/dashboard_tile_style"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginEnd="20dp"
+        android:layout_marginEnd="10dp"
         android:layout_marginStart="20dp"
-        android:layout_marginBottom="22dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="20dp"
         android:gravity="center"
         android:text="@string/crm"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -69,19 +58,20 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginEnd="20dp"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="20dp"
         android:text="@string/calendar"
         app:layout_constraintBottom_toTopOf="@+id/pb_email"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@id/guideline1"
-        app:layout_constraintTop_toTopOf="@+id/personal_banker_id" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/pb_email"
         style="@style/dashboard_tile_style"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="10dp"
         android:layout_marginEnd="20dp"
         android:layout_marginTop="18dp"
         android:text="@string/email"
