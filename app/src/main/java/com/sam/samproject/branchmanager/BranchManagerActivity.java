@@ -31,7 +31,7 @@ public class BranchManagerActivity extends BaseActivity implements View.OnClickL
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.bnch_calendar:
-                showFragment(new CalendarFragment(), true);
+                showFragment(new com.sam.samproject.personalbanker.fragments.CalendarFragment(), true);
                 break;
             case R.id.bnch_email:
                 showFragment(new EmailFragment(), true);

@@ -60,9 +60,8 @@
         android:id="@+id/relSign"
         android:layout_marginTop="@dimen/margin_16dp"
         android:layout_width="match_parent"
-        android:layout_height="90dp">
+        android:layout_height="115dp">
         <TextView
-
             android:id="@+id/txtSign"
             android:textColor="@android:color/black"
             android:textSize="@dimen/margin_16dp"
@@ -71,12 +70,22 @@
             android:layout_alignParentLeft="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/clear"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/margin_16dp"
+            android:text="Clear"
+            android:padding="@dimen/margin_8dp"
+            android:layout_toRightOf="@+id/txtSign"
+            android:layout_marginLeft="100dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
 
         <com.github.gcacace.signaturepad.views.SignaturePad
             android:background="#b2beb5"
-            android:layout_toRightOf="@+id/txtSign"
+            android:layout_below="@+id/txtSign"
             android:id="@+id/signature_pad"
-            android:layout_width="240dp"
+            android:layout_width="280dp"
             app:penColor="@android:color/black"
             android:layout_height="match_parent"/>
 
