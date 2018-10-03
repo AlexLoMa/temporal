@@ -14,6 +14,7 @@
         android:layout_height="0dp"
         android:layout_marginLeft="@dimen/margin_16dp"
         android:layout_marginRight="@dimen/margin_16dp"
+        android:layout_marginTop="20dp"
         android:background="@android:color/white"
         android:gravity="center"
         android:text="Electronic \n Queue"
@@ -21,26 +22,6 @@
         android:textSize="@dimen/text_size_large"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/guideline1"
-        app:layout_constraintTop_toTopOf="@+id/login_as" />
-
-
-    <TextView
-        app:layout_constraintVertical_chainStyle="packed"
-        android:id="@+id/login_as"
-        android:layout_width="0dp"
-        android:layout_marginLeft="@dimen/margin_16dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="@dimen/margin_16dp"
-        android:background="@android:color/white"
-        android:gravity="center"
-        android:padding="@dimen/margin_8dp"
-        android:text="Login as RM"
-        android:textColor="@android:color/black"
-        android:textSize="@dimen/text_size_medium"
-        app:layout_constraintEnd_toEndOf="@+id/guideline1"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/rlshUsingMobileApp"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -49,7 +30,7 @@
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginLeft="@dimen/margin_16dp"
-        android:layout_marginTop="@dimen/margin_16dp"
+        android:layout_marginTop="20dp"
         android:background="@android:color/white"
         android:padding="@dimen/margin_8dp"
         android:text="Using the \n Mobile app"
@@ -58,7 +39,7 @@
         app:layout_constraintEnd_toEndOf="@id/guideline1"
         app:layout_constraintBottom_toTopOf="@+id/rlshCRMSummary"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/login_as" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:gravity="center"
