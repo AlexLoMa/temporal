@@ -24,9 +24,8 @@
     <ImageView
         android:src="@drawable/ic_calendar"
         android:id="@+id/bnch_calendar"
-        style="@style/dashboard_tile_style"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="180dp"
         android:layout_margin="20dp"
         android:text="@string/calendar"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -38,9 +37,8 @@
     <ImageView
         android:src="@drawable/ic_email"
         android:id="@+id/bnch_email"
-        style="@style/dashboard_tile_style"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="180dp"
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
         android:gravity="center"
@@ -52,11 +50,11 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bnch_calendar" />
 
-    <TextView
+    <ImageView
+        android:src="@drawable/ic_stock_news"
         android:id="@+id/bnch_stocks"
-        style="@style/dashboard_tile_style"
         android:layout_width="match_parent"
-        android:layout_height="80dp"
+        android:layout_height="180dp"
         android:layout_margin="20dp"
         android:layout_marginTop="16dp"
         android:text="@string/companystocks"
@@ -68,9 +66,8 @@
     <ImageView
         android:src="@drawable/ic_staffing"
         android:id="@+id/bnch_staffing"
-        style="@style/dashboard_tile_style"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="180dp"
         android:layout_marginEnd="20dp"
         android:layout_marginStart="20dp"
         android:text="@string/staffing"
@@ -82,9 +79,8 @@
     <ImageView
         android:src="@drawable/ic_performance"
         android:id="@+id/bnch_performance"
-        style="@style/dashboard_tile_style"
         android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_height="180dp"
         android:layout_margin="20dp"
         android:text="@string/performance"
         app:layout_constraintBottom_toBottomOf="parent"

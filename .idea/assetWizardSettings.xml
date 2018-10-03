@@ -19,8 +19,8 @@
                         <option name="values">
                           <map>
                             <entry key="assetSourceType" value="FILE" />
-                            <entry key="outputName" value="ic_staffing" />
-                            <entry key="sourceFile" value="P:\icons\ic_staffing.svg" />
+                            <entry key="outputName" value="ic_stock_news" />
+                            <entry key="sourceFile" value="P:\icons\ic_stock_news.svg" />
                           </map>
                         </option>
                       </PersistentState>
