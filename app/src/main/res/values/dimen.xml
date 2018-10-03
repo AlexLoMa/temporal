@@ -2,8 +2,12 @@
 <resources>
     <dimen name="common_margin">24dp</dimen>
     <dimen name="margin_8dp">8dp</dimen>
+
+    <dimen name="usr_psw_padding">32dp</dimen>
     <dimen name="margin_16dp">15dp</dimen>
+    <dimen name="spinner_margin">10dp</dimen>
     <dimen name="spinner_height">42dp</dimen>
+    <dimen name="text_size_xlarge">80dp</dimen>
     <dimen name="text_size_large">32dp</dimen>
     <dimen name="text_size_medium">24dp</dimen>
     <dimen name="text_size_small">16dp</dimen>
