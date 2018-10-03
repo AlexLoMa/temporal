@@ -90,6 +90,7 @@
         app:layout_constraintStart_toEndOf="@+id/state">
 
         <android.support.design.widget.TextInputEditText
+            android:id="@+id/zip_code"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -161,7 +162,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:hint="Years*"
+            android:hint="Years"
             android:background="@drawable/border"
             android:inputType="text"
             android:maxLines="1"
@@ -181,7 +182,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:hint="Months*"
+            android:hint="Months"
             android:background="@drawable/border"
             android:inputType="text"
             android:maxLines="1"
