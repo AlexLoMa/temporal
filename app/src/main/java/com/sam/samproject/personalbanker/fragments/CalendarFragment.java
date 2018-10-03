@@ -1,5 +1,7 @@
 package com.sam.samproject.personalbanker.fragments;
 
+import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -17,10 +19,9 @@ public class CalendarFragment extends BaseFragment {
         return R.layout.fragment_calendar;
     }
 
-
     @Override
-    protected void initViews(View view) {
-        super.initViews(view);
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
         CalendarView pb_calendar = view.findViewById(R.id.pb_calendar);
         RecyclerView recyclerView = view.findViewById(R.id.rlMeeting);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());

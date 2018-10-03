@@ -1,12 +1,10 @@
 package com.sam.samproject.personalbanker;
 
-import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.view.View;
-import android.widget.CalendarView;
 
 import com.sam.samproject.R;
 import com.sam.samproject.base.BaseActivity;
@@ -15,14 +13,14 @@ import com.sam.samproject.personalbanker.fragments.CalendarFragment;
 import com.sam.samproject.personalbanker.fragments.CrmFragment;
 import com.sam.samproject.personalbanker.fragments.EmailFragment;
 import com.sam.samproject.personalbanker.fragments.StocksFragment;
-
-import java.io.ByteArrayOutputStream;
+import com.sam.samproject.utils.Utils;
 
 public class PersonalBankerActivity extends BaseActivity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setTitle(Utils.getUserName() +" " + getString(R.string.dashboard));
         setContentView(R.layout.activity_personal_banker);
         findViewById(R.id.pb_calendar).setOnClickListener(this);
         findViewById(R.id.pb_email).setOnClickListener(this);
