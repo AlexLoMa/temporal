@@ -23,7 +23,13 @@ public class AccountOpenFragment extends BaseFragment implements View.OnClickLis
     private EditText emailAdd;
     private EditText zipCode;
     private EditText lifeInsurance;
-    private TextInputLayout textInputLayout;
+    private TextInputLayout textFirstNameInputLayout;
+    private TextInputLayout textLastNameInputLayout;
+    private TextInputLayout textDoBInputLayout;
+    private TextInputLayout textEmailInputLayout;
+    private TextInputLayout textCellNumberInputLayout;
+    private TextInputLayout textInsuranceInputLayout;
+    private TextInputLayout textZipcodeInputLayout;
     private View rootView;
 
     @Override
@@ -74,14 +80,6 @@ public class AccountOpenFragment extends BaseFragment implements View.OnClickLis
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.first_name:
-            case R.id.last_name:
-            case R.id.birth_date:
-            case R.id.cellno:
-            case R.id.emailadd:
-            case R.id.life_insurance:
-                textInputLayout.setError(null);
-                break;
             case R.id.submit:
                 rootView.findViewById(R.id.submit).setFocusable(true);
                 rootView.findViewById(R.id.submit).requestFocus();
@@ -96,49 +94,79 @@ public class AccountOpenFragment extends BaseFragment implements View.OnClickLis
     }
 
     private Boolean validationSuccess() {
+        boolean validationSuccess = true;
         if (firstName.getText().toString().isEmpty()) {
-            textInputLayout = rootView.findViewById(R.id.firstname);
-            textInputLayout.setError("FirstName is Required");
+            textFirstNameInputLayout = rootView.findViewById(R.id.firstname);
+            textFirstNameInputLayout.setError("FirstName is Required");
             firstName.setOnFocusChangeListener(this);
-            return false;
-        } else if (lastName.getText().toString().isEmpty()) {
-            textInputLayout = rootView.findViewById(R.id.lastname);
-            textInputLayout.setError("LastName is Required");
-            lastName.setOnFocusChangeListener(this);
-            return false;
-        } else if (dob.getText().toString().isEmpty()) {
-            textInputLayout = rootView.findViewById(R.id.birthdate);
-            textInputLayout.setError("Date Of Birth is Required");
-            dob.setOnFocusChangeListener(this);
-            return false;
-        } else if (cellNum.getText().toString().isEmpty()) {
-            textInputLayout = rootView.findViewById(R.id.cell_num);
-            textInputLayout.setError("CellNumber is Required");
-            cellNum.setOnFocusChangeListener(this);
-            return false;
-        } else if (emailAdd.getText().toString().isEmpty()) {
-            textInputLayout = rootView.findViewById(R.id.email_address);
-            textInputLayout.setError("EmailAddress is Required");
-            emailAdd.setOnFocusChangeListener(this);
-            return false;
-        } else if (zipCode.getText().toString().isEmpty()) {
-            textInputLayout = rootView.findViewById(R.id.zip_code);
-            textInputLayout.setError("ZipCode is Required");
-            zipCode.setOnFocusChangeListener(this);
-            return false;
-        } else if (lifeInsurance.getText().toString().isEmpty()) {
-            textInputLayout = rootView.findViewById(R.id.life_insurance);
-            textInputLayout.setError("Insurance Number is Required");
-            lifeInsurance.setOnFocusChangeListener(this);
-            return false;
+            validationSuccess = false;
         }
-        textInputLayout = null;
-        return true;
+        if (lastName.getText().toString().isEmpty()) {
+            textLastNameInputLayout = rootView.findViewById(R.id.lastname);
+            textLastNameInputLayout.setError("LastName is Required");
+            lastName.setOnFocusChangeListener(this);
+            validationSuccess = false;
+        }
+        if (dob.getText().toString().isEmpty()) {
+            textDoBInputLayout = rootView.findViewById(R.id.birthdate);
+            textDoBInputLayout.setError("Date Of Birth is Required");
+            dob.setOnFocusChangeListener(this);
+            validationSuccess = false;
+        }
+        if (cellNum.getText().toString().isEmpty()) {
+            textCellNumberInputLayout = rootView.findViewById(R.id.cell_num);
+            textCellNumberInputLayout.setError("CellNumber is Required");
+            cellNum.setOnFocusChangeListener(this);
+            validationSuccess = false;
+        }
+        if (emailAdd.getText().toString().isEmpty()) {
+            textEmailInputLayout = rootView.findViewById(R.id.email_address);
+            textEmailInputLayout.setError("EmailAddress is Required");
+            emailAdd.setOnFocusChangeListener(this);
+            validationSuccess = false;
+        }
+        if (zipCode.getText().toString().isEmpty()) {
+            textZipcodeInputLayout = rootView.findViewById(R.id.zipcode);
+            textZipcodeInputLayout.setError("ZipCode is Required");
+            zipCode.setOnFocusChangeListener(this);
+            validationSuccess = false;
+        }
+        if (lifeInsurance.getText().toString().isEmpty()) {
+            textInsuranceInputLayout = rootView.findViewById(R.id.lifeinsurance);
+            textInsuranceInputLayout.setError("Insurance Number is Required");
+            lifeInsurance.setOnFocusChangeListener(this);
+            validationSuccess = false;
+        }
+        return validationSuccess;
     }
 
     @Override
-    public void onFocusChange(View view, boolean b) {
-        if (b)
-            textInputLayout.setError(null);
+    public void onFocusChange(View view, boolean hasFocus) {
+        if (hasFocus) {
+            switch (view.getId()) {
+                case R.id.first_name:
+                    textFirstNameInputLayout.setError(null);
+                    break;
+                case R.id.last_name:
+                    textLastNameInputLayout.setError(null);
+                    break;
+                case R.id.birth_date:
+                    textDoBInputLayout.setError(null);
+                    break;
+                case R.id.emailadd:
+                    textEmailInputLayout.setError(null);
+                    break;
+                case R.id.cellno:
+                    textCellNumberInputLayout.setError(null);
+                    break;
+                case R.id.zip_code:
+                    textZipcodeInputLayout.setError(null);
+                    break;
+                case R.id.life_insurance:
+                    textInsuranceInputLayout.setError(null);
+                    break;
+            }
+        }
+
     }
 }
