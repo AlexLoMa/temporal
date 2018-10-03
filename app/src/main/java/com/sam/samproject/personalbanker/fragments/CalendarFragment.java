@@ -1,5 +1,7 @@
 package com.sam.samproject.personalbanker.fragments;
 
+import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.view.View;
 import android.widget.CalendarView;
 
@@ -12,10 +14,9 @@ public class CalendarFragment extends BaseFragment {
         return R.layout.fragment_calendar;
     }
 
-
     @Override
-    protected void initViews(View view) {
-        super.initViews(view);
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
         CalendarView pb_calendar = view.findViewById(R.id.pb_calendar);
     }
 }

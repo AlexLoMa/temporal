@@ -57,7 +57,7 @@ public class SignatureFragment extends DialogFragment implements SignaturePad.On
                 bitmap = mSignaturePad.getTransparentSignatureBitmap(true);
 
                 if (bitmap != null) {
-                    accountOpenFragment.setBimap(bitmap);
+                    accountOpenFragment.setBitmap(bitmap);
                     dismiss();
                 }
                 break;

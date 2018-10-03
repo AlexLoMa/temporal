@@ -1,7 +1,5 @@
 package com.sam.samproject.branchmanager.fragment;
 
-import android.view.View;
-
 import com.sam.samproject.R;
 import com.sam.samproject.base.BaseFragment;
 

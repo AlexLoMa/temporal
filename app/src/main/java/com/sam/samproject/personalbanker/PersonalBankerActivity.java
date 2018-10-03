@@ -1,12 +1,10 @@
 package com.sam.samproject.personalbanker;
 
-import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.view.View;
-import android.widget.CalendarView;
 
 import com.sam.samproject.R;
 import com.sam.samproject.base.BaseActivity;
@@ -15,8 +13,6 @@ import com.sam.samproject.personalbanker.fragments.CalendarFragment;
 import com.sam.samproject.personalbanker.fragments.CrmFragment;
 import com.sam.samproject.personalbanker.fragments.EmailFragment;
 import com.sam.samproject.personalbanker.fragments.StocksFragment;
-
-import java.io.ByteArrayOutputStream;
 
 public class PersonalBankerActivity extends BaseActivity implements View.OnClickListener {
 
