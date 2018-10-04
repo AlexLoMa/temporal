@@ -40,6 +40,17 @@
             android:paddingStart="10dp"
             android:textColor="@android:color/black" />
     </android.support.design.widget.TextInputLayout>
+    <TextView
+        android:id="@+id/lifeinsurance_errormsg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/error_message"
+        android:textColor="@color/red_500"
+        android:textSize="12sp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@id/lifeinsurance"
+        app:layout_constraintStart_toStartOf="@id/lifeinsurance"
+        app:layout_constraintTop_toBottomOf="@id/lifeinsurance" />
 
     <android.support.design.widget.TextInputLayout
         android:id="@+id/disabilityinsurance"

@@ -17,6 +17,12 @@ import com.sam.samproject.utils.Utils;
 
 public class PersonalBankerActivity extends BaseActivity implements View.OnClickListener {
 
+   private AccountOpenFragment accountOpenFragment = new AccountOpenFragment();
+   private CalendarFragment calendarFragment = new CalendarFragment();
+   private EmailFragment emailFragment = new EmailFragment();
+   private CrmFragment crmFragment = new CrmFragment();
+   private StocksFragment stocksFragment = new StocksFragment();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,20 +38,30 @@ public class PersonalBankerActivity extends BaseActivity implements View.OnClick
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.
-                    pb_calendar: showFragment(new CalendarFragment(), true, null);
+            case R.id.pb_calendar:
+                if (!calendarFragment.isVisible()) {
+                    showFragment(calendarFragment, true, null);
+                }
                 break;
             case R.id.pb_email:
-                showFragment(new EmailFragment(), true, null);
+                if (!emailFragment.isVisible()) {
+                    showFragment(emailFragment, true, null);
+                }
                 break;
             case R.id.crm:
-                showFragment(new CrmFragment(), true, null);
+                if (!crmFragment.isVisible()) {
+                    showFragment(crmFragment, true, null);
+                }
                 break;
             case R.id.account_open:
-                showFragment(new AccountOpenFragment(), true, null);
+                if (!accountOpenFragment.isVisible()) {
+                    showFragment(accountOpenFragment, true, null);
+                }
                 break;
             case R.id.pb_stocks:
-                showFragment(new StocksFragment(), true, null);
+                if(!stocksFragment.isVisible()) {
+                    showFragment(stocksFragment, true, null);
+                }
                 break;
 
         }

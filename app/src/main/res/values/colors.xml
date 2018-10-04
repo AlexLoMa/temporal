@@ -8,7 +8,7 @@
     <color name="blue_two">#08A9E4</color>
     <color name="blue_three">#008ABC</color>
     <color name="blue_text_color">#554d56</color>
-
+    <color name="red_500">#FFE1261C</color>
     <color name="slate">#3C4A58</color>
     <color name="peacock_blue">#016297</color>
 </resources>

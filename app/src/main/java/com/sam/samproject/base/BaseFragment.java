@@ -16,13 +16,11 @@ import dagger.android.support.DaggerFragment;
 
 public abstract class BaseFragment extends Fragment {
     protected abstract int layoutResource();
-    protected  void initViews(View view){}
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
        View view = inflater.inflate(layoutResource(), container, false);
-        initViews(view);
         return view;
     }
 }

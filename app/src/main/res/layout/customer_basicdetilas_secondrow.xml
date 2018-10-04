@@ -18,7 +18,7 @@
             android:gravity="center"
             android:hint="WorkNumber"
             android:background="@drawable/border"
-            android:inputType="text"
+            android:inputType="phone"
             android:maxLines="1"
             android:textColor="@android:color/black" />
     </android.support.design.widget.TextInputLayout>
@@ -38,11 +38,21 @@
             android:gravity="center"
             android:hint="CellNumber*"
             android:background="@drawable/border"
-            android:inputType="text"
+            android:inputType="phone"
             android:maxLines="1"
             android:textColor="@android:color/black" />
     </android.support.design.widget.TextInputLayout>
-
+    <TextView
+        android:id="@+id/cell_errormsg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/error_message"
+        android:textColor="@color/red_500"
+        android:textSize="12sp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@id/cell_num"
+        app:layout_constraintStart_toStartOf="@id/cell_num"
+        app:layout_constraintTop_toBottomOf="@id/cell_num" />
 
     <android.support.design.widget.TextInputLayout
         android:id="@+id/home_num"
@@ -58,7 +68,7 @@
             android:gravity="center"
             android:hint="HomeNumber"
             android:background="@drawable/border"
-            android:inputType="text"
+            android:inputType="phone"
             android:maxLines="1"
             android:textColor="@android:color/black" />
     </android.support.design.widget.TextInputLayout>
@@ -78,10 +88,21 @@
             android:gravity="center"
             android:hint="EmailAddress*"
             android:background="@drawable/border"
-            android:inputType="text"
+            android:inputType="textEmailAddress"
             android:maxLines="1"
             android:textColor="@android:color/black" />
     </android.support.design.widget.TextInputLayout>
+    <TextView
+        android:id="@+id/email_errormsg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/error_message"
+        android:textColor="@color/red_500"
+        android:textSize="12sp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@id/email_address"
+        app:layout_constraintStart_toStartOf="@id/email_address"
+        app:layout_constraintTop_toBottomOf="@id/email_address" />
 
     <android.support.design.widget.TextInputLayout
         android:id="@+id/contact_method"
@@ -116,7 +137,7 @@
             android:gravity="center"
             android:hint="Dependents"
             android:background="@drawable/border"
-            android:inputType="text"
+            android:inputType="number"
             android:maxLines="1"
             android:textColor="@android:color/black" />
     </android.support.design.widget.TextInputLayout>
