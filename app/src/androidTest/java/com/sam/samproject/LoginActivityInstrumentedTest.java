@@ -8,9 +8,11 @@ import android.widget.EditText;
 
 import com.sam.samproject.login.LoginActivity;
 
+import org.junit.FixMethodOrder;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.junit.runners.MethodSorters;
 
 import static android.support.test.espresso.Espresso.onData;
 import static android.support.test.espresso.Espresso.onView;
@@ -24,6 +26,7 @@ import static org.hamcrest.CoreMatchers.allOf;
 import static org.hamcrest.CoreMatchers.is;
 
 @RunWith(AndroidJUnit4.class)
+@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class LoginActivityInstrumentedTest {
 
     @Rule
@@ -55,7 +58,7 @@ public class LoginActivityInstrumentedTest {
     */
 
     @Test
-    public void RelationshipManagerTest () {
+    public void A_RelationshipManagerTest () {
 
         String[] myArray = mActivityRule.getActivity().getResources().getStringArray(R.array.role);
         // find the spinner and click on it.
@@ -78,7 +81,7 @@ public class LoginActivityInstrumentedTest {
     }
 
      @Test
-     public void PersonalBankerTest () {
+     public void B_PersonalBankerTest () {
 
         String[] myArray = mActivityRule.getActivity().getResources().getStringArray(R.array.role);
         // find the spinner and click on it.
@@ -101,7 +104,7 @@ public class LoginActivityInstrumentedTest {
     }
 
     @Test
-    public void BranchManagerTest () {
+    public void C_BranchManagerTest () {
 
         String[] myArray = mActivityRule.getActivity().getResources().getStringArray(R.array.role);
         // find the spinner and click on it.
@@ -123,7 +126,7 @@ public class LoginActivityInstrumentedTest {
     }
 
     @Test
-    public void RelationshipManagerLandscapeTest () {
+    public void D_RelationshipManagerLandscapeTest () {
         mActivityRule.getActivity().setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         //mActivityRule.getActivity().setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LOCKED);
         String[] myArray = mActivityRule.getActivity().getResources().getStringArray(R.array.role);
@@ -148,7 +151,7 @@ public class LoginActivityInstrumentedTest {
     }
 
     @Test
-    public void PersonalBankerLandscapeTest () {
+    public void E_PersonalBankerLandscapeTest () {
         mActivityRule.getActivity().setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         //mActivityRule.getActivity().setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LOCKED);
         String[] myArray = mActivityRule.getActivity().getResources().getStringArray(R.array.role);
@@ -173,7 +176,7 @@ public class LoginActivityInstrumentedTest {
     }
 
     @Test
-    public void BranchManagerLandscapeTest () {
+    public void F_BranchManagerLandscapeTest () {
         mActivityRule.getActivity().setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE);
         //mActivityRule.getActivity().setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LOCKED);
         String[] myArray = mActivityRule.getActivity().getResources().getStringArray(R.array.role);
