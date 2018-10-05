@@ -8,6 +8,6 @@
             android:textColor="@android:color/black"
             android:gravity="center"
             android:id="@+id/txtTime"
-            android:layout_width="122dp"
-            android:layout_height="54dp" />
+            android:layout_width="@dimen/meeting_width"
+            android:layout_height="@dimen/meeting_height" />
 </android.support.constraint.ConstraintLayout>

@@ -6,9 +6,9 @@
 
     <android.support.design.widget.TextInputLayout
         android:id="@+id/work_num"
-        android:layout_width="0dp"
+        android:layout_width="@dimen/form_width"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
+        android:layout_margin="@dimen/form_marginstart"
         app:layout_constraintEnd_toStartOf="@id/cell_num"
         app:layout_constraintStart_toStartOf="parent">
 
@@ -16,7 +16,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:hint="WorkNumber"
+            android:hint="@string/work_no"
             android:background="@drawable/border"
             android:inputType="phone"
             android:maxLines="1"
@@ -25,9 +25,9 @@
 
     <android.support.design.widget.TextInputLayout
         android:id="@+id/cell_num"
-        android:layout_width="0dp"
+        android:layout_width="@dimen/form_width"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
+        android:layout_margin="@dimen/form_marginstart"
         app:layout_constraintEnd_toStartOf="@id/home_num"
         app:layout_constraintStart_toEndOf="@+id/work_num">
 
@@ -36,7 +36,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:hint="CellNumber*"
+            android:hint="@string/cell_no"
             android:background="@drawable/border"
             android:inputType="phone"
             android:maxLines="1"
@@ -48,7 +48,7 @@
         android:layout_height="wrap_content"
         android:text="@string/error_message"
         android:textColor="@color/red_500"
-        android:textSize="12sp"
+        android:textSize="@dimen/mortform_text"
         android:visibility="gone"
         app:layout_constraintEnd_toEndOf="@id/cell_num"
         app:layout_constraintStart_toStartOf="@id/cell_num"
@@ -56,9 +56,9 @@
 
     <android.support.design.widget.TextInputLayout
         android:id="@+id/home_num"
-        android:layout_width="0dp"
+        android:layout_width="@dimen/form_width"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
+        android:layout_margin="@dimen/form_marginstart"
         app:layout_constraintEnd_toStartOf="@id/email_address"
         app:layout_constraintStart_toEndOf="@id/cell_num">
 
@@ -66,7 +66,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:hint="HomeNumber"
+            android:hint="@string/home_no"
             android:background="@drawable/border"
             android:inputType="phone"
             android:maxLines="1"
@@ -75,9 +75,9 @@
 
     <android.support.design.widget.TextInputLayout
         android:id="@+id/email_address"
-        android:layout_width="0dp"
+        android:layout_width="@dimen/form_width"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
+        android:layout_margin="@dimen/form_marginstart"
         app:layout_constraintEnd_toStartOf="@id/contact_method"
         app:layout_constraintStart_toEndOf="@+id/home_num">
 
@@ -86,7 +86,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:hint="EmailAddress*"
+            android:hint="@string/email_add"
             android:background="@drawable/border"
             android:inputType="textEmailAddress"
             android:maxLines="1"
@@ -98,7 +98,7 @@
         android:layout_height="wrap_content"
         android:text="@string/error_message"
         android:textColor="@color/red_500"
-        android:textSize="12sp"
+        android:textSize="@dimen/mortform_text"
         android:visibility="gone"
         app:layout_constraintEnd_toEndOf="@id/email_address"
         app:layout_constraintStart_toStartOf="@id/email_address"
@@ -106,9 +106,9 @@
 
     <android.support.design.widget.TextInputLayout
         android:id="@+id/contact_method"
-        android:layout_width="0dp"
+        android:layout_width="@dimen/form_width"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
+        android:layout_margin="@dimen/form_marginstart"
         app:layout_constraintEnd_toStartOf="@id/dependents"
         app:layout_constraintStart_toEndOf="@+id/email_address">
 
@@ -116,7 +116,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:hint="ContactMethod"
+            android:hint="@string/contact_method"
             android:background="@drawable/border"
             android:inputType="text"
             android:maxLines="1"
@@ -125,9 +125,9 @@
 
     <android.support.design.widget.TextInputLayout
         android:id="@+id/dependents"
-        android:layout_width="0dp"
+        android:layout_width="@dimen/form_width"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
+        android:layout_margin="@dimen/form_marginstart"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/contact_method">
 
@@ -135,7 +135,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:hint="Dependents"
+            android:hint="@string/dependents"
             android:background="@drawable/border"
             android:inputType="number"
             android:maxLines="1"

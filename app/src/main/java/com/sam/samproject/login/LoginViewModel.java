@@ -75,6 +75,7 @@ public class LoginViewModel extends BaseViewModel {
             Toast.makeText(v.getContext(),"Please Enter User Password.",Toast.LENGTH_LONG).show();
             return;
         }
+        // set to get the username on toolbar
         Utils.setUserName(strUserName.get());
         if(text.get().equals(v.getContext().getString(R.string.rel_manager))){
 

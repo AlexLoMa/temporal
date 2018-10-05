@@ -19,6 +19,7 @@ public class RelationshipManagerActivity extends BaseActivity implements View.On
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //set to get the title on the toolbar when rm opens up
         setTitle(Utils.getUserName() +" " + getString(R.string.dashboard));
         setContentView(R.layout.activity_relationship_manager);
         findViewById(R.id.rlshUsingMobileApp).setOnClickListener(this);

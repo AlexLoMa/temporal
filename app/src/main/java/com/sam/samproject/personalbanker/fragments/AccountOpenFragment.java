@@ -86,6 +86,8 @@ public class AccountOpenFragment extends BaseFragment implements View.OnClickLis
         }
     }
 
+    // validation for mandatory fields
+
     private Boolean validationSuccess() {
         boolean validationSuccess = true;
         if (firstName.getText().toString().isEmpty()) {

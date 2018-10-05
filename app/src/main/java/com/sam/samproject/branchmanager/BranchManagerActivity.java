@@ -20,6 +20,7 @@ public class BranchManagerActivity extends BaseActivity implements View.OnClickL
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //set to get the title on the toolbar when branchmanager opens up
         setTitle(Utils.getUserName() +" " + getString(R.string.dashboard));
         setContentView(R.layout.activity_branch_manager);
         findViewById(R.id.bnch_calendar).setOnClickListener(this);
@@ -29,6 +30,7 @@ public class BranchManagerActivity extends BaseActivity implements View.OnClickL
         findViewById(R.id.bnch_stocks).setOnClickListener(this);
     }
 
+    // onclick listener to open up the tiles on branch manager
     @Override
     public void onClick(View v) {
         switch (v.getId()) {

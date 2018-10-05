@@ -6,9 +6,9 @@
 
     <android.support.design.widget.TextInputLayout
         android:id="@+id/salutation"
-        android:layout_width="0dp"
+        android:layout_width="@dimen/form_width"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
+        android:layout_margin="@dimen/form_marginstart"
         app:layout_constraintEnd_toStartOf="@id/firstname"
         app:layout_constraintStart_toStartOf="parent">
 
@@ -17,7 +17,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/border"
             android:gravity="center"
-            android:hint="Salutation"
+            android:hint="@string/salutation"
             android:imeOptions="actionNext"
             android:inputType="text"
             android:maxLines="1"
@@ -26,9 +26,9 @@
 
     <android.support.design.widget.TextInputLayout
         android:id="@+id/firstname"
-        android:layout_width="0dp"
+        android:layout_width="@dimen/form_width"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
+        android:layout_margin="@dimen/form_marginstart"
         app:layout_constraintEnd_toStartOf="@id/initial"
         app:layout_constraintStart_toEndOf="@+id/salutation">
 
@@ -38,7 +38,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/border"
             android:gravity="center"
-            android:hint="FirstName*"
+            android:hint="@string/firstname"
             android:imeOptions="actionNext"
             android:inputType="text"
             android:maxLines="1"
@@ -51,7 +51,7 @@
         android:layout_height="wrap_content"
         android:text="@string/error_message"
         android:textColor="@color/red_500"
-        android:textSize="12sp"
+        android:textSize="@dimen/mortform_text"
         android:visibility="gone"
         app:layout_constraintEnd_toEndOf="@id/firstname"
         app:layout_constraintStart_toStartOf="@id/firstname"
@@ -59,9 +59,9 @@
 
     <android.support.design.widget.TextInputLayout
         android:id="@+id/initial"
-        android:layout_width="0dp"
+        android:layout_width="@dimen/form_width"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
+        android:layout_margin="@dimen/form_marginstart"
         app:layout_constraintEnd_toStartOf="@id/lastname"
         app:layout_constraintStart_toEndOf="@id/firstname">
 
@@ -70,7 +70,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/border"
             android:gravity="center"
-            android:hint="Initial"
+            android:hint="@string/initial"
             android:imeOptions="actionNext"
             android:inputType="text"
             android:maxLines="1"
@@ -79,9 +79,9 @@
 
     <android.support.design.widget.TextInputLayout
         android:id="@+id/lastname"
-        android:layout_width="0dp"
+        android:layout_width="@dimen/form_width"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
+        android:layout_margin="@dimen/form_marginstart"
         app:layout_constraintEnd_toStartOf="@id/birthdate"
         app:layout_constraintStart_toEndOf="@+id/initial">
 
@@ -91,7 +91,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/border"
             android:gravity="center"
-            android:hint="LastName*"
+            android:hint="@string/lastname"
             android:imeOptions="actionNext"
             android:inputType="text"
             android:maxLines="1"
@@ -104,7 +104,7 @@
         android:layout_height="wrap_content"
         android:text="@string/error_message"
         android:textColor="@color/red_500"
-        android:textSize="12sp"
+        android:textSize="@dimen/mortform_text"
         android:visibility="gone"
         app:layout_constraintEnd_toEndOf="@id/lastname"
         app:layout_constraintStart_toStartOf="@id/lastname"
@@ -112,9 +112,9 @@
 
     <android.support.design.widget.TextInputLayout
         android:id="@+id/birthdate"
-        android:layout_width="0dp"
+        android:layout_width="@dimen/form_width"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
+        android:layout_margin="@dimen/form_marginstart"
         app:layout_constraintEnd_toStartOf="@id/ssn"
         app:layout_constraintStart_toEndOf="@+id/lastname">
 
@@ -124,7 +124,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/border"
             android:gravity="center"
-            android:hint="Birthdate*"
+            android:hint="@string/birthdate"
             android:imeOptions="actionNext"
             android:inputType="number"
             android:maxLines="1"
@@ -137,7 +137,7 @@
         android:layout_height="wrap_content"
         android:text="@string/error_message"
         android:textColor="@color/red_500"
-        android:textSize="12sp"
+        android:textSize="@dimen/mortform_text"
         android:visibility="gone"
         app:layout_constraintEnd_toEndOf="@id/birthdate"
         app:layout_constraintStart_toStartOf="@id/birthdate"
@@ -145,9 +145,9 @@
 
     <android.support.design.widget.TextInputLayout
         android:id="@+id/ssn"
-        android:layout_width="0dp"
+        android:layout_width="@dimen/form_width"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
+        android:layout_margin="@dimen/form_marginstart"
         app:layout_constraintEnd_toStartOf="@id/martialstatus"
         app:layout_constraintStart_toEndOf="@+id/birthdate">
 
@@ -156,7 +156,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/border"
             android:gravity="center"
-            android:hint="SSN(Optional)"
+            android:hint="@string/ssn"
             android:imeOptions="actionNext"
             android:inputType="number"
             android:maxLines="1"
@@ -165,9 +165,9 @@
 
     <android.support.design.widget.TextInputLayout
         android:id="@+id/martialstatus"
-        android:layout_width="0dp"
+        android:layout_width="@dimen/form_width"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
+        android:layout_margin="@dimen/form_marginstart"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/ssn">
 
@@ -176,7 +176,7 @@
             android:layout_height="wrap_content"
             android:background="@drawable/border"
             android:gravity="center"
-            android:hint="MartialStatus"
+            android:hint="@string/martialstatus"
             android:imeOptions="actionNext"
             android:inputType="text"
             android:maxLines="1"

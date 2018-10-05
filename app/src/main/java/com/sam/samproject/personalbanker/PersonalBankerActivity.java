@@ -26,6 +26,7 @@ public class PersonalBankerActivity extends BaseActivity implements View.OnClick
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //set to get the title on the toolbar when personalbanker opens up
         setTitle(Utils.getUserName() +" " + getString(R.string.dashboard));
         setContentView(R.layout.activity_personal_banker);
         findViewById(R.id.pb_calendar).setOnClickListener(this);
@@ -34,6 +35,8 @@ public class PersonalBankerActivity extends BaseActivity implements View.OnClick
         findViewById(R.id.crm).setOnClickListener(this);
         findViewById(R.id.pb_stocks).setOnClickListener(this);
     }
+
+    // onclick listener to open up the different tiles on personal banker
 
     @Override
     public void onClick(View v) {

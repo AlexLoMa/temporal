@@ -20,11 +20,11 @@
 
         <LinearLayout
             android:id="@+id/vertical_line"
-            android:layout_width="15dp"
-            android:layout_height="275dp"
+            android:layout_width="@dimen/margin_16dp"
+            android:layout_height="@dimen/layout_margin275dp"
             android:background="@drawable/login_blue_line"
-            android:layout_marginTop="15dp"
-            android:layout_marginLeft="70dp"
+            android:layout_marginTop="@dimen/margin_16dp"
+            android:layout_marginLeft="@dimen/margin_70dp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintTop_toTopOf="@+id/txtInstruct"
             />
@@ -33,7 +33,7 @@
             android:id="@+id/txtInstruct"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
+            android:layout_marginLeft="@dimen/margin_20dp"
             android:fontFamily="roboto-medium"
             android:text="@string/txt_welcome"
             android:textColor="@color/peacock_blue"
@@ -46,10 +46,10 @@
             android:id="@+id/spContainer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="204dp"
-            android:layout_marginBottom="16dp"
+            android:layout_marginLeft="@dimen/margin_204dp"
+            android:layout_marginBottom="@dimen/land_margin_16dp"
             android:background="@drawable/white_round_rect_shape"
-            android:elevation="5dp"
+            android:elevation="@dimen/elevation"
             android:gravity="center"
             app:layout_constraintBottom_toTopOf="@+id/usr_psw_panel"
             app:layout_constraintLeft_toRightOf="@id/txtInstruct">
@@ -61,21 +61,13 @@
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:layout_marginLeft="@dimen/usr_psw_padding"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="@dimen/margin_10dp"
                 android:layout_marginRight="@dimen/usr_psw_padding"
-                android:layout_marginBottom="10dp"
+                android:layout_marginBottom="@dimen/margin_10dp"
                 android:entries="@{viewmodel.roles}"
-                android:minWidth="400dp"
+                android:minWidth="@dimen/land_width"
                 android:minHeight="@dimen/spinner_height"
                 tools:listitem="@layout/spinner_item_view" />
-
-            <!--ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_marginRight="5dp"
-                android:layout_toRightOf="@+id/spRole"
-                android:src="@drawable/ic_dropdown_arrow" / -->
 
         </RelativeLayout>
 
@@ -83,9 +75,9 @@
             android:id="@+id/usr_psw_panel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="196dp"
+            android:layout_marginBottom="@dimen/margin_196dp"
             android:background="@drawable/white_round_rect_shape"
-            android:elevation="5dp"
+            android:elevation="@dimen/elevation"
             android:gravity="center"
             android:orientation="vertical"
             android:padding="@dimen/usr_psw_padding"
@@ -99,7 +91,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/usr_psw_padding"
-                android:minWidth="400dp">
+                android:minWidth="@dimen/land_width">
 
                 <android.support.design.widget.TextInputEditText
                     android:layout_width="match_parent"
@@ -117,7 +109,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/usr_psw_padding"
-                android:minWidth="400dp"
+                android:minWidth="@dimen/land_width"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/inputUserName">
@@ -136,9 +128,9 @@
             <android.support.v7.widget.AppCompatButton
                 android:id="@+id/btnSubmit"
                 android:layout_width="wrap_content"
-                android:layout_height="60dp"
+                android:layout_height="@dimen/land_height"
                 android:background="@drawable/blue_round_rect_shape"
-                android:minWidth="400dp"
+                android:minWidth="@dimen/land_width"
                 android:onClick="@{viewmodel::onLogin}"
                 android:text="@string/login"
                 android:textColor="@android:color/white"
