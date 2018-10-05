@@ -10,7 +10,6 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Toast;
-
 import com.sam.samproject.R;
 import com.sam.samproject.base.BaseViewModel;
 import com.sam.samproject.branchmanager.BranchManagerActivity;
@@ -20,6 +19,7 @@ import com.sam.samproject.utils.Utils;
 
 public class LoginViewModel extends BaseViewModel {
     private String roles[];
+    //set observable for the variables to update view.
     private ObservableField<String> text;
     private ObservableField<String> strUserName;
     private ObservableField<String> strUserPassword;
@@ -46,11 +46,12 @@ public class LoginViewModel extends BaseViewModel {
     }
     @InverseBindingAdapter(attribute = "selectedValue", event = "selectedValueAttrChanged")
     public static String captureSelectedValue(AppCompatSpinner pAppCompatSpinner) {
-        return (String) pAppCompatSpinner.getSelectedItem();
+        return (String) pAppCompatSpinner.getSelectedItem(); // get the selected item from spinner or drop down.
     }
     @BindingAdapter(value = {"selectedValue", "selectedValueAttrChanged"}, requireAll = false)
     public static void bindSpinnerData(AppCompatSpinner pAppCompatSpinner, String newSelectedValue, final InverseBindingListener newTextAttrChanged) {
         pAppCompatSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            //This will help to set the selected item and change the attribute.
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 newTextAttrChanged.onChange();
@@ -65,6 +66,7 @@ public class LoginViewModel extends BaseViewModel {
         }
     }
     public void onLogin(View v){
+        // when user clicks login will ask for the fields require if he will miss something then toast msg sown
 
         if(strUserName.get()==null || strUserName.get().trim().length()==0) {
             Toast.makeText(v.getContext(),"Please Enter User Name.",Toast.LENGTH_LONG).show();
@@ -76,17 +78,17 @@ public class LoginViewModel extends BaseViewModel {
             return;
         }
         Utils.setUserName(strUserName.get());
-        if(text.get().equals(v.getContext().getString(R.string.rel_manager))){
+        if(text.get().equals(v.getContext().getString(R.string.rel_manager))){ //If RM selected then go to RM screen using intent.
 
             (v.getContext()).startActivity(new Intent(v.getContext(),RelationshipManagerActivity.class));
 
-        } else if (text.get().equals(v.getContext().getString(R.string.personal_adv))) {
+        } else if (text.get().equals(v.getContext().getString(R.string.personal_adv))) {//If PB selected then go to PB screen using intent.
 
             Intent intent = new Intent(v.getContext(), PersonalBankerActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
             v.getContext().startActivity(intent);
 
-        } else if (text.get().equals(v.getContext().getString(R.string.branch_manager))) {
+        } else if (text.get().equals(v.getContext().getString(R.string.branch_manager))) {//If BM selected then go to BM screen using intent.
 
             Intent intent = new Intent(v.getContext(), BranchManagerActivity.class);
             intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
