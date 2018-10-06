@@ -6,6 +6,6 @@ import com.sam.samproject.base.BaseFragment;
 public class CalendarFragment extends BaseFragment {
     @Override
     protected int layoutResource() {
-        return R.layout.fragment_calendar;
+        return R.layout.fragment_calendar; //When calendar tile is selected will return the calendar view.
     }
 }

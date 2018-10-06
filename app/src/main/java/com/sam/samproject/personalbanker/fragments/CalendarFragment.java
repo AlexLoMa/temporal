@@ -6,7 +6,6 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.CalendarView;
-
 import com.sam.samproject.R;
 import com.sam.samproject.adapters.TimeSlotAdapter;
 import com.sam.samproject.base.BaseFragment;
@@ -23,6 +22,7 @@ public class CalendarFragment extends BaseFragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         CalendarView pb_calendar = view.findViewById(R.id.pb_calendar);
+        //created recycler view to display time slot in list.
         RecyclerView recyclerView = view.findViewById(R.id.rlMeeting);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());
         TimeSlotAdapter timeSlotAdapter = new TimeSlotAdapter();
@@ -31,7 +31,7 @@ public class CalendarFragment extends BaseFragment {
         recyclerView.setAdapter(timeSlotAdapter);
     }
 
-    private ArrayList<String> getTimeSlots(){
+    private ArrayList<String> getTimeSlots(){ //from here all the time slots are provided for calendar view.
         ArrayList<String> times = new ArrayList<>();
         times.add("6am - 7am");
         times.add("7am - 8am");

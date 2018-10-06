@@ -5,9 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
 import com.sam.samproject.R;
-
 import java.util.ArrayList;
 
 public class TimeSlotAdapter extends RecyclerView.Adapter<TimeSlotAdapter.ViewHolder> {
@@ -26,7 +24,7 @@ public class TimeSlotAdapter extends RecyclerView.Adapter<TimeSlotAdapter.ViewHo
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
 
-        holder.textView.setText(times.get(position));
+        holder.textView.setText(times.get(position)); // will bind time slots to the views
     }
 
     @Override
@@ -39,6 +37,7 @@ public class TimeSlotAdapter extends RecyclerView.Adapter<TimeSlotAdapter.ViewHo
         TextView textView;
         public ViewHolder(View itemView) {
             super(itemView);
+            //initialize the view to be displayed in recyclerview.
             textView = itemView.findViewById(R.id.txtTime);
         }
     }

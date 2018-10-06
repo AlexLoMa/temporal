@@ -5,7 +5,6 @@ import android.support.annotation.Nullable;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
-
 import com.github.gcacace.signaturepad.views.SignaturePad;
 import com.sam.samproject.R;
 import com.sam.samproject.base.BaseFragment;
@@ -70,7 +69,7 @@ public class AccountOpenFragment extends BaseFragment implements View.OnClickLis
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.submit:
+            case R.id.submit: //when user signs and finishes the action this will help to save the bitmap.
                 if (validationSuccess()) {
                     FormResponseFragment formResponseFragment = new FormResponseFragment();
                     ((PersonalBankerActivity) getActivity()).getSupportFragmentManager().beginTransaction()
@@ -78,7 +77,7 @@ public class AccountOpenFragment extends BaseFragment implements View.OnClickLis
                             .replace(R.id.activity_root, formResponseFragment).commit();
                     break;
                 }
-            case R.id.clear:
+            case R.id.clear: // when user clicks clear it will clear the pad to resign.
                 mSignaturePad.clear();
                 break;
             default:
