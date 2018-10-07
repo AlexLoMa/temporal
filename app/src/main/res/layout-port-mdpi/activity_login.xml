@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.sam.samproject.login.LoginActivity"
+    >
+    <data>
+        <variable
+            name="viewmodel"
+            type="com.sam.samproject.login.LoginViewModel"/>
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/mobile_banking_portrait">
+
+        <ImageView
+            android:id="@+id/logo_mobile_fb"
+            app:srcCompat="@drawable/mobile_first_branch_logo"
+            android:layout_width="341dp"
+            android:layout_height="275dp"
+            android:layout_marginTop="@dimen/margin_150dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <RelativeLayout
+            android:id="@+id/spContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginBottom="@dimen/land_margin_16dp"
+            android:background="@drawable/white_round_rect_shape"
+            android:elevation="@dimen/elevation"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/usr_psw_panel" >
+
+            <android.support.v7.widget.AppCompatSpinner
+                android:id="@+id/spRole"
+                selectedValue="@={viewmodel.text}"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginRight="@dimen/usr_psw_padding"
+                android:layout_marginLeft="@dimen/usr_psw_padding"
+                android:layout_marginTop="@dimen/margin_10dp"
+                android:layout_marginBottom="@dimen/margin_10dp"
+                android:entries="@{viewmodel.roles}"
+                android:minHeight="@dimen/spinner_height"
+                android:minWidth="@dimen/land_width"
+                tools:listitem="@layout/spinner_item_view" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/usr_psw_panel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/usr_psw_padding"
+            android:layout_marginBottom="@dimen/margin_230dp"
+            android:gravity="center"
+            android:background="@drawable/white_round_rect_shape"
+            android:orientation="vertical"
+            android:elevation="@dimen/elevation"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/inputUserName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/usr_psw_padding"
+                android:minWidth="@dimen/land_width"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent">
+
+                <android.support.design.widget.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/txt_user_name"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:text="@={viewmodel.strUserName}"
+                    android:textColor="@color/slate" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/inputPassword"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/usr_psw_padding"
+                android:minWidth="@dimen/land_width"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/inputUserName">
+
+                <android.support.design.widget.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/txt_user_password"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:text="@={viewmodel.strUserPassword}"
+                    android:textColor="@color/slate" />
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.v7.widget.AppCompatButton
+                android:id="@+id/btnSubmit"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/land_height"
+                android:minWidth="@dimen/land_width"
+                android:background="@drawable/blue_round_rect_shape"
+                android:onClick="@{viewmodel::onLogin}"
+                android:text="@string/login"
+                android:textColor="@android:color/white"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/inputPassword" />
+
+        </LinearLayout>
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

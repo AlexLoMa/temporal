@@ -6,9 +6,9 @@
 
     <android.support.design.widget.TextInputLayout
         android:id="@+id/apt_no"
-        android:layout_width="0dp"
+        android:layout_width="@dimen/form_width"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
+        android:layout_margin="@dimen/form_marginstart"
         app:layout_constraintEnd_toStartOf="@id/street_name"
         app:layout_constraintStart_toStartOf="parent">
 
@@ -16,7 +16,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:hint="Apt #"
+            android:hint="@string/apt_no"
             android:background="@drawable/border"
             android:inputType="text"
             android:maxLines="1"
@@ -25,9 +25,9 @@
 
     <android.support.design.widget.TextInputLayout
         android:id="@+id/street_name"
-        android:layout_width="0dp"
+        android:layout_width="@dimen/form_width"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
+        android:layout_margin="@dimen/form_marginstart"
         app:layout_constraintEnd_toStartOf="@id/city"
         app:layout_constraintStart_toEndOf="@+id/apt_no">
 
@@ -35,7 +35,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:hint="Street # and StreetName"
+            android:hint="@string/streetname"
             android:background="@drawable/border"
             android:inputType="text"
             android:maxLines="1"
@@ -45,9 +45,9 @@
 
     <android.support.design.widget.TextInputLayout
         android:id="@+id/city"
-        android:layout_width="0dp"
+        android:layout_width="@dimen/form_width"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
+        android:layout_margin="@dimen/form_marginstart"
         app:layout_constraintEnd_toStartOf="@id/state"
         app:layout_constraintStart_toEndOf="@id/street_name">
 
@@ -55,7 +55,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:hint="City"
+            android:hint="@string/city"
             android:background="@drawable/border"
             android:inputType="text"
             android:maxLines="1"
@@ -64,9 +64,9 @@
 
     <android.support.design.widget.TextInputLayout
         android:id="@+id/state"
-        android:layout_width="0dp"
+        android:layout_width="@dimen/form_width"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
+        android:layout_margin="@dimen/form_marginstart"
         app:layout_constraintEnd_toStartOf="@id/zipcode"
         app:layout_constraintStart_toEndOf="@+id/city">
 
@@ -74,7 +74,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:hint="State"
+            android:hint="@string/state"
             android:background="@drawable/border"
             android:inputType="text"
             android:maxLines="1"
@@ -83,28 +83,40 @@
 
     <android.support.design.widget.TextInputLayout
         android:id="@+id/zipcode"
-        android:layout_width="0dp"
+        android:layout_width="@dimen/form_width"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
+        android:layout_margin="@dimen/form_marginstart"
         app:layout_constraintEnd_toStartOf="@id/status"
         app:layout_constraintStart_toEndOf="@+id/state">
 
         <android.support.design.widget.TextInputEditText
+            android:id="@+id/zip_code"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:hint="Zipcode"
+            android:hint="@string/zipcode"
             android:background="@drawable/border"
-            android:inputType="text"
+            android:inputType="number"
             android:maxLines="1"
             android:textColor="@android:color/black" />
     </android.support.design.widget.TextInputLayout>
+    <TextView
+        android:id="@+id/zipcode_errormsg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/error_message"
+        android:textColor="@color/red_500"
+        android:textSize="@dimen/mortform_text"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@id/zipcode"
+        app:layout_constraintStart_toStartOf="@id/zipcode"
+        app:layout_constraintTop_toBottomOf="@id/zipcode" />
 
     <android.support.design.widget.TextInputLayout
         android:id="@+id/status"
-        android:layout_width="0dp"
+        android:layout_width="@dimen/form_width"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
+        android:layout_margin="@dimen/form_marginstart"
         app:layout_constraintEnd_toStartOf="@id/rentpay"
         app:layout_constraintStart_toEndOf="@+id/zipcode">
 
@@ -112,7 +124,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:hint="Status"
+            android:hint="@string/status"
             android:background="@drawable/border"
             android:inputType="text"
             android:maxLines="1"
@@ -121,9 +133,9 @@
 
     <android.support.design.widget.TextInputLayout
         android:id="@+id/rentpay"
-        android:layout_width="0dp"
+        android:layout_width="@dimen/form_width"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
+        android:layout_margin="@dimen/form_marginstart"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/status">
 
@@ -131,9 +143,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:hint="Rent Payment"
+            android:hint="@string/rentpay"
             android:background="@drawable/border"
-            android:inputType="text"
+            android:inputType="number"
             android:maxLines="1"
             android:textColor="@android:color/black" />
     </android.support.design.widget.TextInputLayout>
@@ -142,17 +154,17 @@
         android:id="@+id/time_at_residence"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Time at Residence:"
+        android:text="@string/time_at_residence"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/apt_no"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="25dp" />
+        android:layout_marginStart="@dimen/form_marginstart"
+        android:layout_marginTop="@dimen/form_margintop" />
 
     <android.support.design.widget.TextInputLayout
         android:id="@+id/years"
-        android:layout_width="0dp"
+        android:layout_width="@dimen/form_width"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
+        android:layout_margin="@dimen/form_marginstart"
         app:layout_constraintEnd_toStartOf="@id/months"
         app:layout_constraintStart_toEndOf="@+id/time_at_residence"
         app:layout_constraintTop_toBottomOf="@+id/street_name">
@@ -161,18 +173,18 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:hint="Years"
+            android:hint="@string/years"
             android:background="@drawable/border"
-            android:inputType="text"
+            android:inputType="number"
             android:maxLines="1"
             android:textColor="@android:color/black" />
     </android.support.design.widget.TextInputLayout>
 
     <android.support.design.widget.TextInputLayout
         android:id="@+id/months"
-        android:layout_width="0dp"
+        android:layout_width="@dimen/form_width"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
+        android:layout_margin="@dimen/form_marginstart"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/years"
         app:layout_constraintTop_toBottomOf="@+id/city">
@@ -181,9 +193,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:hint="Months"
+            android:hint="@string/months"
             android:background="@drawable/border"
-            android:inputType="text"
+            android:inputType="number"
             android:maxLines="1"
             android:textColor="@android:color/black" />
     </android.support.design.widget.TextInputLayout>

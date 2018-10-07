@@ -9,10 +9,10 @@
         android:id="@+id/customer_previousadd_header"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="30dp"
-        android:text="Previous Address"
-        android:textSize="15sp"
+        android:layout_marginStart="@dimen/bm_margin_start_end"
+        android:layout_marginTop="@dimen/address_margin"
+        android:text="@string/previous_add"
+        android:textSize="@dimen/address_text"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -20,9 +20,9 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:text="(Complete only if less than 3years at current address)"
-        android:textSize="15sp"
+        android:layout_marginTop="@dimen/address_margin"
+        android:text="@string/lessthanthree"
+        android:textSize="@dimen/address_text"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/customer_previousadd_header"
         app:layout_constraintTop_toTopOf="parent" />
@@ -30,8 +30,7 @@
     <include layout="@layout/customer_currentaddress_details"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="@dimen/mortg_form_margin"
         app:layout_constraintTop_toBottomOf="@+id/customer_previousadd_header"/>
-
 
 </android.support.constraint.ConstraintLayout>

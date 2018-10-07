@@ -6,14 +6,13 @@
     android:background="@android:color/holo_blue_dark"
     tools:context=".relationmanager.fragment.ElectronicQueueFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
         android:padding="@dimen/common_margin"
         android:layout_centerInParent="true"
-        android:textSize="@dimen/text_size_large"
+        android:textSize="@dimen/fragment_text"
         android:textColor="@android:color/white"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="I am in electronic queue page." />
+        android:text="@string/electronic_queue" />
 
 </RelativeLayout>

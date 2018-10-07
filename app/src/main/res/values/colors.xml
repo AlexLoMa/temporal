@@ -3,4 +3,16 @@
     <color name="colorPrimary">#ff33b5e5</color>
     <color name="colorPrimaryDark">#ff0099cc</color>
     <color name="colorAccent">#FF4081</color>
+
+    <color name="blue_one">#00C2F6</color>
+    <color name="blue_two">#08A9E4</color>
+    <color name="blue_three">#008ABC</color>
+    <color name="blue_text_color">#554d56</color>
+    <color name="red_500">#FFE1261C</color>
+    <color name="slate">#3C4A58</color>
+    <color name="peacock_blue">#016297</color>
+    <color name="background_color">#FFffff</color>
+    <color name="sign_submit_background">#b2beb5</color>
+    <color name="stroke_color">#949494</color>
+    <color name="form_text_color">#000000</color>
 </resources>

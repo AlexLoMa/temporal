@@ -7,6 +7,7 @@ package com.sam.samproject.base;
 import android.content.res.Configuration;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Toast;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -21,6 +22,13 @@ public class BaseActivity extends DaggerAppCompatActivity {
     protected boolean mIsStandaloneMode;
     protected boolean mIsDexDualMode;
 
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        Toast.makeText(this, "Dex-Mode Enabled=" + mIsDexMode + ", isDualMode=" + mIsDexDualMode + ", isStandaloneMode=" + mIsStandaloneMode, Toast.LENGTH_LONG).show();
+    }
 
     @Override
     public void onConfigurationChanged(Configuration newConfig) {

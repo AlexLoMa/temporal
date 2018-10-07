@@ -1,6 +1,5 @@
 package com.sam.samproject.personalbanker;
 
-import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -14,14 +13,21 @@ import com.sam.samproject.personalbanker.fragments.CalendarFragment;
 import com.sam.samproject.personalbanker.fragments.CrmFragment;
 import com.sam.samproject.personalbanker.fragments.EmailFragment;
 import com.sam.samproject.personalbanker.fragments.StocksFragment;
+import com.sam.samproject.utils.Utils;
 
-import java.io.ByteArrayOutputStream;
+public class PersonalBankerActivity extends BaseActivity implements View.OnClickListener {
 
-public class PersonalBankerActivity extends BaseActivity implements View.OnClickListener, SignCompleteListener {
+   private AccountOpenFragment accountOpenFragment = new AccountOpenFragment();
+   private CalendarFragment calendarFragment = new CalendarFragment();
+   private EmailFragment emailFragment = new EmailFragment();
+   private CrmFragment crmFragment = new CrmFragment();
+   private StocksFragment stocksFragment = new StocksFragment();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //set to get the title on the toolbar when personalbanker opens up
+        setTitle(Utils.getUserName() +" " + getString(R.string.dashboard));
         setContentView(R.layout.activity_personal_banker);
         findViewById(R.id.pb_calendar).setOnClickListener(this);
         findViewById(R.id.pb_email).setOnClickListener(this);
@@ -30,23 +36,35 @@ public class PersonalBankerActivity extends BaseActivity implements View.OnClick
         findViewById(R.id.pb_stocks).setOnClickListener(this);
     }
 
+    // onclick listener to open up the different tiles on personal banker
+
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.pb_calendar:
-                showFragment(new CalendarFragment(), true, null);
+                if (!calendarFragment.isVisible()) {
+                    showFragment(calendarFragment, true, null);
+                }
                 break;
             case R.id.pb_email:
-                showFragment(new EmailFragment(), true, null);
+                if (!emailFragment.isVisible()) {
+                    showFragment(emailFragment, true, null);
+                }
                 break;
             case R.id.crm:
-                showFragment(new CrmFragment(), true, null);
+                if (!crmFragment.isVisible()) {
+                    showFragment(crmFragment, true, null);
+                }
                 break;
             case R.id.account_open:
-                showFragment(new AccountOpenFragment(), true, null);
+                if (!accountOpenFragment.isVisible()) {
+                    showFragment(accountOpenFragment, true, null);
+                }
                 break;
             case R.id.pb_stocks:
-                showFragment(new StocksFragment(), true, null);
+                if(!stocksFragment.isVisible()) {
+                    showFragment(stocksFragment, true, null);
+                }
                 break;
 
         }
@@ -66,14 +84,6 @@ public class PersonalBankerActivity extends BaseActivity implements View.OnClick
         fragmentTransaction.commit();
     }
 
-    @Override
-    public void onSignomplete(Bitmap bitmap) {
-        ByteArrayOutputStream stream = new ByteArrayOutputStream();
-        bitmap.compress(Bitmap.CompressFormat.PNG, 100, stream);
-        byte[] byteArray = stream.toByteArray();
 
-        Bundle bundle = new Bundle();
-        bundle.putSerializable("sign", byteArray);
-        showFragment(new AccountOpenFragment(), true, bundle);
-    }
+
 }

@@ -1,82 +1,114 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView  xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:fillViewport="true">
-<LinearLayout
+    <LinearLayout
 
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#FFffff"
-    android:orientation="vertical"
-    android:clickable="true">
-
-    <include layout="@layout/customer_form_header" />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Applicant Details"
-        android:textAllCaps="true"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        android:layout_marginLeft="15dp"/>
-    <include
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        layout="@layout/customer_basicdetials" />
+        android:layout_height="match_parent"
+        android:background="@color/background_color"
+        android:orientation="vertical"
+        android:clickable="true">
 
-    <include
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        layout="@layout/customer_basicdetilas_secondrow" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Current Address"
-        android:textSize="15sp"
-        android:textStyle="bold"
-        android:layout_marginTop="15dp"
-        android:layout_marginLeft="15dp" />
-
-    <include
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        layout="@layout/customer_currentaddress_details" />
-
-    <include layout="@layout/customer_previousaddress_detials" />
-
-    <include
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        layout="@layout/customer_insurance_detials" />
-
-    <RelativeLayout
-        android:id="@+id/relSign"
-        android:layout_marginTop="@dimen/margin_16dp"
-        android:layout_width="match_parent"
-        android:layout_height="60dp">
+        <include layout="@layout/customer_form_header" />
         <TextView
-            android:id="@+id/txtSign"
-            android:textColor="@android:color/black"
-            android:textSize="@dimen/margin_16dp"
-            android:text="Signature"
-            android:padding="@dimen/margin_8dp"
-            android:layout_alignParentLeft="true"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
-        <ImageView
-            android:scaleType="centerInside"
-            android:id="@+id/imgSign"
-            android:layout_toRightOf="@+id/txtSign"
-            android:layout_width="140dp"
-            android:layout_height="match_parent" />
-    </RelativeLayout>
+            android:layout_height="wrap_content"
+            android:text="@string/applicant_details"
+            android:textAllCaps="true"
+            android:textSize="@dimen/form_text"
+            android:textStyle="bold"
+            android:layout_marginLeft="@dimen/form_margin"/>
+        <include
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/form_margin"
+            layout="@layout/customer_basicdetials" />
 
-</LinearLayout>
+        <include
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/mortg_form_margin"
+            layout="@layout/customer_basicdetilas_secondrow" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/current_address"
+            android:textSize="@dimen/address_text"
+            android:textStyle="bold"
+            android:layout_marginTop="@dimen/form_margin"
+            android:layout_marginLeft="@dimen/form_margin" />
+
+        <include
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/mortg_form_margin"
+            layout="@layout/customer_currentaddress_details" />
+
+        <include layout="@layout/customer_previousaddress_detials" />
+
+        <include
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            layout="@layout/customer_insurance_detials" />
+
+        <RelativeLayout
+            android:layout_marginLeft="@dimen/margin_8dp"
+            android:id="@+id/relSign"
+            android:layout_marginTop="@dimen/form_margin"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/sign_height">
+            <TextView
+                android:id="@+id/txtSign"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/sign__submit_text"
+                android:text="@string/signature"
+                android:padding="@dimen/margin_8dp"
+                android:layout_alignParentLeft="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+            <TextView
+                android:id="@+id/clear"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/sign__submit_text"
+                android:text="@string/clear"
+                android:padding="@dimen/margin_8dp"
+                android:layout_toRightOf="@+id/txtSign"
+                android:layout_marginLeft="@dimen/sign_margin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <com.github.gcacace.signaturepad.views.SignaturePad
+                android:background="@color/sign_submit_background"
+                android:layout_below="@+id/txtSign"
+                android:id="@+id/signature_pad"
+                android:layout_width="@dimen/signpad_width"
+                app:penColor="@android:color/black"
+                android:layout_height="match_parent"/>
+
+            <Button
+                android:id="@+id/submit"
+                android:layout_width="@dimen/submit_width"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/black"
+                android:text="@string/submit"
+                android:background="@color/sign_submit_background"
+                android:textSize="@dimen/sign__submit_text"
+                android:padding="@dimen/margin_8dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="@dimen/bm_margin_start_end" />
+        </RelativeLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/mandatory"
+            android:textSize="@dimen/address_text"
+            android:textColor="@color/red_500"
+            android:layout_marginLeft="@dimen/margin_8dp"
+            android:layout_marginTop="@dimen/mandatory_margin"/>
+    </LinearLayout>
 
 </ScrollView>
-
