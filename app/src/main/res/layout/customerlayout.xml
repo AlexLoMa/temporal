@@ -208,6 +208,7 @@
             android:layout_marginBottom="20dp"
             android:layout_gravity="bottom" >
             <Button
+                android:id="@+id/cancel_button"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:background="#b2b2b2"
@@ -215,6 +216,7 @@
                 android:layout_weight="1"
                 android:textColor="@android:color/white" />
             <Button
+                android:id="@+id/submit_button"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:background="#00c2f6"
