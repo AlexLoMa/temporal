@@ -198,6 +198,7 @@
             android:layout_marginTop="25dp"
             android:background="#009640"
             android:text="@string/e_sign"
+            android:textAllCaps="false"
             android:textColor="@android:color/white"/>
         <LinearLayout
             android:layout_width="match_parent"
