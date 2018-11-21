@@ -2,7 +2,10 @@ package com.sam.samproject.personalbanker.fragments;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import com.github.gcacace.signaturepad.views.SignaturePad;
@@ -10,8 +13,8 @@ import com.sam.samproject.R;
 import com.sam.samproject.base.BaseFragment;
 import com.sam.samproject.personalbanker.PersonalBankerActivity;
 
-public class AccountOpenFragment extends BaseFragment implements View.OnClickListener, View.OnFocusChangeListener {
-    private SignaturePad mSignaturePad;
+public class AccountOpenFragment extends BaseFragment implements View.OnClickListener {
+  /*  private SignaturePad mSignaturePad;
     private EditText firstName;
     private EditText lastName;
     private EditText dob;
@@ -27,17 +30,21 @@ public class AccountOpenFragment extends BaseFragment implements View.OnClickLis
     private TextView emailAddressErrorMSg;
     private TextView cellErrorMSg;
     private TextView zipcodeErrorMsg;
-    private TextView lifeinsuranceErrormsg;
+    private TextView lifeinsuranceErrormsg; */
+
+    private Button eSignButton;
 
     @Override
     protected int layoutResource() {
-        return R.layout.fragment_customer_form;
+        return R.layout.customerlayout;
     }
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        firstName = view.findViewById(R.id.first_name);
+
+        eSignButton = view.findViewById(R.id.e_sign);
+      /*  firstName = view.findViewById(R.id.first_name);
         lastName = view.findViewById(R.id.last_name);
         dob = view.findViewById(R.id.birth_date);
         cellNum = view.findViewById(R.id.cellno);
@@ -63,31 +70,24 @@ public class AccountOpenFragment extends BaseFragment implements View.OnClickLis
         lifeInsurance.setOnClickListener(this);
         view.findViewById(R.id.submit).setOnClickListener(this);
         view.findViewById(R.id.clear).setOnClickListener(this);
-        rootView = view;
+        rootView = view; */
+       eSignButton.setOnClickListener(this);
     }
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.submit: //when user signs and finishes the action this will help to save the bitmap.
-                if (validationSuccess()) {
-                    FormResponseFragment formResponseFragment = new FormResponseFragment();
-                    ((PersonalBankerActivity) getActivity()).getSupportFragmentManager().beginTransaction()
-                            .addToBackStack(FormResponseFragment.class.getSimpleName())
-                            .replace(R.id.activity_root, formResponseFragment).commit();
-                    break;
-                }
-            case R.id.clear: // when user clicks clear it will clear the pad to resign.
-                mSignaturePad.clear();
-                break;
-            default:
-                setFieldsToDefaultView(v);
+
+            SignatureDialogFragment signatureDialogFragment = new SignatureDialogFragment();
+              FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction()
+                        .addToBackStack(SignatureDialogFragment.class.getSimpleName());
+
+                   signatureDialogFragment.show(fragmentTransaction,"show");
         }
-    }
+
 
     // validation for mandatory fields
 
-    private Boolean validationSuccess() {
+  /*  private Boolean validationSuccess() {
         boolean validationSuccess = true;
         if (firstName.getText().toString().isEmpty()) {
             firstName.setBackgroundResource(R.drawable.border_error);
@@ -173,6 +173,6 @@ public class AccountOpenFragment extends BaseFragment implements View.OnClickLis
                 lifeinsuranceErrormsg.setVisibility(View.GONE);
                 break;
         }
-    }
+    } */
 
 }

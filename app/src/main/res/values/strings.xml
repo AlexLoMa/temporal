@@ -75,4 +75,17 @@
     <string name="life_insurance">Life Insurance*</string>
     <string name="disability_in">Disabiltity Insurance</string>
     <string name="critical_in">Critical Illiness Insurance</string>
+    <string name="suffix">Suffix</string>
+    <string name="name">Name</string>
+    <string name="mi">MI</string>
+    <string name="last_name">Last Name</string>
+    <string name="e_sign">e-signature</string>
+
+    <string-array name="gender_selection">
+        <item>Mr</item>
+        <item>Miss</item>
+        <item>Mrs</item>
+    </string-array>
+    <string name="title_activity_main2">Main2Activity</string>
+
 </resources>

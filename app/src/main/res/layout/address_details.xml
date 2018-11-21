@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/streetno"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintHorizontal_weight="0.25"
+        app:layout_constraintEnd_toStartOf="@+id/aptno"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textColor="@android:color/black"
+        android:text="Street Name and Number"/>
+
+    <EditText
+        android:id="@+id/streetnameno"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintHorizontal_weight="0.25"
+        app:layout_constraintEnd_toStartOf="@+id/aptnoEditText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/streetno"
+        android:background="@drawable/edtitext_background"/>
+
+    <TextView
+        android:id="@+id/aptno"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintHorizontal_weight="0.25"
+        app:layout_constraintEnd_toStartOf="@+id/citi"
+        app:layout_constraintStart_toEndOf="@+id/streetno"
+        android:text="Apt/Unit #"
+        android:textColor="@android:color/black"/>
+
+    <EditText
+        android:id="@+id/aptnoEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintHorizontal_weight="0.25"
+        app:layout_constraintEnd_toStartOf="@+id/citiEditText"
+        app:layout_constraintStart_toEndOf="@+id/streetnameno"
+        app:layout_constraintTop_toBottomOf="@+id/aptno"
+        android:background="@drawable/edtitext_background" />
+
+    <TextView
+        android:id="@+id/citi"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintHorizontal_weight="0.25"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/aptno"
+        android:text="City"
+        android:textColor="@android:color/black"/>
+
+    <EditText
+        android:id="@+id/citiEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintHorizontal_weight="0.25"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/aptnoEditText"
+        app:layout_constraintTop_toBottomOf="@+id/citi"
+        android:background="@drawable/edtitext_background"/>
+    <TextView
+        android:id="@+id/ste"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintHorizontal_weight="0.25"
+        android:text="State"
+        android:textColor="@android:color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/streetnameno"
+        app:layout_constraintEnd_toStartOf="@id/zip" />
+    <EditText
+        android:id="@+id/steedittext"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintHorizontal_weight="0.25"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/zip"
+        app:layout_constraintTop_toBottomOf="@+id/ste"
+        android:background="@drawable/edtitext_background"/>
+
+    <TextView
+        android:id="@+id/zip"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintHorizontal_weight="0.25"
+        android:text="Zipcode"
+        android:textColor="@android:color/black"
+        app:layout_constraintEnd_toStartOf="@id/ammountpaid"
+        app:layout_constraintTop_toBottomOf="@+id/aptnoEditText"
+        app:layout_constraintStart_toEndOf="@id/ste" />
+    <EditText
+        android:id="@+id/zipedittext"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintHorizontal_weight="0.25"
+        app:layout_constraintStart_toEndOf="@id/steedittext"
+        app:layout_constraintEnd_toStartOf="@id/ammountpaid"
+        app:layout_constraintTop_toBottomOf="@+id/ste"
+        android:background="@drawable/edtitext_background"/>
+    <TextView
+        android:id="@+id/ammountpaid"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintHorizontal_weight="0.25"
+        android:text="AmountPaid"
+        android:textColor="@android:color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/citiEditText"
+        app:layout_constraintStart_toEndOf="@id/zip" />
+    <EditText
+        android:id="@+id/ammountpaidedittext"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintHorizontal_weight="0.25"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/zipedittext"
+        app:layout_constraintTop_toBottomOf="@+id/ammountpaid"
+        android:background="@drawable/edtitext_background"/>
+
+</android.support.constraint.ConstraintLayout>

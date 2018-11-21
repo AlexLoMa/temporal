@@ -10,6 +10,6 @@
         android:color="@color/stroke_color" />
 
     <!-- Round Corners -->
-    <corners android:radius="@dimen/elevation" />
+    <corners android:radius="0dp" />
 
 </shape>

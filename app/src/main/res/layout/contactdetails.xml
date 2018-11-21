@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/home_num"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintHorizontal_weight="0.25"
+        app:layout_constraintEnd_toStartOf="@+id/mno"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textColor="@android:color/black"
+        android:text="Home Number"/>
+
+    <EditText
+        android:id="@+id/homenum"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintHorizontal_weight="0.25"
+        app:layout_constraintEnd_toStartOf="@+id/mnoEditText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/home_num"
+        android:background="@drawable/edtitext_background"/>
+
+    <TextView
+        android:id="@+id/mno"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintHorizontal_weight="0.25"
+        app:layout_constraintEnd_toStartOf="@+id/wno"
+        app:layout_constraintStart_toEndOf="@+id/home_num"
+        android:text="MobileNumber"
+        android:textColor="@android:color/black"/>
+
+    <EditText
+        android:id="@+id/mnoEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintHorizontal_weight="0.25"
+        app:layout_constraintEnd_toStartOf="@+id/wnoEditText"
+        app:layout_constraintStart_toEndOf="@+id/homenum"
+        app:layout_constraintTop_toBottomOf="@+id/mno"
+        android:background="@drawable/edtitext_background" />
+
+    <TextView
+        android:id="@+id/wno"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintHorizontal_weight="0.25"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/mno"
+        android:text="WorkNumber"
+        android:textColor="@android:color/black"/>
+
+    <EditText
+        android:id="@+id/wnoEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintHorizontal_weight="0.25"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/mnoEditText"
+        app:layout_constraintTop_toBottomOf="@+id/wno"
+        android:background="@drawable/edtitext_background"/>
+    <TextView
+        android:id="@+id/mailadd"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginRight="8dp"
+        android:text="Email Address"
+        android:textColor="@android:color/black"
+        app:layout_constraintHorizontal_weight="0.25"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/home_num"
+        app:layout_constraintEnd_toStartOf="@id/mno" />
+    <EditText
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mailadd"
+        android:background="@drawable/edtitext_background"/>
+
+</android.support.constraint.ConstraintLayout>

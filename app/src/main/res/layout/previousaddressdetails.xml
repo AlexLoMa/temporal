@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/prestreetno"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintHorizontal_weight="0.25"
+        app:layout_constraintEnd_toStartOf="@+id/preaptno"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textColor="@android:color/black"
+        android:text="Street Name and Number"/>
+
+    <EditText
+        android:id="@+id/prestreetnameno"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintHorizontal_weight="0.25"
+        app:layout_constraintEnd_toStartOf="@+id/preaptnoEditText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/prestreetno"
+        android:background="@drawable/edtitext_background"/>
+
+    <TextView
+        android:id="@+id/preaptno"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintHorizontal_weight="0.25"
+        app:layout_constraintEnd_toStartOf="@+id/preciti"
+        app:layout_constraintStart_toEndOf="@+id/prestreetno"
+        android:text="Apt/Unit #"
+        android:textColor="@android:color/black"/>
+
+    <EditText
+        android:id="@+id/preaptnoEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintHorizontal_weight="0.25"
+        app:layout_constraintEnd_toStartOf="@+id/precitiEditText"
+        app:layout_constraintStart_toEndOf="@+id/prestreetnameno"
+        app:layout_constraintTop_toBottomOf="@+id/preaptno"
+        android:background="@drawable/edtitext_background" />
+
+    <TextView
+        android:id="@+id/preciti"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintHorizontal_weight="0.25"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/preaptno"
+        android:text="City"
+        android:textColor="@android:color/black"/>
+
+    <EditText
+        android:id="@+id/precitiEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintHorizontal_weight="0.25"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/preaptnoEditText"
+        app:layout_constraintTop_toBottomOf="@+id/preciti"
+        android:background="@drawable/edtitext_background"/>
+    <TextView
+        android:id="@+id/preste"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintHorizontal_weight="0.25"
+        android:text="State"
+        android:textColor="@android:color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/prestreetnameno"
+        app:layout_constraintEnd_toStartOf="@id/prezip" />
+    <EditText
+        android:id="@+id/presteedittext"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintHorizontal_weight="0.25"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/prezip"
+        app:layout_constraintTop_toBottomOf="@+id/preste"
+        android:background="@drawable/edtitext_background"/>
+
+    <TextView
+        android:id="@+id/prezip"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintHorizontal_weight="0.25"
+        android:text="Zipcode"
+        android:textColor="@android:color/black"
+        app:layout_constraintEnd_toStartOf="@id/preammountpaid"
+        app:layout_constraintTop_toBottomOf="@+id/preaptnoEditText"
+        app:layout_constraintStart_toEndOf="@id/preste" />
+    <EditText
+        android:id="@+id/prezipedittext"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintHorizontal_weight="0.25"
+        app:layout_constraintStart_toEndOf="@id/presteedittext"
+        app:layout_constraintEnd_toStartOf="@id/preammountpaid"
+        app:layout_constraintTop_toBottomOf="@+id/preste"
+        android:background="@drawable/edtitext_background"/>
+    <TextView
+        android:id="@+id/preammountpaid"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintHorizontal_weight="0.25"
+        android:text="AmountPaid"
+        android:textColor="@android:color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/precitiEditText"
+        app:layout_constraintStart_toEndOf="@id/prezip" />
+    <EditText
+        android:id="@+id/preammountpaidedittext"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintHorizontal_weight="0.25"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/prezipedittext"
+        app:layout_constraintTop_toBottomOf="@+id/preammountpaid"
+        android:background="@drawable/edtitext_background"/>
+
+</android.support.constraint.ConstraintLayout>

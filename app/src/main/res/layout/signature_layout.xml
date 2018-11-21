@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.github.gcacace.signaturepad.views.SignaturePad
+        android:background="@android:color/white"
+        android:id="@+id/signature_pad"
+        android:layout_width="match_parent"
+        app:penColor="@android:color/black"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_height="300dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/signature_pad"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:weightSum="2"
+        android:layout_marginBottom="30dp"
+        android:layout_gravity="bottom" >
+        <Button
+            android:id="@+id/clearButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="#b2b2b2"
+            android:text="clear"
+            android:layout_weight="1"
+
+            android:textColor="@android:color/white" />
+        <Button
+            android:id="@+id/submitButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="#00c2f6"
+            android:layout_weight="1"
+            android:textColor="@android:color/white"
+            android:text="done"/>
+
+    </LinearLayout>
+</android.support.constraint.ConstraintLayout>

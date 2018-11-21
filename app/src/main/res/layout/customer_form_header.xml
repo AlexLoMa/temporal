@@ -12,7 +12,7 @@
         android:layout_marginTop="@dimen/form_header_margintop"
         android:text="@string/mortgage_application"
         android:textAllCaps="true"
-        android:textColor="@color/form_text_color"
+        android:textColor="@android:color/black"
         android:textSize="@dimen/form_header_text" />
 
     <TextView
@@ -31,7 +31,6 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="@dimen/form_headeradd_margin"
         android:text="@string/bank_address"
-        android:textAllCaps="true"
         android:textSize="@dimen/form_headeradd_text" />
 
     <TextView
@@ -41,12 +40,5 @@
         android:layout_marginTop="@dimen/form_headeradd_margin"
         android:text="@string/bank_phone"
         android:textSize="@dimen/form_headeradd_text" />
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/divider_height"
-        android:layout_marginTop="@dimen/form_header_margintop"
-        android:background="@android:color/darker_gray" />
-
 
 </merge>
