@@ -17,6 +17,7 @@ import com.sam.samproject.R;
 public class SignatureDialogFragment extends DialogFragment implements View.OnClickListener {
 
     private Button clearButton;
+    private Button doneButton;
     private SignaturePad mSignaturePad;
     @Nullable
     @Override
@@ -24,8 +25,10 @@ public class SignatureDialogFragment extends DialogFragment implements View.OnCl
 
         View view = inflater.inflate(R.layout.signature_layout,container,false);
         clearButton = view.findViewById(R.id.clear_button);
+        doneButton = view.findViewById(R.id.done_button);
         mSignaturePad = view.findViewById(R.id.signature_pad);
         clearButton.setOnClickListener(this);
+        doneButton.setOnClickListener(this);
         return view;
 
     }
@@ -42,7 +45,13 @@ public class SignatureDialogFragment extends DialogFragment implements View.OnCl
 
     @Override
     public void onClick(View view) {
-
-        mSignaturePad.clear();
+        switch (view.getId()) {
+            case R.id.clear_button:
+            mSignaturePad.clear();
+            break;
+            case R.id.done_button:
+                getDialog().dismiss();
+                break;
+        }
     }
 }

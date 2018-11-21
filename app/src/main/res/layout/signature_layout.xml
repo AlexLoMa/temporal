@@ -34,10 +34,10 @@
 
             android:textColor="@android:color/white" />
         <Button
-            android:id="@+id/submit_button"
+            android:id="@+id/done_button"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:background="#00c2f6"
+            android:background="#009640"
             android:layout_marginEnd="2dp"
             android:layout_weight="1"
             android:textColor="@android:color/white"

@@ -2,210 +2,230 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="200dp">
+    android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/suffix"
-        android:layout_width="0dp"
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/nameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/suffix"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:text="@string/suffix"
+            android:textColor="@android:color/black"
+            app:layout_constraintEnd_toStartOf="@+id/name"
+            app:layout_constraintHorizontal_weight="0.25"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Spinner
+            android:id="@+id/spinner"
+            style="@style/spinner_style"
+            android:layout_width="0dp"
+            android:layout_height="24dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/nameEditText"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintHorizontal_weight="0.25"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/suffix" />
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:text="@string/name"
+            android:textColor="@android:color/black"
+            app:layout_constraintEnd_toStartOf="@+id/mi"
+            app:layout_constraintHorizontal_weight="0.5"
+            app:layout_constraintStart_toEndOf="@+id/suffix" />
+
+        <EditText
+            android:id="@+id/nameEditText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/edtitext_background"
+            app:layout_constraintEnd_toStartOf="@+id/miEditText"
+            app:layout_constraintHorizontal_weight="0.5"
+            app:layout_constraintStart_toEndOf="@+id/spinner"
+            app:layout_constraintTop_toBottomOf="@+id/name" />
+
+        <TextView
+            android:id="@+id/mi"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:text="@string/mi"
+            android:textColor="@android:color/black"
+            app:layout_constraintEnd_toStartOf="@+id/lastName"
+            app:layout_constraintHorizontal_weight="0.25"
+            app:layout_constraintStart_toEndOf="@+id/name" />
+
+        <EditText
+            android:id="@+id/miEditText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/edtitext_background"
+            app:layout_constraintEnd_toStartOf="@+id/lastNameEditText"
+            app:layout_constraintHorizontal_weight="0.25"
+            app:layout_constraintStart_toEndOf="@+id/nameEditText"
+            app:layout_constraintTop_toBottomOf="@+id/mi" />
+
+        <TextView
+            android:id="@+id/lastName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:text="@string/last_name"
+            android:textColor="@android:color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="0.5"
+            app:layout_constraintStart_toEndOf="@+id/mi" />
+
+        <EditText
+            android:id="@+id/lastNameEditText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/edtitext_background"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="0.5"
+            app:layout_constraintStart_toEndOf="@+id/miEditText"
+            app:layout_constraintTop_toBottomOf="@+id/lastName" />
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/dobLayout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:text="@string/suffix"
-        android:textColor="@android:color/black"
-        app:layout_constraintEnd_toStartOf="@+id/name"
-        app:layout_constraintHorizontal_weight="0.25"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:layout_marginTop="10dp"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintTop_toBottomOf="@id/nameLayout">
 
-    <Spinner
-        android:id="@+id/spinner"
-        style="@style/spinner_style"
-        android:layout_width="0dp"
-        android:layout_height="24dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintEnd_toStartOf="@id/nameEditText"
-        app:layout_constraintHorizontal_chainStyle="packed"
-        app:layout_constraintHorizontal_weight="0.25"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/suffix" />
+        <TextView
+            android:id="@+id/birthDate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
+            android:text="@string/birthdate"
+            android:textColor="@android:color/black"
+            app:layout_constraintEnd_toStartOf="@id/ssn"
+            app:layout_constraintHorizontal_weight="0.5"
+            app:layout_constraintStart_toStartOf="parent" />
 
-    <TextView
-        android:id="@+id/name"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:text="@string/name"
-        android:textColor="@android:color/black"
-        app:layout_constraintEnd_toStartOf="@+id/mi"
-        app:layout_constraintHorizontal_weight="0.5"
-        app:layout_constraintStart_toEndOf="@+id/suffix" />
+        <Spinner
+            android:id="@+id/monthSpinner"
+            style="@style/spinner_style"
+            android:layout_width="0dp"
+            android:layout_height="24dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/dateEditText"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintHorizontal_weight="0.20"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/birthDate" />
 
-    <EditText
-        android:id="@+id/nameEditText"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/edtitext_background"
-        app:layout_constraintEnd_toStartOf="@+id/miEditText"
-        app:layout_constraintHorizontal_weight="0.5"
-        app:layout_constraintStart_toEndOf="@+id/spinner"
-        app:layout_constraintTop_toBottomOf="@+id/name" />
+        <EditText
+            android:id="@+id/dateEditText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="8dp"
+            android:hint="Date"
+            android:gravity="center"
+            android:background="@drawable/edtitext_background"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/yearEditText"
+            app:layout_constraintHorizontal_weight="0.15"
+            app:layout_constraintStart_toEndOf="@+id/monthSpinner" />
 
-    <TextView
-        android:id="@+id/mi"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:text="@string/mi"
-        android:textColor="@android:color/black"
-        app:layout_constraintEnd_toStartOf="@+id/lastName"
-        app:layout_constraintHorizontal_weight="0.25"
-        app:layout_constraintStart_toEndOf="@+id/name" />
+        <EditText
+            android:id="@+id/yearEditText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="8dp"
+            android:hint="Year"
+            android:gravity="center"
+            android:background="@drawable/edtitext_background"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/ssnEditText"
+            app:layout_constraintHorizontal_weight="0.15"
+            app:layout_constraintStart_toEndOf="@+id/dateEditText" />
 
-    <EditText
-        android:id="@+id/miEditText"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/edtitext_background"
-        app:layout_constraintEnd_toStartOf="@+id/lastNameEditText"
-        app:layout_constraintHorizontal_weight="0.25"
-        app:layout_constraintStart_toEndOf="@+id/nameEditText"
-        app:layout_constraintTop_toBottomOf="@+id/mi" />
+        <TextView
+            android:id="@+id/ssn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:text="@string/ssn"
+            android:textColor="@android:color/black"
+            app:layout_constraintEnd_toStartOf="@+id/maritalStatus"
+            app:layout_constraintHorizontal_weight="0.3"
+            app:layout_constraintStart_toEndOf="@id/birthDate" />
 
-    <TextView
-        android:id="@+id/lastName"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:text="@string/last_name"
-        android:textColor="@android:color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_weight="0.5"
-        app:layout_constraintStart_toEndOf="@+id/mi" />
+        <EditText
+            android:id="@+id/ssnEditText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/edtitext_background"
+            app:layout_constraintEnd_toEndOf="@+id/ssn"
+            app:layout_constraintHorizontal_weight="0.3"
+            app:layout_constraintStart_toEndOf="@+id/birthDate"
+            app:layout_constraintTop_toBottomOf="@+id/ssn" />
 
-    <EditText
-        android:id="@+id/lastNameEditText"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/edtitext_background"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_weight="0.5"
-        app:layout_constraintStart_toEndOf="@+id/miEditText"
-        app:layout_constraintTop_toBottomOf="@+id/lastName" />
+        <TextView
+            android:id="@+id/maritalStatus"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:text="@string/martialstatus"
+            android:textColor="@android:color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="0.3"
+            app:layout_constraintStart_toEndOf="@+id/ssn" />
 
-
-    <TextView
-        android:id="@+id/birthdate"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginTop="8dp"
-        android:text="@string/birthdate"
-        android:textColor="@android:color/black"
-        app:layout_constraintEnd_toStartOf="@+id/name"
-        app:layout_constraintHorizontal_weight="0.25"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spinner" />
-    <LinearLayout
-    android:id="@+id/birthdate_text"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    app:layout_constraintTop_toBottomOf="@id/birthdate"
-    app:layout_constraintStart_toStartOf="parent"
-    android:orientation="horizontal">
-    <Spinner
-        android:id="@+id/birthmonth_spinner"
-        style="@style/spinner_style"
-        android:layout_width="80dp"
-        android:layout_height="24dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintHorizontal_chainStyle="packed"
-        app:layout_constraintHorizontal_weight="0.25" />
-
-     <EditText
-         android:id="@+id/date_edittext"
-         android:layout_width="30dp"
-         android:layout_height="wrap_content"
-         android:layout_marginLeft="1dp"
-         android:layout_marginRight="1dp"
-         android:layout_marginTop="8dp"
-         android:background="@drawable/edtitext_background" />
-    <EditText
-        android:id="@+id/year_edittext"
-        android:layout_width="80dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="5dp"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/edtitext_background" />
-</LinearLayout>
-
-    <TextView
-        android:id="@+id/ssno"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="100dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginTop="8dp"
-        android:text="@string/ssn"
-        android:textColor="@android:color/black"
-        app:layout_constraintEnd_toStartOf="@+id/mi"
-        app:layout_constraintHorizontal_weight="0.25"
-        app:layout_constraintStart_toEndOf="@id/birthdate"
-        app:layout_constraintTop_toBottomOf="@+id/miEditText" />
-
-    <EditText
-        android:id="@+id/ssnoEditText"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/edtitext_background"
-        app:layout_constraintEnd_toStartOf="@+id/masEditText"
-        app:layout_constraintHorizontal_weight="0.25"
-        app:layout_constraintStart_toEndOf="@+id/birthdate_text"
-        app:layout_constraintTop_toBottomOf="@+id/ssno" />
-    <TextView
-        android:id="@+id/mas"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="150dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginTop="8dp"
-        android:text="Martial Status"
-        android:textColor="@android:color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_weight="0.25"
-        app:layout_constraintStart_toEndOf="@+id/ssno"
-        app:layout_constraintTop_toBottomOf="@+id/lastNameEditText" />
-
-   <EditText
-        android:id="@+id/masEditText"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/edtitext_background"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_weight="0.25"
-        app:layout_constraintStart_toEndOf="@+id/ssnoEditText"
-        app:layout_constraintTop_toBottomOf="@+id/mas" />
+        <Spinner
+            android:id="@+id/maritalStatusSpinner"
+            style="@style/spinner_style"
+            android:layout_width="0dp"
+            android:layout_height="24dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="0.32"
+            app:layout_constraintStart_toStartOf="@+id/maritalStatus"
+            app:layout_constraintTop_toBottomOf="@+id/maritalStatus" />
+    </android.support.constraint.ConstraintLayout>
 
 </android.support.constraint.ConstraintLayout>
