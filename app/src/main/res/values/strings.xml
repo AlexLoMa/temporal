@@ -13,6 +13,11 @@
         <item name="personal_adv">@string/personal_adv</item>
         <item name="branch_manager">@string/branch_manager</item>
     </array>
+    <array name="role_personal">
+        <item name="personal_adv">Personal Banker</item>
+        <item name="rel_manager">@string/rel_manager</item>
+        <item name="branch_manager">@string/branch_manager</item>
+    </array>
     <string name="calendar">Calendar</string>
     <string name="email">Email</string>
     <string name="staffing">Staffing</string>
