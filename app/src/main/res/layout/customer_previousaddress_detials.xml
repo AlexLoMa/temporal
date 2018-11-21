@@ -2,6 +2,7 @@
 <android.support.constraint.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
@@ -27,10 +28,12 @@
         app:layout_constraintStart_toEndOf="@+id/customer_previousadd_header"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <include layout="@layout/customer_currentaddress_details"
+    <include
+        layout="@layout/customer_currentaddress_details"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/mortg_form_margin"
-        app:layout_constraintTop_toBottomOf="@+id/customer_previousadd_header"/>
+        app:layout_constraintTop_toBottomOf="@+id/customer_previousadd_header"
+        tools:layout_editor_absoluteX="0dp" />
 
 </android.support.constraint.ConstraintLayout>
