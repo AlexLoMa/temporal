@@ -17,23 +17,23 @@ import com.sam.samproject.utils.Utils;
 
 public class PersonalBankerActivity extends BaseActivity implements View.OnClickListener {
 
-   private AccountOpenFragment accountOpenFragment = new AccountOpenFragment();
-   private CalendarFragment calendarFragment = new CalendarFragment();
-   private EmailFragment emailFragment = new EmailFragment();
-   private CrmFragment crmFragment = new CrmFragment();
-   private StocksFragment stocksFragment = new StocksFragment();
+    private AccountOpenFragment accountOpenFragment = new AccountOpenFragment();
+    private CalendarFragment calendarFragment = new CalendarFragment();
+    private EmailFragment emailFragment = new EmailFragment();
+    private CrmFragment crmFragment = new CrmFragment();
+    private StocksFragment stocksFragment = new StocksFragment();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         //set to get the title on the toolbar when personalbanker opens up
         setTitle(Utils.getUserName() +" " + getString(R.string.dashboard));
-        setContentView(R.layout.activity_personal_banker);
-        findViewById(R.id.pb_calendar).setOnClickListener(this);
-        findViewById(R.id.pb_email).setOnClickListener(this);
-        findViewById(R.id.account_open).setOnClickListener(this);
+        setContentView(R.layout.activity_personal_banker_1);
+        findViewById(R.id.calender).setOnClickListener(this);
+        findViewById(R.id.email).setOnClickListener(this);
+        findViewById(R.id.mortage_app).setOnClickListener(this);
         findViewById(R.id.crm).setOnClickListener(this);
-        findViewById(R.id.pb_stocks).setOnClickListener(this);
+        findViewById(R.id.stock).setOnClickListener(this);
     }
 
     // onclick listener to open up the different tiles on personal banker
@@ -41,12 +41,12 @@ public class PersonalBankerActivity extends BaseActivity implements View.OnClick
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
-            case R.id.pb_calendar:
+            case R.id.calender:
                 if (!calendarFragment.isVisible()) {
                     showFragment(calendarFragment, true, null);
                 }
                 break;
-            case R.id.pb_email:
+            case R.id.email:
                 if (!emailFragment.isVisible()) {
                     showFragment(emailFragment, true, null);
                 }
@@ -56,12 +56,12 @@ public class PersonalBankerActivity extends BaseActivity implements View.OnClick
                     showFragment(crmFragment, true, null);
                 }
                 break;
-            case R.id.account_open:
+            case R.id.mortage_app:
                 if (!accountOpenFragment.isVisible()) {
                     showFragment(accountOpenFragment, true, null);
                 }
                 break;
-            case R.id.pb_stocks:
+            case R.id.stock:
                 if(!stocksFragment.isVisible()) {
                     showFragment(stocksFragment, true, null);
                 }
@@ -83,7 +83,5 @@ public class PersonalBankerActivity extends BaseActivity implements View.OnClick
         }
         fragmentTransaction.commit();
     }
-
-
 
 }
