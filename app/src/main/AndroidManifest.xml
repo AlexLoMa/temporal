@@ -20,6 +20,7 @@
         <activity android:name=".branchmanager.BranchManagerActivity"/>
         <activity android:name=".personalbanker.PersonalBankerActivity"/>
         <activity android:name=".relationmanager.RelationshipManagerActivity"></activity>
+        <activity android:name=".personalbanker.SignatureActivity"></activity>
     </application>
 
 </manifest>

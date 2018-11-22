@@ -11,6 +11,7 @@ import com.sam.samproject.login.LoginActivity;
 import com.sam.samproject.login.LoginActivityModule;
 import com.sam.samproject.personalbanker.PersonalBankerActivity;
 import com.sam.samproject.personalbanker.PersonalBankerActivityModule;
+import com.sam.samproject.personalbanker.SignatureActivity;
 import com.sam.samproject.relationmanager.RelationshipManagerActivity;
 import com.sam.samproject.relationmanager.RelationshipManagerModule;
 
@@ -31,4 +32,7 @@ public abstract class ActivityModule {
 
     @ContributesAndroidInjector(modules = RelationshipManagerModule.class)
     abstract RelationshipManagerActivity bindRelationshipManagerActivity();
+
+    @ContributesAndroidInjector
+    abstract SignatureActivity bindSignatureActivity();
 }

@@ -1,5 +1,6 @@
 package com.sam.samproject.personalbanker.fragments;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -14,8 +15,10 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import com.github.gcacace.signaturepad.views.SignaturePad;
 import com.sam.samproject.R;
+import com.sam.samproject.base.BaseActivity;
 import com.sam.samproject.base.BaseFragment;
 import com.sam.samproject.personalbanker.PersonalBankerActivity;
+import com.sam.samproject.personalbanker.SignatureActivity;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -42,17 +45,41 @@ public class AccountOpenFragment extends BaseFragment implements View.OnClickLis
         addMonthSpinnerItems();
         eSignButton.setOnClickListener(this);
         submitButton.setOnClickListener(this);
+
     }
+
+
+
+    /*
+     * If it is dual mode
+     */
+
+            //eSignButton.setVisibility(View.GONE);
 
     @Override
     public void onClick(View v) {
         switch(v.getId()) {
             case R.id.e_sign:
-                SignatureDialogFragment signatureDialogFragment = new SignatureDialogFragment();
-                FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction()
-                        .addToBackStack(SignatureDialogFragment.class.getSimpleName());
 
-                signatureDialogFragment.show(fragmentTransaction, "signature");
+                /*
+                    If the application is in dex mode and in dual mode, the signature area is shown in a separated
+                    activity to let it be used in the tablet; otherwise, a dialog is shown for the
+                    signature.
+                 */
+                if( ((BaseActivity) getActivity()).ismIsDexMode() && ((BaseActivity) getActivity()).ismIsDexDualMode() ){
+
+                    Intent intent = new Intent(v.getContext(), SignatureActivity.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                    v.getContext().startActivity(intent);
+
+                } else {
+
+                    SignatureDialogFragment signatureDialogFragment = new SignatureDialogFragment();
+                    FragmentTransaction fragmentTransaction = getActivity().getSupportFragmentManager().beginTransaction()
+                            .addToBackStack(SignatureDialogFragment.class.getSimpleName());
+
+                    signatureDialogFragment.show(fragmentTransaction, "signature");
+                }
                 break;
 
             case R.id.submit_button:

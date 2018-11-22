@@ -27,6 +27,16 @@
         <item name="android:background">@drawable/spinner_background</item>
         <item name="android:popupBackground">#DFFFFFFF</item>
        </style>
+    
+    <style name="done_button">
+        <item name="android:background">#009640</item>
+        <item name="android:textColor">#ffffffff</item>
+    </style>
+
+    <style name="clear_button">
+        <item name="android:background">#b2b2b2</item>
+        <item name="android:textColor">#ffffffff</item>
+    </style>
 
 </resources>
 

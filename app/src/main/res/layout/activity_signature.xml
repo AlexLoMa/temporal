@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.github.gcacace.signaturepad.views.SignaturePad
+        android:id="@+id/sign_pad"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="8dp"
+        android:background="@android:color/white"
+        app:layout_constraintBottom_toTopOf="@id/b_clear"
+        app:layout_constraintTop_toTopOf="parent"
+        app:penColor="@android:color/black"
+        tools:layout_editor_absoluteX="16dp" />
+
+    <Button
+        android:id="@+id/b_clear"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="clear"
+        style="@style/clear_button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/b_done" />
+
+    <Button
+        android:id="@+id/b_done"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="done"
+        style="@style/done_button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/b_clear"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</android.support.constraint.ConstraintLayout>
