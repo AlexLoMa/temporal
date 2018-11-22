@@ -28,6 +28,7 @@ public class AccountOpenFragment extends BaseFragment implements View.OnClickLis
 
     private Button eSignButton;
     private Button submitButton;
+    private Button cancelButton;
     private Spinner monthspinner;
 
     @Override
@@ -41,14 +42,14 @@ public class AccountOpenFragment extends BaseFragment implements View.OnClickLis
 
         eSignButton = view.findViewById(R.id.e_sign);
         submitButton = view.findViewById(R.id.submit_button);
+        cancelButton = view.findViewById(R.id.cancel_button);
         monthspinner = view.findViewById(R.id.monthSpinner);
         addMonthSpinnerItems();
         eSignButton.setOnClickListener(this);
         submitButton.setOnClickListener(this);
+        cancelButton.setOnClickListener(this);
 
     }
-
-
 
     /*
      * If it is dual mode
@@ -87,6 +88,13 @@ public class AccountOpenFragment extends BaseFragment implements View.OnClickLis
                 FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction()
                         .addToBackStack(SuccessDialogFragment.class.getSimpleName());
                 successDialogFragment.show(ft,"success");
+                break;
+
+            case R.id.cancel_button:
+                CautionDialogFragment cautionDialogFragment = new CautionDialogFragment();
+                FragmentTransaction fragmentTran = getActivity().getSupportFragmentManager().beginTransaction()
+                        .addToBackStack(SuccessDialogFragment.class.getSimpleName());
+                cautionDialogFragment.show(fragmentTran,"caution");
                 break;
         }
     }
