@@ -1,20 +1,18 @@
 package com.sam.samproject.personalbanker.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.DialogFragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.Button;
-import android.widget.FrameLayout;
-
 import com.sam.samproject.R;
+import com.sam.samproject.personalbanker.PersonalBankerActivity;
 
 public class CautionDialogFragment extends DialogFragment implements View.OnClickListener {
 
@@ -48,6 +46,10 @@ public class CautionDialogFragment extends DialogFragment implements View.OnClic
             case R.id.no_button:
                 getDialog().dismiss();
                 break;
+            case R.id.yes_button:
+                Intent intent = new Intent(getContext(), PersonalBankerActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                startActivity(intent);
 
         }
     }

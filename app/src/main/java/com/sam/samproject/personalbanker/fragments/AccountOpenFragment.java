@@ -4,25 +4,23 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
-import com.github.gcacace.signaturepad.views.SignaturePad;
 import com.sam.samproject.R;
 import com.sam.samproject.base.BaseActivity;
 import com.sam.samproject.base.BaseFragment;
-import com.sam.samproject.personalbanker.PersonalBankerActivity;
 import com.sam.samproject.personalbanker.SignatureActivity;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class AccountOpenFragment extends BaseFragment implements View.OnClickListener {
 
@@ -84,10 +82,17 @@ public class AccountOpenFragment extends BaseFragment implements View.OnClickLis
                 break;
 
             case R.id.submit_button:
-                SuccessDialogFragment successDialogFragment = new SuccessDialogFragment();
+                final SuccessDialogFragment successDialogFragment = new SuccessDialogFragment();
                 FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction()
                         .addToBackStack(SuccessDialogFragment.class.getSimpleName());
                 successDialogFragment.show(ft,"success");
+                final Timer t = new Timer();
+                t.schedule(new TimerTask() {
+                    public void run() {
+                        successDialogFragment.dismiss();
+                        t.cancel();
+                    }
+                }, 5000);
                 break;
 
             case R.id.cancel_button:
