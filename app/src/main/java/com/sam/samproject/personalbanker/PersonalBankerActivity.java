@@ -7,11 +7,16 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.AppCompatSpinner;
+import android.support.v7.widget.PopupMenu;
+import android.view.Gravity;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.PopupWindow;
+import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -35,6 +40,7 @@ public class PersonalBankerActivity extends BaseActivity implements View.OnClick
     private StocksFragment stocksFragment = new StocksFragment();
     private ImageView btnBack;
     private FrameLayout frameLayout;
+    private ImageView dot;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +49,7 @@ public class PersonalBankerActivity extends BaseActivity implements View.OnClick
         setTitle(Utils.getUserName() +" " + getString(R.string.dashboard));
         setContentView(R.layout.activity_personal_banker_1);
         findViewById(R.id.calender).setOnClickListener(this);
+
         btnBack = findViewById(R.id.btnBack);
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -63,6 +70,14 @@ public class PersonalBankerActivity extends BaseActivity implements View.OnClick
         spinner.setAdapter(arrayAdapter);
         arrayAdapter.notifyDataSetChanged();
 
+        dot = findViewById(R.id.dot);
+        dot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onPopupButtonClick(dot);
+            }
+        });
+        popupWindow = new PopupWindow(getLayoutInflater().inflate(R.layout.profile_view,null,false), 400, RelativeLayout.LayoutParams.WRAP_CONTENT);
     }
 
     // onclick listener to open up the different tiles on personal banker
@@ -123,6 +138,18 @@ public class PersonalBankerActivity extends BaseActivity implements View.OnClick
             fragment.setArguments(bundle);
         }
         fragmentTransaction.commit();
+    }
+    PopupWindow popupWindow;
+    public void onPopupButtonClick(View button) {
+
+        //popupWindow.showAtLocation(dot, Gravity.CENTER,0,0);
+        if(popupWindow.isShowing()){
+            popupWindow.dismiss();
+        }else{
+            popupWindow.setAttachedInDecor(true);
+            popupWindow.showAsDropDown(dot);
+        }
+
     }
 
 

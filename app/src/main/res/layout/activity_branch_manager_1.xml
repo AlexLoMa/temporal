@@ -1,0 +1,440 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/dark_grey_background_color"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <android.support.v7.widget.Toolbar
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@color/header"
+        android:theme="@style/ThemeOverlay.AppCompat.Light"
+        ><!-- logo for the Toolbar-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <ImageView
+                android:src="@drawable/ic_back_header"
+                android:visibility="gone"
+                android:layout_alignParentLeft="true"
+                android:id="@+id/btnBack"
+                android:scaleType="center"
+                android:layout_width="32dp"
+                android:layout_height="match_parent" />
+
+            <TextView
+                android:layout_toRightOf="@+id/btnBack"
+                android:text="IMOBILE FIRST BRANCH"
+                android:textSize="@dimen/text_size_medium"
+                android:textStyle="bold"
+                android:textColor="@color/text_white_color"
+                android:paddingLeft="8dp"
+                android:gravity="center_vertical|left"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+
+            <RelativeLayout
+                android:layout_toLeftOf="@+id/dot"
+                android:background="@drawable/border_transparant_back"
+                android:layout_centerVertical="true"
+                android:id="@+id/spContainer"
+                android:layout_width="220dp"
+                android:layout_height="36dp"
+                android:gravity="center"
+                >
+
+                <android.support.v7.widget.AppCompatSpinner
+                    android:layout_alignParentLeft="true"
+                    android:id="@+id/spRole"
+                    android:layout_width="190dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_margin="@dimen/common_margin"
+                    android:background="@null"
+                    />
+
+                <ImageView
+                    android:layout_toRightOf="@+id/spRole"
+                    android:id="@+id/drop"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/ic_drop_down_white" />
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/dot"
+                android:layout_alignParentRight="true"
+                android:src="@drawable/ic_dot"
+                android:scaleType="center"
+                android:layout_width="24dp"
+                android:layout_height="match_parent" />
+
+        </RelativeLayout>
+    </android.support.v7.widget.Toolbar>
+
+    <FrameLayout
+        android:elevation="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        android:id="@+id/activity_root"
+        android:layout_width="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+    <android.support.v7.widget.CardView
+        app:layout_constraintBottom_toTopOf="@+id/calender"
+        android:id="@+id/mortage_app"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/personal_tiles_common_mar"
+        app:layout_constraintEnd_toStartOf="@id/crm"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/txt_mortage_app"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/personal_header_footer"
+                android:background="@color/header"
+                android:gravity="center"
+                android:text="@string/staffing"
+                android:textColor="@color/text_white_color"
+                android:textSize="@dimen/personal_header_footer_text_size"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <RelativeLayout
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:id="@+id/img_mortage_app"
+                android:layout_width="0dp"
+                android:layout_height="120dp"
+                android:background="@drawable/white_background"
+                app:layout_constraintTop_toBottomOf="@+id/txt_mortage_app" >
+                <ImageView
+                    android:layout_centerInParent="true"
+                    android:scaleType="center"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp" />
+
+            </RelativeLayout>
+
+
+
+            <LinearLayout
+                android:visibility="gone"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/personal_header_footer"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/img_mortage_app">
+
+                <TextView
+                    android:id="@+id/txt_start_new"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/grey_button"
+                    android:gravity="center"
+                    android:text="Start "
+                    android:textColor="@color/text_white_color"
+                    android:textSize="@dimen/personal_header_footer_text_size" />
+
+                <TextView
+                    android:id="@+id/txt_history"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/grey_button"
+                    android:gravity="center"
+                    android:text="History"
+                    android:textColor="@color/text_white_color"
+                    android:textSize="@dimen/personal_header_footer_text_size" />
+
+            </LinearLayout>
+
+
+        </android.support.constraint.ConstraintLayout>
+    </android.support.v7.widget.CardView>
+
+
+    <android.support.v7.widget.CardView
+        app:layout_constraintBottom_toTopOf="@+id/email"
+        android:layout_marginLeft="@dimen/personal_tiles_common_mar"
+        android:layout_marginBottom="@dimen/personal_tiles_common_mar"
+        android:layout_marginTop="@dimen/personal_tiles_common_mar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/mortage_app"
+        app:layout_constraintEnd_toEndOf="@id/mortage_app"
+        android:id="@+id/calender"
+        android:layout_width="0dp"
+        android:layout_height="0dp">
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+
+                android:id="@+id/txt_calender_"
+                android:layout_width="0dp"
+                android:layout_height="38dp"
+                android:background="@color/header"
+                android:gravity="center"
+                android:text="CALENDAR"
+                android:textColor="@color/text_white_color"
+                android:textSize="@dimen/personal_header_footer_text_size"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <ImageView
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toTopOf="@+id/llButton"
+                android:id="@+id/img_calendar"
+                app:layout_constraintTop_toBottomOf="@+id/txt_calender_"
+                android:background="@drawable/calendar_s"
+                android:layout_width="0dp"
+                android:layout_height="0dp" />
+
+
+            <LinearLayout
+                android:id="@+id/llButton"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:orientation="horizontal"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/personal_header_footer">
+                <TextView
+                    android:layout_weight="1"
+                    android:text="Today"
+                    android:background="@color/dark_sky_button"
+                    android:textColor="@color/text_white_color"
+                    android:textSize="@dimen/personal_header_footer_text_size"
+                    android:gravity="center"
+                    android:id="@+id/txt_all_calendar"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent" />
+
+                <TextView
+                    android:layout_weight="1"
+                    android:text="Weekly"
+                    android:background="@color/grey_button"
+                    android:textColor="@color/text_white_color"
+                    android:textSize="@dimen/personal_header_footer_text_size"
+                    android:gravity="center"
+                    android:id="@+id/txt_unread_calendar"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent" />
+
+            </LinearLayout>
+
+
+        </android.support.constraint.ConstraintLayout>
+    </android.support.v7.widget.CardView>
+
+
+
+    <android.support.v7.widget.CardView
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="@dimen/personal_tiles_common_mar"
+        app:layout_constraintBottom_toTopOf="@+id/stock"
+        app:layout_constraintStart_toEndOf="@id/mortage_app"
+        android:id="@+id/crm"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content">
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/txt_crm"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/personal_header_footer"
+                android:background="@color/header"
+                android:gravity="center"
+                android:text="@string/performance"
+                android:textColor="@color/text_white_color"
+                android:textSize="@dimen/personal_header_footer_text_size"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <ImageView
+                android:id="@+id/img_crm"
+                android:layout_width="match_parent"
+                android:layout_height="320dp"
+                android:background="@drawable/white_background"
+                app:layout_constraintBottom_toTopOf="@+id/txt_more"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_crm" />
+            <TextView
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:text="More"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:background="@color/dark_sky_button"
+                android:textColor="@color/text_white_color"
+                android:textSize="@dimen/personal_header_footer_text_size"
+                android:layout_height="@dimen/personal_header_footer"
+                android:gravity="center"
+                android:id="@+id/txt_more"
+                android:layout_width="0dp"
+                />
+        </android.support.constraint.ConstraintLayout>
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:layout_marginBottom="@dimen/personal_tiles_common_mar"
+        android:layout_marginLeft="@dimen/personal_tiles_common_mar"
+        app:layout_constraintEnd_toEndOf="@id/calender"
+        app:layout_constraintTop_toBottomOf="@+id/calender"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:id="@+id/email"
+        android:layout_width="0dp"
+        android:layout_height="0dp">
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/txt_email"
+                android:layout_width="0dp"
+                android:layout_height="39dp"
+                android:background="@color/header"
+                android:gravity="center"
+                android:text="@string/email"
+                android:textColor="@color/text_white_color"
+                android:textSize="@dimen/personal_header_footer_text_size"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <ImageView
+
+                app:layout_constraintBottom_toTopOf="@+id/ll_email_btn"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:id="@+id/img_email"
+                app:layout_constraintTop_toBottomOf="@+id/txt_email"
+                android:background="@drawable/email_s"
+                android:layout_width="0dp"
+                android:layout_height="0dp" />
+
+
+            <LinearLayout
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:id="@+id/ll_email_btn"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:orientation="horizontal"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/personal_header_footer">
+                <TextView
+                    android:layout_weight="1"
+                    android:text="All"
+                    android:background="@color/dark_sky_button"
+                    android:textColor="@color/text_white_color"
+                    android:textSize="@dimen/personal_header_footer_text_size"
+                    android:gravity="center"
+                    android:id="@+id/txt_all"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent" />
+
+                <TextView
+                    android:layout_weight="1"
+                    android:text="Unread"
+                    android:background="@color/grey_button"
+                    android:textColor="@color/text_white_color"
+                    android:textSize="@dimen/personal_header_footer_text_size"
+                    android:gravity="center"
+                    android:id="@+id/txt_unread"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent" />
+
+            </LinearLayout>
+
+
+        </android.support.constraint.ConstraintLayout>
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        app:layout_constraintTop_toBottomOf="@+id/crm"
+        android:layout_marginBottom="@dimen/personal_tiles_common_mar"
+        android:layout_marginTop="@dimen/personal_tiles_common_mar"
+        app:layout_constraintStart_toStartOf="@id/crm"
+        app:layout_constraintEnd_toEndOf="@id/crm"
+        android:id="@+id/stock"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content">
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/txt_stock"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/personal_header_footer"
+                android:background="@color/header"
+                android:gravity="center"
+                android:text="@string/companystocks"
+                android:textColor="@color/text_white_color"
+                android:textSize="@dimen/personal_header_footer_text_size"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <ImageView
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:id="@+id/img_stock"
+                app:layout_constraintTop_toBottomOf="@+id/txt_stock"
+                android:background="@drawable/white_background"
+                android:layout_width="0dp"
+                android:layout_height="100dp" />
+
+            <TextView
+                android:visibility="gone"
+                android:id="@+id/txt_more_stock"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/personal_header_footer"
+                android:background="@color/dark_sky_button"
+                android:gravity="center"
+                android:text="More"
+                android:textColor="@color/text_white_color"
+                android:textSize="@dimen/personal_header_footer_text_size"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/img_stock" />
+        </android.support.constraint.ConstraintLayout>
+    </android.support.v7.widget.CardView>
+
+</android.support.constraint.ConstraintLayout>
