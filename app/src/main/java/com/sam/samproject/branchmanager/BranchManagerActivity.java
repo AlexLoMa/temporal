@@ -65,7 +65,7 @@ public class BranchManagerActivity extends BaseActivity implements View.OnClickL
                 onPopupButtonClick(dot);
             }
         });
-        popupWindow = new PopupWindow(getLayoutInflater().inflate(R.layout.profile_view,null,false), 400, RelativeLayout.LayoutParams.WRAP_CONTENT);
+        popupWindow = new PopupWindow(getLayoutInflater().inflate(R.layout.profile_view,null,false), 500, RelativeLayout.LayoutParams.WRAP_CONTENT);
     }
 
     private ImageView dot;
