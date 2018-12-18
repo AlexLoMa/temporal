@@ -118,7 +118,8 @@ public class PersonalBankerActivity extends BaseActivity implements View.OnClick
             case R.id.stock:
                 if(!stocksFragment.isVisible()) {
                     frameLayout.setVisibility(View.VISIBLE);
-                    showFragment(stocksFragment, true, null);
+                    Intent newsIntent = new Intent(this,NewsActivity.class);
+                    startActivity(newsIntent);
                     btnBack.setVisibility(View.VISIBLE);
                 }
                 break;

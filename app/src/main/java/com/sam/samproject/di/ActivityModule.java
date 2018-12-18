@@ -9,6 +9,7 @@ import com.sam.samproject.branchmanager.BranchManagerActivityModule;
 import com.sam.samproject.branchmanager.fragment.BranchManagerFragmentModule;
 import com.sam.samproject.login.LoginActivity;
 import com.sam.samproject.login.LoginActivityModule;
+import com.sam.samproject.personalbanker.NewsActivity;
 import com.sam.samproject.personalbanker.PersonalBankerActivity;
 import com.sam.samproject.personalbanker.PersonalBankerActivityModule;
 import com.sam.samproject.personalbanker.SignatureActivity;
@@ -35,4 +36,7 @@ public abstract class ActivityModule {
 
     @ContributesAndroidInjector
     abstract SignatureActivity bindSignatureActivity();
+
+    @ContributesAndroidInjector
+    abstract NewsActivity bindNewsActivity();
 }
