@@ -17,9 +17,12 @@ import static android.support.test.espresso.Espresso.onView;
 import static android.support.test.espresso.action.ViewActions.clearText;
 import static android.support.test.espresso.action.ViewActions.click;
 import static android.support.test.espresso.action.ViewActions.typeText;
+import static android.support.test.espresso.assertion.ViewAssertions.matches;
+import static android.support.test.espresso.matcher.ViewMatchers.hasDescendant;
 import static android.support.test.espresso.matcher.ViewMatchers.isAssignableFrom;
 import static android.support.test.espresso.matcher.ViewMatchers.isDescendantOfA;
 import static android.support.test.espresso.matcher.ViewMatchers.withId;
+import static android.support.test.espresso.matcher.ViewMatchers.withText;
 import static org.hamcrest.CoreMatchers.allOf;
 import static org.hamcrest.CoreMatchers.is;
 
@@ -42,6 +45,7 @@ public class LoginActivityInstrumentedTest {
         // the above command to typeText was not working due to TextInputLayout, so need to write as below.
         onView(allOf(isDescendantOfA(withId(R.id.inputUserName)), isAssignableFrom(EditText.class)))
                 .perform(clearText(), typeText("UserName" + ' ' + 1));
+        Espresso.closeSoftKeyboard();
         // enter password
         onView(allOf(isDescendantOfA(withId(R.id.inputPassword)), isAssignableFrom(EditText.class)))
                 .perform(clearText(), typeText("Password" + ' ' + 1));
@@ -66,6 +70,7 @@ public class LoginActivityInstrumentedTest {
         // the above command to typeText was not working due to TextInputLayout, so need to write as below.
         onView(allOf(isDescendantOfA(withId(R.id.inputUserName)), isAssignableFrom(EditText.class)))
                 .perform(clearText(), typeText("UserName" + ' ' + 2));
+        Espresso.closeSoftKeyboard();
         // enter password
         onView(allOf(isDescendantOfA(withId(R.id.inputPassword)), isAssignableFrom(EditText.class)))
                 .perform(clearText(), typeText("Password" + ' ' + 2));
@@ -75,10 +80,11 @@ public class LoginActivityInstrumentedTest {
         onView(withId(R.id.btnSubmit)).perform(click());
 
         //  Automate Mortage Form
-       // MortgageFormAutomation();
+        MortgageFormAutomation();
 
         //Espresso.pressBack();
     }
+
 
     @Test
     public void C_BranchManagerTest () {
@@ -93,6 +99,7 @@ public class LoginActivityInstrumentedTest {
         // the above command to typeText was not working due to TextInputLayout, so need to write as below.
         onView(allOf(isDescendantOfA(withId(R.id.inputUserName)), isAssignableFrom(EditText.class)))
                 .perform(clearText(), typeText("UserName" + ' ' + 3));
+        Espresso.closeSoftKeyboard();
         // enter password
         onView(allOf(isDescendantOfA(withId(R.id.inputPassword)), isAssignableFrom(EditText.class)))
                 .perform(clearText(), typeText("Password" + ' ' + 3));
@@ -101,5 +108,13 @@ public class LoginActivityInstrumentedTest {
         onView(withId(R.id.btnSubmit)).perform(click());
         // Espresso.pressBack();
       }
+
+    private void MortgageFormAutomation() {
+
+        onView(withId(R.id.mortage_app))
+                .check(matches(hasDescendant(withText("Mortage Application")))).perform(click());
+        Espresso.closeSoftKeyboard();
+
+    }
 
    }
