@@ -88,9 +88,9 @@ public class NewsActivity extends BaseActivity implements OnRecyclerViewItemClic
                 Article article = (Article) view.getTag();
                 if(!TextUtils.isEmpty(article.getUrl())) {
                     Log.e("clicked url", article.getUrl());
-         //           Intent webActivity = new Intent(this,WebActivity.class);
-           //         webActivity.putExtra("url",article.getUrl());
-           //         startActivity(webActivity);
+                    Intent webActivity = new Intent(this,WebActivity.class);
+                    webActivity.putExtra("url",article.getUrl());
+                    startActivity(webActivity);
                 }
                 break;
         }

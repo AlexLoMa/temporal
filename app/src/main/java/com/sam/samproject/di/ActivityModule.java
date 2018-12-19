@@ -13,6 +13,7 @@ import com.sam.samproject.personalbanker.NewsActivity;
 import com.sam.samproject.personalbanker.PersonalBankerActivity;
 import com.sam.samproject.personalbanker.PersonalBankerActivityModule;
 import com.sam.samproject.personalbanker.SignatureActivity;
+import com.sam.samproject.personalbanker.WebActivity;
 import com.sam.samproject.relationmanager.RelationshipManagerActivity;
 import com.sam.samproject.relationmanager.RelationshipManagerModule;
 
@@ -39,4 +40,7 @@ public abstract class ActivityModule {
 
     @ContributesAndroidInjector
     abstract NewsActivity bindNewsActivity();
+
+    @ContributesAndroidInjector
+    abstract WebActivity bindWebActivity();
 }
