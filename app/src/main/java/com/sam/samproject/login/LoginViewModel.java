@@ -11,6 +11,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Toast;
 import com.sam.samproject.R;
+import com.sam.samproject.SamApplication;
 import com.sam.samproject.base.BaseViewModel;
 import com.sam.samproject.branchmanager.BranchManagerActivity;
 import com.sam.samproject.personalbanker.PersonalBankerActivity;
@@ -79,24 +80,50 @@ public class LoginViewModel extends BaseViewModel {
         }
         // set to get the username on toolbar
         Utils.setUserName(strUserName.get());
-        if(text.get().equals(v.getContext().getString(R.string.rel_manager))){ //If RM selected then go to RM screen using intent.
 
-            (v.getContext()).startActivity(new Intent(v.getContext(),RelationshipManagerActivity.class));
+        LoginModel loginModel = new LoginModel();
+        loginModel.setEmailId(strUserName.get());
+        loginModel.setPassword(strUserPassword.get());
+        SamApplication samApplication = (SamApplication) v.getContext().getApplicationContext();
+        if(text.get().equals(v.getContext().getString(R.string.rel_manager))){ //If RM selected then go to RM screen using intent.
+            loginModel.setUserType(1);
+            if(samApplication.validateUser(loginModel)){
+                (v.getContext()).startActivity(new Intent(v.getContext(),RelationshipManagerActivity.class));
+            }else{
+                Toast.makeText(v.getContext(),"Invalid user name or password.",Toast.LENGTH_LONG).show();
+            }
 
         } else if (text.get().equals(v.getContext().getString(R.string.personal_adv))) {//If PB selected then go to PB screen using intent.
+            loginModel.setUserType(2);
 
-            Intent intent = new Intent(v.getContext(), PersonalBankerActivity.class);
-            intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
-            v.getContext().startActivity(intent);
+
+            if(samApplication.validateUser(loginModel)){
+                Intent intent = new Intent(v.getContext(), PersonalBankerActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                v.getContext().startActivity(intent);
+            }else{
+                Toast.makeText(v.getContext(),"Invalid user name or password.",Toast.LENGTH_LONG).show();
+            }
+
+
 
         } else if (text.get().equals(v.getContext().getString(R.string.branch_manager))) {//If BM selected then go to BM screen using intent.
-
-            Intent intent = new Intent(v.getContext(), BranchManagerActivity.class);
-            intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
-            v.getContext().startActivity(intent);
+            loginModel.setUserType(3);
+            if(samApplication.validateUser(loginModel)){
+                Intent intent = new Intent(v.getContext(), BranchManagerActivity.class);
+                intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+                v.getContext().startActivity(intent);
+            }else{
+                Toast.makeText(v.getContext(),"Invalid user name or password.",Toast.LENGTH_LONG).show();
+            }
 
         } else {
             Toast.makeText(v.getContext(),"Please select role",Toast.LENGTH_LONG).show();
+            return;
         }
+
+
+
+
     }
 }
