@@ -11,6 +11,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
+
 import com.sam.samproject.R;
 import com.sam.samproject.base.BaseActivity;
 import com.sam.samproject.base.BaseFragment;
@@ -53,11 +54,9 @@ public class AccountOpenFragment extends BaseFragment implements View.OnClickLis
      * If it is dual mode
      */
 
-            //eSignButton.setVisibility(View.GONE);
-
     @Override
     public void onClick(View v) {
-        switch(v.getId()) {
+        switch (v.getId()) {
             case R.id.e_sign:
 
                 /*
@@ -65,7 +64,7 @@ public class AccountOpenFragment extends BaseFragment implements View.OnClickLis
                     activity to let it be used in the tablet; otherwise, a dialog is shown for the
                     signature.
                  */
-                if( ((BaseActivity) getActivity()).ismIsDexMode() && ((BaseActivity) getActivity()).ismIsDexDualMode() ){
+                if (((BaseActivity) getActivity()).ismIsDexMode() && ((BaseActivity) getActivity()).ismIsDexDualMode()) {
 
                     Intent intent = new Intent(v.getContext(), SignatureActivity.class);
                     intent.setFlags(Intent.FLAG_ACTIVITY_SINGLE_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -85,7 +84,7 @@ public class AccountOpenFragment extends BaseFragment implements View.OnClickLis
                 final SuccessDialogFragment successDialogFragment = new SuccessDialogFragment();
                 FragmentTransaction ft = getActivity().getSupportFragmentManager().beginTransaction()
                         .addToBackStack(SuccessDialogFragment.class.getSimpleName());
-                successDialogFragment.show(ft,"success");
+                successDialogFragment.show(ft, "success");
                 final Timer t = new Timer();
                 t.schedule(new TimerTask() {
                     public void run() {
@@ -99,7 +98,7 @@ public class AccountOpenFragment extends BaseFragment implements View.OnClickLis
                 CautionDialogFragment cautionDialogFragment = new CautionDialogFragment();
                 FragmentTransaction fragmentTran = getActivity().getSupportFragmentManager().beginTransaction()
                         .addToBackStack(SuccessDialogFragment.class.getSimpleName());
-                cautionDialogFragment.show(fragmentTran,"caution");
+                cautionDialogFragment.show(fragmentTran, "caution");
                 break;
         }
     }

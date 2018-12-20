@@ -1,7 +1,6 @@
 package com.sam.samproject.adapters;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
@@ -16,38 +15,48 @@ import com.sam.samproject.utils.OnRecyclerViewItemClickListener;
 
 import java.util.List;
 
-public class NewsFeedAdapter  extends RecyclerView.Adapter<NewsFeedAdapter.ViewHolder> {
+public class NewsFeedAdapter extends RecyclerView.Adapter<NewsFeedAdapter.ViewHolder> {
 
     private List<Article> articleArrayList;
     private Context context;
     private OnRecyclerViewItemClickListener onRecyclerViewItemClickListener;
+
     public NewsFeedAdapter(List<Article> articleArrayList) {
         this.articleArrayList = articleArrayList;
     }
+
     @Override
     public NewsFeedAdapter.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
         View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.newsfeed_adapter, viewGroup, false);
         return new NewsFeedAdapter.ViewHolder(view);
     }
+
     @Override
     public void onBindViewHolder(NewsFeedAdapter.ViewHolder viewHolder, int position) {
         final Article articleModel = articleArrayList.get(position);
-        if(!TextUtils.isEmpty(articleModel.getTitle())) {
+        if (!TextUtils.isEmpty(articleModel.getTitle())) {
             viewHolder.titleText.setText(articleModel.getTitle());
         }
-        if(!TextUtils.isEmpty(articleModel.getDescription())) {
+        if (!TextUtils.isEmpty(articleModel.getDescription())) {
             viewHolder.descriptionText.setText(articleModel.getDescription());
         }
         viewHolder.artilceAdapterParentLinear.setTag(articleModel);
     }
+
     @Override
     public int getItemCount() {
         return articleArrayList.size();
     }
-    class ViewHolder extends RecyclerView.ViewHolder{
+
+    public void setOnRecyclerViewItemClickListener(OnRecyclerViewItemClickListener onRecyclerViewItemClickListener) {
+        this.onRecyclerViewItemClickListener = onRecyclerViewItemClickListener;
+    }
+
+    class ViewHolder extends RecyclerView.ViewHolder {
         private TextView titleText;
         private TextView descriptionText;
         private LinearLayout artilceAdapterParentLinear;
+
         ViewHolder(View view) {
             super(view);
             titleText = view.findViewById(R.id.news_feed_adapter_title);
@@ -62,9 +71,6 @@ public class NewsFeedAdapter  extends RecyclerView.Adapter<NewsFeedAdapter.ViewH
                 }
             });
         }
-    }
-    public void setOnRecyclerViewItemClickListener(OnRecyclerViewItemClickListener onRecyclerViewItemClickListener) {
-        this.onRecyclerViewItemClickListener = onRecyclerViewItemClickListener;
     }
 
 }
