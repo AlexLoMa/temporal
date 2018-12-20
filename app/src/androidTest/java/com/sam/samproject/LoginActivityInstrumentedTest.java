@@ -115,6 +115,6 @@ public class LoginActivityInstrumentedTest {
                 .check(matches(hasDescendant(withText("Mortage Application")))).perform(click());
         Espresso.closeSoftKeyboard();
 
-    }
+     }
 
    }
