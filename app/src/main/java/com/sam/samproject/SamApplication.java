@@ -14,9 +14,9 @@ import java.util.HashMap;
 import dagger.android.AndroidInjector;
 import dagger.android.DaggerApplication;
 
-public class SamApplication extends DaggerApplication{
+public class SamApplication extends DaggerApplication {
 
-    private HashMap<Integer,ArrayList<LoginModel>> hsLoging;
+    private HashMap<Integer, ArrayList<LoginModel>> hsLoging;
 
     @Override
     public void onCreate() {
@@ -32,67 +32,67 @@ public class SamApplication extends DaggerApplication{
     }
 
 
-    private void setLoginAuthenticator(){
+    private void setLoginAuthenticator() {
 
         //Relationship manager
         LoginModel loginModel1 = new LoginModel();
         loginModel1.setUserType(1);
         loginModel1.setPassword("123456");
-        loginModel1.setEmailId("relmanager1@gmail.com");
+        loginModel1.setEmailId("relmanager1");
 
         LoginModel loginModel2 = new LoginModel();
         loginModel2.setUserType(1);
         loginModel2.setPassword("123456");
-        loginModel2.setEmailId("relmanager2@gmail.com");
+        loginModel2.setEmailId("relmanager2");
 
         ArrayList<LoginModel> arrayListB = new ArrayList<>();
         arrayListB.add(loginModel1);
         arrayListB.add(loginModel2);
 
-        hsLoging.put(1,arrayListB);
+        hsLoging.put(1, arrayListB);
 
         //Personal banker
         LoginModel personall = new LoginModel();
         personall.setUserType(2);
         personall.setPassword("123456");
-        personall.setEmailId("personalbanker1@gmail.com");
+        personall.setEmailId("personalbanker1");
 
         LoginModel personal2 = new LoginModel();
         personal2.setUserType(2);
         personal2.setPassword("123456");
-        personal2.setEmailId("personalbanker2@gmail.com");
+        personal2.setEmailId("personalbanker2");
 
         ArrayList<LoginModel> arrayListP = new ArrayList<>();
         arrayListP.add(personal2);
         arrayListP.add(personall);
 
-        hsLoging.put(2,arrayListP);
+        hsLoging.put(2, arrayListP);
 
         //Branch manager
         LoginModel branch1 = new LoginModel();
         branch1.setUserType(3);
         branch1.setPassword("123456");
-        branch1.setEmailId("branchmanager1@gmail.com");
+        branch1.setEmailId("branchmanager1");
 
         LoginModel branch2 = new LoginModel();
         branch2.setUserType(3);
         branch2.setPassword("123456");
-        branch2.setEmailId("branchmanager2@gmail.com");
+        branch2.setEmailId("branchmanager2");
 
         ArrayList<LoginModel> arrayListBM = new ArrayList<>();
         arrayListBM.add(branch1);
         arrayListBM.add(branch2);
 
 
-        hsLoging.put(3,arrayListBM);
+        hsLoging.put(3, arrayListBM);
     }
 
 
-    public boolean validateUser(LoginModel loginModel){
+    public boolean validateUser(LoginModel loginModel) {
         boolean isValidateSuccessfully = false;
         ArrayList<LoginModel> data = hsLoging.get(loginModel.getUserType());
-        for(int i=0;i<data.size();i++){
-            if(loginModel.getEmailId().equals(data.get(i).getEmailId()) && loginModel.getPassword().equals(data.get(i).getPassword())){
+        for (int i = 0; i < data.size(); i++) {
+            if (loginModel.getEmailId().equals(data.get(i).getEmailId()) && loginModel.getPassword().equals(data.get(i).getPassword())) {
                 isValidateSuccessfully = true;
                 break;
             }

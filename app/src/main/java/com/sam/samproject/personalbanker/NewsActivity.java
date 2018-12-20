@@ -47,25 +47,26 @@ public class NewsActivity extends BaseActivity implements OnRecyclerViewItemClic
         showProgressDialog("Fetching News...");
 
         final ApiInterface apiService = ApiClient.getClient().create(ApiInterface.class);
-        Call<ResponseModel> call = apiService.getLatestNews("techcrunch",API_KEY);
+        Call<ResponseModel> call = apiService.getLatestNews("techcrunch", API_KEY);
         call.enqueue(new Callback<ResponseModel>() {
             @Override
-            public void onResponse(Call<ResponseModel>call, Response<ResponseModel> response) {
+            public void onResponse(Call<ResponseModel> call, Response<ResponseModel> response) {
                 progressDialog.dismiss();
-                if(response.body().getStatus().equals("ok")) {
+                if (response.body().getStatus().equals("ok")) {
                     List<Article> articleList = response.body().getArticles();
-                    if(articleList.size()>0) {
+                    if (articleList.size() > 0) {
                         final NewsFeedAdapter newsFeedAdapter = new NewsFeedAdapter(articleList);
                         newsFeedAdapter.setOnRecyclerViewItemClickListener(NewsActivity.this);
                         mainRecycler.setAdapter(newsFeedAdapter);
                     }
                 }
             }
+
             @Override
-            public void onFailure(Call<ResponseModel>call, Throwable t) {
+            public void onFailure(Call<ResponseModel> call, Throwable t) {
                 progressDialog.dismiss();
                 Log.e("out", t.toString());
-                Toast.makeText(getApplicationContext(),"Something went wrong Please check internet connection",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Something went wrong Please check internet connection", Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -86,10 +87,10 @@ public class NewsActivity extends BaseActivity implements OnRecyclerViewItemClic
         switch (view.getId()) {
             case R.id.news_feed_ll_parent:
                 Article article = (Article) view.getTag();
-                if(!TextUtils.isEmpty(article.getUrl())) {
+                if (!TextUtils.isEmpty(article.getUrl())) {
                     Log.e("clicked url", article.getUrl());
-                    Intent webActivity = new Intent(this,WebActivity.class);
-                    webActivity.putExtra("url",article.getUrl());
+                    Intent webActivity = new Intent(this, WebActivity.class);
+                    webActivity.putExtra("url", article.getUrl());
                     startActivity(webActivity);
                 }
                 break;

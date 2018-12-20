@@ -50,7 +50,7 @@ public class BaseActivity extends DaggerAppCompatActivity {
         return mIsDexDualMode;
     }
 
-    private boolean checkDeXEnabled(){
+    private boolean checkDeXEnabled() {
         boolean enabled;
         Configuration config = getResources().getConfiguration();
         try {

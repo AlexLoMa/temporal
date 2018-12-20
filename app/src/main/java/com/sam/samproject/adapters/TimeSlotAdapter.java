@@ -5,19 +5,22 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
 import com.sam.samproject.R;
+
 import java.util.ArrayList;
 
 public class TimeSlotAdapter extends RecyclerView.Adapter<TimeSlotAdapter.ViewHolder> {
 
-    private ArrayList<String> times =new ArrayList<>();
-    public void setTimes(ArrayList<String> times){
+    private ArrayList<String> times = new ArrayList<>();
+
+    public void setTimes(ArrayList<String> times) {
         this.times = times;
     }
 
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.meeting_time_item_view,parent,false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.meeting_time_item_view, parent, false);
         return new ViewHolder(view);
     }
 
@@ -32,9 +35,10 @@ public class TimeSlotAdapter extends RecyclerView.Adapter<TimeSlotAdapter.ViewHo
         return times.size();
     }
 
-    class ViewHolder extends RecyclerView.ViewHolder{
+    class ViewHolder extends RecyclerView.ViewHolder {
 
         TextView textView;
+
         public ViewHolder(View itemView) {
             super(itemView);
             //initialize the view to be displayed in recyclerview.
