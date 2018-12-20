@@ -44,11 +44,11 @@ public class LoginActivityInstrumentedTest {
         //onView(withId(R.id.inputUserName)).perform(click()).perform(typeText("a"));
         // the above command to typeText was not working due to TextInputLayout, so need to write as below.
         onView(allOf(isDescendantOfA(withId(R.id.inputUserName)), isAssignableFrom(EditText.class)))
-                .perform(clearText(), typeText("UserName" + ' ' + 1));
+                .perform(clearText(), typeText("relmanager1" ));
         Espresso.closeSoftKeyboard();
         // enter password
         onView(allOf(isDescendantOfA(withId(R.id.inputPassword)), isAssignableFrom(EditText.class)))
-                .perform(clearText(), typeText("Password" + ' ' + 1));
+                .perform(clearText(), typeText("123456" ));
         Espresso.closeSoftKeyboard();
 
         // Find the Submit button and click on it.
@@ -69,18 +69,15 @@ public class LoginActivityInstrumentedTest {
         //onView(withId(R.id.inputUserName)).perform(click()).perform(typeText("a"));
         // the above command to typeText was not working due to TextInputLayout, so need to write as below.
         onView(allOf(isDescendantOfA(withId(R.id.inputUserName)), isAssignableFrom(EditText.class)))
-                .perform(clearText(), typeText("UserName" + ' ' + 2));
+                .perform(clearText(), typeText("personalbanker1"));
         Espresso.closeSoftKeyboard();
         // enter password
         onView(allOf(isDescendantOfA(withId(R.id.inputPassword)), isAssignableFrom(EditText.class)))
-                .perform(clearText(), typeText("Password" + ' ' + 2));
+                .perform(clearText(), typeText("123456"));
 
         Espresso.closeSoftKeyboard();
         // Find the Submit button and click on it.
         onView(withId(R.id.btnSubmit)).perform(click());
-
-        //  Automate Mortage Form
-        MortgageFormAutomation();
 
         //Espresso.pressBack();
     }
@@ -98,23 +95,14 @@ public class LoginActivityInstrumentedTest {
         //onView(withId(R.id.inputUserName)).perform(click()).perform(typeText("a"));
         // the above command to typeText was not working due to TextInputLayout, so need to write as below.
         onView(allOf(isDescendantOfA(withId(R.id.inputUserName)), isAssignableFrom(EditText.class)))
-                .perform(clearText(), typeText("UserName" + ' ' + 3));
+                .perform(clearText(), typeText("branchmanager1" ));
         Espresso.closeSoftKeyboard();
         // enter password
         onView(allOf(isDescendantOfA(withId(R.id.inputPassword)), isAssignableFrom(EditText.class)))
-                .perform(clearText(), typeText("Password" + ' ' + 3));
+                .perform(clearText(), typeText("123456"));
         Espresso.closeSoftKeyboard();
         // Find the Submit button and click on it.
         onView(withId(R.id.btnSubmit)).perform(click());
         // Espresso.pressBack();
       }
-
-    private void MortgageFormAutomation() {
-
-        onView(withId(R.id.mortage_app))
-                .check(matches(hasDescendant(withText("Mortage Application")))).perform(click());
-        Espresso.closeSoftKeyboard();
-
-     }
-
-   }
+}
