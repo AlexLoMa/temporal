@@ -180,7 +180,7 @@ public class BranchManagerActivity extends BaseActivity implements View.OnClickL
                 public void onResponse(Call<WeatherEntity> call, Response<WeatherEntity> response) {
                     double fTemp = 9 / 5 * (response.body().getMain().getTemp() - 273) + 32;
                     double roundOff = Math.round(fTemp * 100.0) / 100.0;
-                    img_weather.setText(roundOff+" f");
+                    img_weather.setText(roundOff+" F");
                 }
 
                 @Override

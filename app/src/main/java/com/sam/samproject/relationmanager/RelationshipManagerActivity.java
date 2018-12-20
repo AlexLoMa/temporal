@@ -167,9 +167,9 @@ public class RelationshipManagerActivity extends BaseActivity implements View.On
 
                 @Override
                 public void onResponse(Call<WeatherEntity> call, Response<WeatherEntity> response) {
-//                    double fTemp = 9 / 5 * (response.body().getMain().getTemp() - 273) + 32;
-//                    double roundOff = Math.round(fTemp * 100.0) / 100.0;
-//                    img_weather.setText(roundOff+" f");
+                    double fTemp = 9 / 5 * (response.body().getMain().getTemp() - 273) + 32;
+                    double roundOff = Math.round(fTemp * 100.0) / 100.0;
+                    img_weather.setText(roundOff+" F");
                 }
 
                 @Override
