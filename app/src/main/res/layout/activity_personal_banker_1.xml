@@ -425,7 +425,7 @@
                 android:layout_height="@dimen/personal_header_footer"
                 android:background="@color/dark_sky_button"
                 android:gravity="center"
-                android:text="More"
+                android:text="News"
                 android:textColor="@color/text_white_color"
                 android:textSize="@dimen/personal_header_footer_text_size"
                 app:layout_constraintEnd_toEndOf="parent"
