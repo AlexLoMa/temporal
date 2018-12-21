@@ -24,6 +24,7 @@ import com.sam.samproject.branchmanager.fragment.PerformanceFragment;
 import com.sam.samproject.branchmanager.fragment.StaffingFragment;
 import com.sam.samproject.branchmanager.fragment.StocksFragment;
 import com.sam.samproject.model.WeatherEntity;
+import com.sam.samproject.personalbanker.NewsActivity;
 import com.sam.samproject.personalbanker.PersonalBankerActivity;
 import com.sam.samproject.relationmanager.RelationshipManagerActivity;
 import com.sam.samproject.utils.Utils;
@@ -43,6 +44,7 @@ public class BranchManagerActivity extends BaseActivity implements View.OnClickL
     private FrameLayout frameLayout;
     private TextView img_weather;
     private ImageView dot;
+    private com.sam.samproject.personalbanker.fragments.StocksFragment stocksFragment = new com.sam.samproject.personalbanker.fragments.StocksFragment();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -131,9 +133,12 @@ public class BranchManagerActivity extends BaseActivity implements View.OnClickL
                 showFragment(new StaffingFragment(), true);
                 break;
             case R.id.stock:
-                btnBack.setVisibility(View.VISIBLE);
-                frameLayout.setVisibility(View.VISIBLE);
-                showFragment(new StocksFragment(), true);
+                if(!stocksFragment.isVisible()) {
+                    frameLayout.setVisibility(View.VISIBLE);
+                    Intent newsIntent = new Intent(this, NewsActivity.class);
+                    startActivity(newsIntent);
+                    btnBack.setVisibility(View.VISIBLE);
+                }
                 break;
 
         }
