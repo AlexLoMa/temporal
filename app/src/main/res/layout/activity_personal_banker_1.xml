@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/personalBanker_layout"
     android:background="@color/dark_grey_background_color"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -121,19 +122,21 @@
 
 
             <RelativeLayout
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
                 android:id="@+id/img_mortage_app"
                 android:layout_width="0dp"
                 android:layout_height="80dp"
                 android:background="@drawable/white_background"
-                app:layout_constraintTop_toBottomOf="@+id/txt_mortage_app" >
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_mortage_app">
+
                 <ImageView
-                    android:layout_centerInParent="true"
-                    android:src="@drawable/ic_doc"
-                    android:scaleType="center"
                     android:layout_width="40dp"
-                    android:layout_height="40dp" />
+                    android:layout_height="40dp"
+                    android:layout_centerInParent="true"
+                    android:scaleType="center"
+                    android:src="@drawable/ic_doc" />
 
             </RelativeLayout>
 
