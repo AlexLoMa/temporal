@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.sam.samproject">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:name=".SamApplication"
         android:allowBackup="true"
@@ -21,6 +23,8 @@
         <activity android:name=".personalbanker.PersonalBankerActivity"/>
         <activity android:name=".relationmanager.RelationshipManagerActivity"></activity>
         <activity android:name=".personalbanker.SignatureActivity"></activity>
+        <activity android:name=".personalbanker.NewsActivity"/>
+        <activity android:name=".personalbanker.WebActivity"/>
     </application>
 
 </manifest>
