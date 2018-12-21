@@ -425,7 +425,6 @@
                 android:layout_height="100dp" />
 
             <TextView
-                android:visibility="gone"
                 android:id="@+id/txt_more_stock"
                 android:layout_width="0dp"
                 android:layout_height="@dimen/personal_header_footer"
