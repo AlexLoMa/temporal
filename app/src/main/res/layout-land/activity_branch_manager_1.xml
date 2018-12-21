@@ -420,12 +420,11 @@
                 app:layout_constraintStart_toStartOf="parent"
                 android:id="@+id/img_stock"
                 app:layout_constraintTop_toBottomOf="@+id/txt_stock"
-                android:background="@drawable/white_background"
+                android:background="@drawable/stocks_s"
                 android:layout_width="0dp"
-                android:layout_height="100dp" />
+                android:layout_height="80dp" />
 
             <TextView
-                android:visibility="gone"
                 android:id="@+id/txt_more_stock"
                 android:layout_width="0dp"
                 android:layout_height="@dimen/personal_header_footer"
