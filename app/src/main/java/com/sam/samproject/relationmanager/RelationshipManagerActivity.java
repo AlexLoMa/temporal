@@ -21,7 +21,9 @@ import com.sam.samproject.R;
 import com.sam.samproject.base.BaseActivity;
 import com.sam.samproject.branchmanager.BranchManagerActivity;
 import com.sam.samproject.model.WeatherEntity;
+import com.sam.samproject.personalbanker.NewsActivity;
 import com.sam.samproject.personalbanker.PersonalBankerActivity;
+import com.sam.samproject.personalbanker.fragments.StocksFragment;
 import com.sam.samproject.relationmanager.fragment.CRMSummaryFragment;
 import com.sam.samproject.relationmanager.fragment.ElectronicQueueFragment;
 import com.sam.samproject.relationmanager.fragment.FastCheckDepositeFragment;
@@ -42,6 +44,7 @@ public class RelationshipManagerActivity extends BaseActivity implements View.On
     private FrameLayout frameLayout;
     private TextView img_weather;
     private ImageView dot;
+    private StocksFragment stocksFragment = new StocksFragment();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,6 +56,7 @@ public class RelationshipManagerActivity extends BaseActivity implements View.On
         findViewById(R.id.email).setOnClickListener(this);
         findViewById(R.id.calender).setOnClickListener(this);
         findViewById(R.id.crm).setOnClickListener(this);
+        findViewById(R.id.stock).setOnClickListener(this);
 
         img_weather = findViewById(R.id.img_weather);
         getWeather();
@@ -122,6 +126,15 @@ public class RelationshipManagerActivity extends BaseActivity implements View.On
                 break;
             case R.id.crm:
                 showFragment(new CRMSummaryFragment(), true);
+                break;
+
+            case R.id.stock:
+                if(!stocksFragment.isVisible()) {
+                    frameLayout.setVisibility(View.VISIBLE);
+                    Intent newsIntent = new Intent(this,NewsActivity.class);
+                    startActivity(newsIntent);
+                    btnBack.setVisibility(View.VISIBLE);
+                }
                 break;
         }
     }
